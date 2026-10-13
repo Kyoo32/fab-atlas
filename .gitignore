@@ -5,6 +5,7 @@ web/.astro/
 
 # nb2md 생성물
 web/src/content/docs/notes/notebooks/
+web/public/notebooks/
 
 # Python
 .venv/

@@ -15,6 +15,7 @@
 ## 저작권
 
 - 코퍼스는 재배포가 허용된 공개 문서만 쓰고, `data/sources.csv`에 반드시 기록해요.
+- 코드는 MIT, `data/` 폴더는 CC BY-SA 4.0이에요.
 - 책 내용을 코퍼스나 문서에 옮기지 않아요. (D-002)
 
 ## 내 말로 쓰기
@@ -36,7 +37,7 @@
 - 작업노트(Starlight): `web/src/content/docs/notes/`
   - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, summary, tags, hours)
   - 용어사전 `glossary.mdx`, 결정 기록 `decisions.md`
-  - `notebooks/`는 `scripts/nb2md.py`가 생성해요. 직접 고치지 않아요 (gitignore 대상).
+  - `notebooks/`는 `scripts/nb2md.py`가 생성해요. 이미지 출력은 `web/public/notebooks/`에 생겨요. 둘 다 직접 고치지 않아요 (gitignore 대상).
 - 템플릿: `templates/` (작업일지, 용어 항목, 결정)
 - 마크다운 안의 내부 링크는 base를 포함한 절대 경로로 써요: `/fab-atlas/notes/...`
 - `sources.csv`의 `process` 값은 `web/src/data/processes.ts`의 여덟 개 이름 중 하나예요.
@@ -47,6 +48,7 @@
 cd web && npm run dev      # nb2md 후 개발 서버
 cd web && npm run build    # nb2md 후 빌드
 uv run scripts/nb2md.py    # 노트북 변환만
+uv run scripts/fetch_corpus.py  # sources.csv의 위키백과 문서 → data/raw/
 ```
 
 ## 커밋

@@ -1,11 +1,13 @@
 """notebooks/*.ipynb → web/src/content/docs/notes/notebooks/*.md 변환.
 
+이미지 출력은 web/public/notebooks/{노트북}/cell{번호}-{순번}.{확장자}로 저장해요.
 표준 라이브러리만 써요. web의 prebuild/predev에서 자동으로 실행돼요.
     uv run scripts/nb2md.py
 """
 
 from __future__ import annotations
 
+import base64
 import json
 import shutil
 from pathlib import Path
@@ -13,6 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "notebooks"
 OUT = ROOT / "web" / "src" / "content" / "docs" / "notes" / "notebooks"
+IMG_OUT = ROOT / "web" / "public" / "notebooks"
+IMG_URL = "/fab-atlas/notebooks"
+# 한 출력에 여러 형식이 있으면 앞의 것을 써요.
+IMAGE_TYPES = {"image/png": "png", "image/jpeg": "jpg", "image/svg+xml": "svg"}
 REPO = "Kyoo32/fab-atlas"
 BRANCH = "main"
 
@@ -25,21 +31,37 @@ def _yaml_str(value: str) -> str:
     return json.dumps(value, ensure_ascii=False)
 
 
-def _outputs(outputs: list[dict]) -> list[str]:
+def _save_image(data: dict, stem: str, cell_no: int, seq: int) -> str | None:
+    for mime, ext in IMAGE_TYPES.items():
+        if mime not in data:
+            continue
+        name = f"cell{cell_no}-{seq}.{ext}"
+        dest = IMG_OUT / stem / name
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if mime == "image/svg+xml":
+            dest.write_text(_text(data[mime]), encoding="utf-8")
+        else:
+            dest.write_bytes(base64.b64decode(_text(data[mime])))
+        return f"![{stem} cell {cell_no} 출력 {seq}]({IMG_URL}/{stem}/{name})"
+    return None
+
+
+def _outputs(outputs: list[dict], stem: str, cell_no: int) -> list[str]:
     parts: list[str] = []
+    seq = 0
     for out in outputs:
         kind = out.get("output_type")
         if kind == "stream":
             text = _text(out.get("text", ""))
         elif kind in ("execute_result", "display_data"):
             data = out.get("data", {})
-            if "text/plain" in data:
-                text = _text(data["text/plain"])
-            elif any(k.startswith("image/") for k in data):
-                parts.append("_(이미지 출력은 원본 노트북에서 확인해요)_")
+            if any(m in data for m in IMAGE_TYPES):
+                seq += 1
+                parts.append(_save_image(data, stem, cell_no, seq))  # type: ignore[arg-type]
                 continue
-            else:
+            if "text/plain" not in data:
                 continue
+            text = _text(data["text/plain"])
         elif kind == "error":
             text = f"{out.get('ename', 'Error')}: {out.get('evalue', '')}"
         else:
@@ -56,6 +78,7 @@ def convert(nb_path: Path) -> tuple[str, str]:
     body: list[str] = []
 
     for i, cell in enumerate(nb.get("cells", [])):
+        cell_no = i + 1
         src = _text(cell.get("source", "")).rstrip()
         if cell.get("cell_type") == "markdown":
             # 첫 마크다운 셀의 H1은 페이지 제목으로 올려요.
@@ -68,7 +91,7 @@ def convert(nb_path: Path) -> tuple[str, str]:
         elif cell.get("cell_type") == "code":
             if src:
                 body.append(f"```{lang}\n{src}\n```")
-            body.extend(_outputs(cell.get("outputs", [])))
+            body.extend(_outputs(cell.get("outputs", []), nb_path.stem, cell_no))
 
     rel = nb_path.relative_to(ROOT).as_posix()
     github = f"https://github.com/{REPO}/blob/{BRANCH}/{rel}"
@@ -88,8 +111,9 @@ def convert(nb_path: Path) -> tuple[str, str]:
 
 
 def main() -> None:
-    if OUT.exists():
-        shutil.rmtree(OUT)
+    for d in (OUT, IMG_OUT):
+        if d.exists():
+            shutil.rmtree(d)
     OUT.mkdir(parents=True)
 
     notebooks = sorted(SRC.glob("*.ipynb"))

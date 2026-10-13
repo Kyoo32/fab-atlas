@@ -21,7 +21,7 @@
     },
     {
       "label": "4주차",
-      "items": [{ "text": "QA 데모와 검증 리포트 공개", "done": false }]
+      "items": [{ "id": "report-public", "text": "QA 데모와 검증 리포트 공개", "done": false }]
     },
     {
       "label": "이후",
