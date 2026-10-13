@@ -1,0 +1,15 @@
+[project]
+name = "fabatlas"
+version = "0.0.1"
+description = "8대 공정을 지도로 보고, 묻고, 근거로 답한다"
+authors = [{ name = "Kyuwon Lee" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""

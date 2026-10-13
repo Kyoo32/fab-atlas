@@ -1,0 +1,42 @@
+---
+import ShowcaseLayout from '../layouts/ShowcaseLayout.astro';
+import ProcessStrip from '../components/showcase/ProcessStrip.astro';
+import VersionCards from '../components/showcase/VersionCards.astro';
+import ProgressList from '../components/showcase/ProgressList.astro';
+import { withBase } from '../lib/url';
+---
+
+<ShowcaseLayout>
+	<section class="hero">
+		<h1>FabAtlas</h1>
+		<p class="subtitle">8대 공정을 지도로 보고, 묻고, 근거로 답한다</p>
+		<p class="lead">답을 잘하는 챗봇보다, 어디서 틀리는지 아는 챗봇</p>
+		<div class="actions">
+			<a class="btn primary" href={withBase('report/')}>검증 리포트</a>
+			<a class="btn ghost" href={withBase('notes/')}>작업노트 보기 →</a>
+		</div>
+	</section>
+
+	<section>
+		<h2>8대 공정</h2>
+		<ProcessStrip />
+	</section>
+
+	<section>
+		<h2>무엇을 만드나요</h2>
+		<VersionCards />
+	</section>
+
+	<section>
+		<h2>진행 현황</h2>
+		<ProgressList />
+	</section>
+</ShowcaseLayout>
+
+<style>
+	.hero { margin-top: 40px; }
+	h1 { font-size: 2.5rem; margin: 0; }
+	.subtitle { font-size: 1.15rem; margin: 4px 0 16px; color: var(--muted); }
+	.lead { font-size: 1.05rem; margin: 0 0 24px; }
+	.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>

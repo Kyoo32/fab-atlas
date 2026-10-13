@@ -1,0 +1,20 @@
+{
+  "name": "fab-atlas-web",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "nb2md": "cd .. && uv run scripts/nb2md.py",
+    "predev": "npm run nb2md",
+    "dev": "astro dev",
+    "prebuild": "npm run nb2md",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.6",
+    "astro": "7.3.8",
+    "sharp": "0.35.5"
+  }
+}

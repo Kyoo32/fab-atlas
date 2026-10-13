@@ -1,0 +1,19 @@
+# Node / Astro
+node_modules/
+web/dist/
+web/.astro/
+
+# nb2md 생성물
+web/src/content/docs/notes/notebooks/
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Claude 로컬 설정
+.claude/settings.local.json

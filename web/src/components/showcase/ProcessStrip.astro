@@ -1,0 +1,37 @@
+---
+// 8대 공정 가로 띠. 지금은 정적 표시예요.
+// 나중에 인터랙티브 공정 지도(Astro island, client:visible)로 바꿀 자리라서 데이터는 props로 받아요.
+import { PROCESSES } from '../../data/processes';
+
+interface Props {
+	processes?: readonly { id: string; name: string }[];
+}
+const { processes = PROCESSES } = Astro.props;
+---
+
+<ol class="strip" aria-label="반도체 8대 공정">
+	{processes.map((p, i) => (
+		<li data-process={p.id}>
+			<span class="num">{i + 1}</span>
+			<span class="name">{p.name}</span>
+		</li>
+	))}
+</ol>
+
+<style>
+	.strip {
+		list-style: none; margin: 0; padding: 0;
+		display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+	}
+	li {
+		flex: 1 0 auto; min-width: 96px; position: relative;
+		background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+		padding: 10px 12px; text-align: center;
+	}
+	li:not(:last-child)::after {
+		content: '→'; position: absolute; right: -8px; top: 50%; transform: translate(50%, -50%);
+		color: var(--muted); font-size: 0.8rem;
+	}
+	.num { display: block; color: var(--muted); font-size: 0.75rem; }
+	.name { font-weight: 600; white-space: nowrap; }
+</style>

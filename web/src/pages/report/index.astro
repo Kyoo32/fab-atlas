@@ -1,0 +1,41 @@
+---
+// 검증 리포트. 3주차에 섹션별 컴포넌트(차트 island 포함)로 채워요.
+import ShowcaseLayout from '../../layouts/ShowcaseLayout.astro';
+import { withBase } from '../../lib/url';
+
+const toc = [
+	{ id: 'summary', title: '요약' },
+	{ id: 'setup', title: '실험 설정: 코퍼스, 평가셋, 9조합' },
+	{ id: 'axes', title: '축별 결과' },
+	{ id: 'breakdown', title: '어디서 무너지나' },
+	{ id: 'failures', title: '실패 사례' },
+	{ id: 'limits', title: '한계와 다음 단계' },
+];
+---
+
+<ShowcaseLayout title="검증 리포트">
+	<section>
+		<h1>검증 리포트</h1>
+		<p class="notice">3주차부터 채워져요. 지금은 목차만 있어요.</p>
+	</section>
+
+	<section>
+		<h2>목차</h2>
+		<ol class="toc">
+			{toc.map((t) => (
+				<li id={t.id}>
+					{t.title} <span class="todo">준비 중</span>
+				</li>
+			))}
+		</ol>
+	</section>
+
+	<p><a href={withBase('notes/')}>작업노트에서 진행 과정 보기 →</a></p>
+</ShowcaseLayout>
+
+<style>
+	h1 { margin: 0 0 8px; }
+	.notice { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+	.toc li { margin-bottom: 6px; }
+	.todo { font-size: 0.75rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; margin-left: 6px; }
+</style>

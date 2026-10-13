@@ -1,0 +1,31 @@
+{
+  "updated": "2026-10-13",
+  "phases": [
+    {
+      "label": "1주차",
+      "items": [
+        { "text": "공개 코퍼스 수집", "done": false },
+        { "text": "기본 RAG 근거 인용 답변", "done": false }
+      ]
+    },
+    {
+      "label": "2주차",
+      "items": [
+        { "text": "평가셋 50문항", "done": false },
+        { "text": "9조합 실험", "done": false }
+      ]
+    },
+    {
+      "label": "3주차",
+      "items": [{ "text": "다축 강건성 리포트", "done": false }]
+    },
+    {
+      "label": "4주차",
+      "items": [{ "text": "QA 데모와 검증 리포트 공개", "done": false }]
+    },
+    {
+      "label": "이후",
+      "items": [{ "text": "v2 MES 에이전트", "done": false }]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+---
+const versions = [
+	{
+		tag: 'v1',
+		title: '공정 지식 QA',
+		points: ['근거 인용 답변', '다축 강건성 검증'],
+	},
+	{
+		tag: 'v2',
+		title: 'MES 에이전트',
+		points: ['가상 MES DB 툴 호출', '가드레일', '회귀 테스트'],
+	},
+];
+---
+
+<div class="cards">
+	{versions.map((v) => (
+		<article class="card">
+			<span class="tag">{v.tag}</span>
+			<h3>{v.title}</h3>
+			<ul>{v.points.map((p) => <li>{p}</li>)}</ul>
+		</article>
+	))}
+</div>
+
+<style>
+	.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+	.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; }
+	.tag { font-size: 0.75rem; font-weight: 700; color: var(--accent); }
+	h3 { margin: 4px 0 8px; font-size: 1.1rem; }
+	ul { margin: 0; padding-left: 1.2em; color: var(--muted); }
+</style>

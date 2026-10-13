@@ -1,0 +1,75 @@
+---
+// 작업일지(notes/devlog/*)를 날짜순으로 나열해요. 기본은 오래된순, 버튼으로 최신순 전환.
+import { getCollection } from 'astro:content';
+import { withBase } from '../../lib/url';
+
+const entries = (await getCollection('docs', (e) => e.id.startsWith('notes/devlog/')))
+	.filter((e) => e.data.date)
+	.sort((a, b) => a.data.date!.getTime() - b.data.date!.getTime());
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<div class="timeline-controls" role="group" aria-label="정렬">
+	<button type="button" data-order="asc" aria-pressed="true">오래된순</button>
+	<button type="button" data-order="desc" aria-pressed="false">최신순</button>
+</div>
+
+{entries.length === 0 ? (
+	<p>아직 작업일지가 없어요.</p>
+) : (
+	<ol class="timeline" id="timeline">
+		{entries.map((e) => (
+			<li>
+				<time datetime={fmt(e.data.date!)}>{fmt(e.data.date!)}</time>
+				<div class="body">
+					<a href={withBase(`${e.id}/`)}>{e.data.title}</a>
+					{e.data.summary && <p class="summary">{e.data.summary}</p>}
+					{e.data.tags.length > 0 && (
+						<p class="tags">{e.data.tags.map((t) => <span>#{t}</span>)}</p>
+					)}
+				</div>
+			</li>
+		))}
+	</ol>
+)}
+
+<script>
+	const list = document.getElementById('timeline');
+	const buttons = document.querySelectorAll<HTMLButtonElement>('.timeline-controls button');
+	let current = 'asc';
+	buttons.forEach((btn) =>
+		btn.addEventListener('click', () => {
+			const order = btn.dataset.order!;
+			if (!list || order === current) return;
+			[...list.children].reverse().forEach((li) => list.appendChild(li));
+			current = order;
+			buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+		}),
+	);
+</script>
+
+<style>
+	.timeline-controls { display: flex; gap: 0.5rem; }
+	.timeline-controls button {
+		font: inherit; font-size: var(--sl-text-sm); cursor: pointer;
+		padding: 0.2rem 0.75rem; border-radius: 999px;
+		border: 1px solid var(--sl-color-gray-5); background: transparent; color: var(--sl-color-gray-2);
+	}
+	.timeline-controls button[aria-pressed='true'] {
+		background: var(--sl-color-accent-low); color: var(--sl-color-white); border-color: var(--sl-color-accent);
+	}
+	.timeline { list-style: none; padding: 0; }
+	.timeline li {
+		display: grid; grid-template-columns: 7rem 1fr; gap: 1rem;
+		padding: 0.75rem 0; border-bottom: 1px solid var(--sl-color-hairline);
+	}
+	.timeline time { color: var(--sl-color-gray-3); font-variant-numeric: tabular-nums; }
+	.timeline .body > * { margin: 0; }
+	.timeline .body a { font-weight: 600; }
+	.summary { color: var(--sl-color-gray-2); }
+	.tags { display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: var(--sl-text-xs); color: var(--sl-color-accent-high); }
+	@media (max-width: 40rem) {
+		.timeline li { grid-template-columns: 1fr; gap: 0.25rem; }
+	}
+</style>

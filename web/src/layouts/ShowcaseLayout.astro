@@ -1,0 +1,110 @@
+---
+// 쇼케이스 영역(/, /report/) 공용 레이아웃. Starlight 밖에서 자유 배치해요.
+// 테마는 Starlight와 같은 localStorage 키(starlight-theme)를 써서 두 영역이 맞춰져요.
+import { withBase } from '../lib/url';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+const { title, description = '8대 공정을 지도로 보고, 묻고, 근거로 답한다' } = Astro.props;
+const pageTitle = title ? `${title} · FabAtlas` : 'FabAtlas';
+---
+
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<link rel="icon" href={withBase('favicon.svg')} type="image/svg+xml" />
+		<title>{pageTitle}</title>
+		<script is:inline>
+			(() => {
+				let stored = '';
+				try { stored = localStorage.getItem('starlight-theme') || ''; } catch {}
+				const dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+				document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+			})();
+		</script>
+	</head>
+	<body>
+		<header class="top">
+			<a class="brand" href={withBase('')}>FabAtlas</a>
+			<nav>
+				<a href={withBase('report/')}>검증 리포트</a>
+				<a href={withBase('notes/')}>작업노트</a>
+				<a href="https://github.com/Kyoo32/fab-atlas">GitHub</a>
+				<button type="button" id="theme-toggle" aria-label="라이트/다크 모드 전환">◐</button>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="foot">© 2026 Kyuwon Lee · FabAtlas</footer>
+
+		<script is:inline>
+			document.getElementById('theme-toggle')?.addEventListener('click', () => {
+				const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+				document.documentElement.dataset.theme = next;
+				try { localStorage.setItem('starlight-theme', next); } catch {}
+			});
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg: #ffffff;
+		--fg: #1b1f24;
+		--muted: #5b6470;
+		--line: #dde1e6;
+		--card: #f6f7f9;
+		--accent: #3a5bd9;
+		--accent-fg: #ffffff;
+		--ok: #2f8a4c;
+		color-scheme: light;
+	}
+	:root[data-theme='dark'] {
+		--bg: #15171b;
+		--fg: #e7e9ec;
+		--muted: #9aa3ae;
+		--line: #2c3138;
+		--card: #1d2025;
+		--accent: #8aa2ff;
+		--accent-fg: #10131a;
+		--ok: #5cc27e;
+		color-scheme: dark;
+	}
+	* { box-sizing: border-box; }
+	body {
+		margin: 0;
+		background: var(--bg);
+		color: var(--fg);
+		font-family: system-ui, -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+		line-height: 1.6;
+	}
+	a { color: var(--accent); }
+	main { max-width: 960px; margin: 0 auto; padding: 0 16px 64px; }
+	section { margin-top: 48px; }
+	h2 { font-size: 1.25rem; margin: 0 0 16px; }
+	.top {
+		display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+		max-width: 960px; margin: 0 auto; padding: 16px;
+	}
+	.top .brand { font-weight: 700; color: var(--fg); text-decoration: none; }
+	.top nav { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+	.top nav a { color: var(--muted); text-decoration: none; }
+	.top nav a:hover { color: var(--fg); }
+	#theme-toggle {
+		background: none; border: 1px solid var(--line); color: var(--fg);
+		border-radius: 6px; padding: 2px 8px; cursor: pointer;
+	}
+	.foot { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 32px 16px; border-top: 1px solid var(--line); }
+	.btn {
+		display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none;
+		border: 1px solid var(--accent); font-weight: 600;
+	}
+	.btn.primary { background: var(--accent); color: var(--accent-fg); }
+	.btn.ghost { color: var(--accent); }
+</style>
