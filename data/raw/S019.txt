@@ -1,0 +1,41 @@
+A probe card (commonly referred to as a DUT board) is used in automated integrated circuit testing. It is an interface between an electronic test system and a semiconductor wafer.
+
+Use and manufacture
+
+A probe card or DUT board is a printed circuit board (PCB), and is the interface between the integrated circuit and a test head, which in turn attaches to automatic test equipment (ATE) (or "tester"). Typically, the probe card is mechanically docked to a Wafer testing prober and electrically connected to the ATE . Its purpose is to provide an electrical path between the test system and the circuits on the wafer, thereby permitting the testing and validation of the circuits at the wafer level, usually before they are diced and packaged. It normally comprises a PCB and some form of contact elements, usually metallic.
+
+A semiconductor manufacturer will typically require a new probe card for each new device wafer and for device shrinks (when the manufacturer reduces the size of the device while keeping its functionality) because the probe card is effectively a custom connector that takes the universal pattern of a given tester and translates the signals to connect to electrical pads on the wafer. For testing of Dynamic random-access memory (DRAM) and Flash memory (FLASH) devices, these pads are typically made of aluminum and are 40–90 um per side. Other devices may have flat pads, or raised bumps or pillars made of copper, copper alloys or many types of solders such as lead-tin, tin-silver and others.
+
+The probe card must make good electrical contact to these pads or bumps during the testing of the device. When the testing of the device is complete, the prober will index the wafer to the next device to be tested.
+
+Normally a probe card is inserted into a wafer prober, inside which the position of the wafer to be tested will be adjusted to ensure a precise contact between the probe card and wafer. Once the probe card and the wafer are loaded, a camera in the prober will optically locate several tips on the probe card and several marks or pads on the wafer, and using this information it will align the pads on the device under test (DUT) to the probe card contacts.
+
+Design and types
+
+Probe cards are broadly classified into needle type, vertical type, and MEMS (Micro Electro-Mechanical System) type depending on shape and forms of contact elements. MEMS type is the most advanced technology currently available. The most advanced type of probe card currently can test an entire 12" wafer with one touchdown.
+
+Probe cards or DUT boards are designed to meet both the mechanical and electrical requirements of the particular chip and the specific test equipment to be used. One type of DUT board is used for testing the individual die of a silicon wafer before they are cut free and packaged, and another type is used for testing packaged IC's.
+
+Efficiency factors
+
+Probe card efficiency is affected by many factors. Perhaps the most important factor impacting probe card efficiency is the number of DUTs that can be tested in parallel. Many wafers today are still tested one device at a time. If one wafer had 1000 of these devices and the time required to test one device was 10 seconds and the time for the prober to move from one device to another device was 1 second, then to test an entire wafer would take 1000 x 11 seconds = 11,000 seconds or roughly 3 hours. If however, the probe card and the tester could test 16 devices in parallel (with 16 times the electrical connections) then the test time would be reduced by almost exactly 16 times (to about 11 minutes).
+
+Advanced Tester Resource Enhancement (ATRE) is a powerful means of increasing the number of DUTs that can be tested by a probe card in parallel (or in one touchdown during which probe card needles remain in contact with the wafer DUTs). ATRE allows the sharing of tester resources among DUTs using active components, which have the ability to connect and disconnect DUTs from the tester resources. Without ATRE, a single tester resource (power, DC or AC signal) would normally only go directly to one DUT. However by installing ATRE-configured relays (switches) onto the probe card PCB, the tester resource can split or branch out to multiple DUTs. For example in a x4 sharing configuration, 1 power signal is fed into 4 relays whose outputs go to 4 DUTs, respectively. Then by turning each relay ON and OFF sequentially (in the case of a DUT current measurement test), the tester can test each of the 4 DUTs in turn during the same touchdown (without having to move the prober from one device to the other). Therefore a tester that has only 256 power signals will appear to have its resources expanded or enhanced so as to enable it to test 1024 DUTs in one touchdown, thanks to the 1024 onboard relays in the x4 sharing scheme implemented on the probe card. ATRE brings dramatic savings in terms of test time and cost, as it can allow a chip manufacturer or test house to validate more DUTs in one touchdown without the need to purchase a more advanced tester equipped with more resources.
+
+Contamination issues
+
+Another major factor is debris that accumulates on the tips of the probe needles. Normally these are made of tungsten or tungsten/rhenium alloys or advanced palladium based alloys like PdCuAg. Some modern probe cards have contact tips manufactured by MEMS technologies.
+
+Irrespective of the probe tip material, contamination builds up on the tips as a result of successive touchdown events (where the probe tips make physical contact with the bond pads of the die). Accumulation of debris has an adverse effect on the critical measurement of contact resistance. To return a used probe card to a contact resistance that is acceptable, the probe tips must be spotless. Cleaning can be done offline using an NWR style laser to reclaim the tips by selectively removing the contamination. Online cleaning can be used during testing to optimize the testing results within the wafer or within wafer lots.
+
+Notes
+
+References
+
+External links
+
+Additional Slides for Lecture 16: "Testing, Design for Testability", EE271
+
+System-in-Package (SiP) Testing, Jin-Fu Li, National Central University, Taiwan
+
+Probe Card Tutorial, Keithley Instruments

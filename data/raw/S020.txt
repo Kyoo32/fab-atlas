@@ -1,0 +1,217 @@
+Integrated circuit packaging is the final stage of semiconductor device fabrication, in which a die is encapsulated in a case that prevents physical damage and corrosion. The case, known as a "package", supports the electrical contacts that connect the device to a circuit board.
+
+The packaging stage is followed by testing of the integrated circuit.
+
+Semiconductor package
+
+A semiconductor package is a metal, plastic, glass, or ceramic casing containing one or more discrete semiconductor devices or integrated circuits. Individual components are fabricated on semiconductor wafers (commonly silicon) before being diced into die, tested, and packaged. The package provides a means for connecting it to the external environment, such as printed circuit board, via leads such as lands, balls, or pins; and protection against threats such as mechanical impact, chemical contamination, and light exposure. Additionally, it helps dissipate heat produced by the device, with or without the aid of a heat spreader. There are thousands of package types in use. Some are defined by international, national, or industry standards, while others are particular to an individual manufacturer.
+
+Package functions
+
+A semiconductor package may have as few as two leads or contacts for devices such as diodes, or in the case of advanced microprocessors, a package may have several thousand connections. Very small packages may be supported only by their wire leads. Larger devices, intended for high-power applications, are installed in carefully designed heat sinks so that they can dissipate hundred or thousands of watts of waste heat.
+
+In addition to providing connections to the semiconductor and handling waste heat, the semiconductor package must protect the "chip" from the environment, particularly the ingress of moisture. Stray particles or corrosion products inside the package may degrade performance of the device or cause failure. A hermetic package allows essentially no gas exchange with the surroundings; such construction requires glass, ceramic or metal enclosures.
+
+Design considerations
+
+Electrical
+
+The current-carrying traces that run out of the die, through the package, and into the printed circuit board (PCB) have very different electrical properties compared to on-chip signals. They require special design techniques and need much more electric power than signals confined to the chip itself. Therefore, it is important that the materials used as electrical contacts exhibit characteristics like low resistance, low capacitance and low inductance. Both the structure and materials must prioritize signal transmission properties, while minimizing any parasitic elements that could negatively affect the signal.
+
+Controlling these characteristics has become important as the rest of technology begins to speed up. Packaging delays have the potential to make up almost half of a high-performance computer's delay, and this bottleneck on speed is expected to increase.
+
+Mechanical and thermal
+
+The integrated circuit package must resist physical breakage, keep out moisture, and provide effective heat dissipation from the chip. Moreover, for RF applications, the package is commonly required to shield electromagnetic interference, that may either degrade the circuit performance or adversely affect neighboring circuits. Finally, the package must permit interconnecting the chip to a PCB. The materials of the package are either plastic (thermoset or thermoplastic), metal (commonly Kovar) or ceramic. A common plastic used for this is epoxy-cresol-novolak (ECN). All three material types offer usable mechanical strength, moisture and heat resistance. Nevertheless, for higher-end devices, metallic and ceramic packages are commonly preferred due to their higher strength (which also supports higher pin-count designs), heat dissipation, hermetic performance, or other reasons. Generally, ceramic packages are more expensive than similar plastic packages.
+
+Some packages have metallic fins to enhance heat transfer, but these take up space. Larger packages also allow for more interconnecting pins.
+
+Economic
+
+Cost is a factor in selection of integrated circuit packaging. Typically, an inexpensive plastic package can dissipate heat up to 2W, which is sufficient for many simple applications, though a similar ceramic package can dissipate up to 50W in the same scenario. As the chips inside the package get smaller and faster, they also tend to get hotter. As the subsequent need for more effective heat dissipation increases, the cost of packaging rises along with it. Generally, the smaller and more complex the package needs to be, the more expensive it is to manufacture. Wire bonding can be used instead of techniques such as flip-chip to reduce costs.
+
+Date code
+
+For semiconductor devices, manufacturers usually print the manufacturer's logo and the part number on the package using ink or laser marking. This makes it easier to distinguish the many different and incompatible devices packaged in relatively few kinds of packages. The markings often include a 4 digit date code, often represented as YYWW where YY is replaced by the last two digits of the calendar year and WW is replaced by the two-digit week number, typically the ISO week number.
+
+Very small packages often include a two-digit date code. One two-digit date code uses YW, where Y is the last digit of the year (0 to 9) and W starts at 1 at the beginning of the year and is incremented every 6 weeks (i.e., W is 1 to 9). Another two-digit date code, the RKM production date code, use YM, where Y is one of 20 letters that repeat in a cycle every 20 years (for example, "M" was used to represent 1980, 2000, 2020, etc.)
+and M indicates the month of production (1 to 9 indicate January to September, O indicates October, N indicates November, D indicates December).
+
+Parts
+
+Leads
+
+To make connections between an integrated circuit and the leads of the package, wire bonds are used, with fine wires connected from the package leads and bonded to conductive pads on the semiconductor die.
+At the outside of the package, wire leads may be soldered to a printed circuit board or used to secure the device to a tag strip. Modern surface mount devices have short metal leads or pads on the package that can be secured by oven-reflow soldering. Aerospace devices in flat packs may use flat metal leads secured to a circuit board by spot welding, though this type of construction is now uncommon.
+
+Sockets
+
+Early semiconductor devices were often inserted in sockets, like vacuum tubes. As devices improved, eventually sockets proved unnecessary for reliability, and devices were directly soldered to printed circuit boards. The package must handle the high temperature gradients of soldering without putting stress on the semiconductor die or its leads.
+
+Sockets are still used for experimental, prototype, or educational applications, for testing of devices, for high-value chips such as microprocessors where replacement is still more economical than discarding the product, and for applications where the chip contains firmware or unique data that might be replaced or refreshed during the life of the product. Devices with hundreds of leads may be inserted in zero insertion force sockets, which are also used on test equipment or device programmers.
+
+Package materials
+
+Many devices are molded out of an epoxy plastic that provides adequate protection of the semiconductor devices, and mechanical strength to support the leads and handling of the package. The plastic can be cresol-novolaks, siloxane polyimide, polyxylylene, silicones, polyepoxides and bisbenzocyclo-butene. Some devices, intended for high-reliability or aerospace or radiation environments, use ceramic packages, with metal lids that are brazed on after assembly, or a glass frit seal. All-metal packages are often used with high power (several watts or more) devices, since they conduct heat well and allow for easy assembly to a heat sink. Often the package forms one contact for the semiconductor device. Lead materials must be chosen with a thermal coefficient of expansion to match the package material. Glass may be used in the package as the package substrate to reduce its thermal expansion and increase its stiffness, which reduce warping and facilitate mounting of the package to a PCB.
+
+A very few early semiconductors were packed in miniature evacuated glass envelopes, like flashlight bulbs; such expensive packaging was made obsolete when surface passivation and improved manufacturing techniques were available. Glass packages are still commonly used with diodes, and glass seals are used in metal transistor packages.
+
+Package materials for high-density dynamic memory must be selected for low background radiation; a single alpha particle emitted by package material can cause a single event upset and transient memory errors (soft errors).
+
+Spaceflight and military applications traditionally used hermetically packaged microcircuits (HPMs).
+However, most modern integrated circuits are only available as plastic encapsulated microcircuits (PEMs).
+Proper fabrication practices using properly qualified PEMs can be used for spaceflight.
+
+History
+
+Early integrated circuits were packaged in ceramic flat packs, which the military used for many years for their reliability and small size. The other type of packaging used in the 1970s, called the ICP (Integrated Circuit Package), was a ceramic package (sometimes round as the transistor package), with the leads on one side, co-axially with the package axis.
+
+Commercial circuit packaging quickly moved to the dual in-line package (DIP), first in ceramic and later in plastic. In the 1980s VLSI pin counts exceeded the practical limit for DIP packaging, leading to pin grid array (PGA) and leadless chip carrier (LCC) packages. Surface mount packaging appeared in the early 1980s and became popular in the late 1980s, using finer lead pitch with leads formed as either gull-wing or J-lead, as exemplified by small-outline integrated circuit—a carrier which occupies an area about 30–50% less than an equivalent DIP, with a typical thickness that is 70% less.
+
+The next big innovation was the area array package, which places the interconnection terminals throughout the surface area of the package, providing a greater number of connections than previous package types where only the outer perimeter is used. The first area array package was a ceramic pin grid array package. Not long after, the plastic ball grid array (BGA), another type of area array package, became one of the most commonly used packaging techniques.
+
+In the late 1990s, plastic quad flat pack (PQFP) and thin small-outline packages (TSOP) replaced PGA packages as the most common for high pin count devices, though PGA packages are still often used for microprocessors. However, industry leaders Intel and AMD transitioned in the 2000s from PGA packages to land grid array (LGA) packages.
+
+Ball grid array (BGA) packages have existed since the 1970s, but evolved into flip-chip ball grid array (FCBGA) packages in the 1990s. FCBGA packages allow for much higher pin count than any existing package types. In an FCBGA package, the die is mounted upside-down (flipped) and connects to the package balls via a substrate that is similar to a printed-circuit board rather than by wires. FCBGA packages allow an array of input-output signals (called area-I/O) to be distributed over the entire die rather than being confined to the die periphery. Ceramic substrates for BGA were replaced with organic substrates to reduce costs and use existing PCB manufacturing techniques to produce more packages at a time by using larger PCB panels during manufacturing.
+
+Traces out of the die, through the package, and into the printed circuit board have very different electrical properties than on-chip signals. They require special design techniques and need much more electric power than signals within the chip itself.
+
+Recent developments consist of stacking multiple dies in single package called SiP, for system in package, or three-dimensional integrated circuit. Combining multiple dies on a small substrate, often ceramic, is called an MCM, or multi-chip module. The boundary between a big MCM and a small printed circuit board is sometimes blurry.
+
+Common package types
+
+Left is X-ray of right PCB, showing metal lead frames inside IC packages
+
+Through-hole technology
+
+Surface-mount technology
+
+Chip carrier
+
+Pin grid array
+
+Flat package
+
+Small outline integrated circuit
+
+Chip-scale package
+
+Ball grid array
+
+Transistor, diode, small pin count IC packages
+
+Multi-chip packages
+
+Operations
+
+For traditional ICs, after wafer dicing, the die is picked from the diced wafer using a vacuum tip or suction cup and undergoes die attachment which is the step during which a die is mounted and fixed to the package or support structure (header). In high-powered applications, the die is usually eutectic bonded onto the package, using e.g. gold-tin or gold-silicon solder (for good heat conduction). For low-cost, low-powered applications, the die is often glued directly onto a substrate (such as a printed wiring board) using an epoxy adhesive.
+Alternatively dies can be attached using solder. These techniques are usually used when the die will be wire bonded; dies with flip chip technology do not use these attachment techniques.
+
+IC bonding is also known as die bonding, die attach, and die mount.
+
+The following operations are performed at the packaging stage, as broken down into bonding, encapsulation, and wafer bonding steps. Note that this list is not all-inclusive and not all of these operations are performed for every package, as the process is highly dependent on the package type.
+
+IC bonding
+
+Wire bonding
+
+Thermosonic bonding
+
+Down bonding
+
+Tape automated bonding
+
+Flip chip
+
+Quilt packaging
+
+Film attaching
+
+Spacer attaching
+
+Sintering die attach
+
+IC encapsulation
+
+Baking
+
+Plating
+
+Lasermarking
+
+Trim and form
+
+Wafer bonding
+
+Sintering die attach is a process that involves placing the semiconductor die onto the substrate and then subjecting it to high temperature and pressure in a controlled environment.
+
+Hybrid integrated circuits
+
+Multiple semiconductor dies and discrete components can be assembled on a ceramic substrate and interconnected with wire bonds. The substrate bears leads for connection to an external circuit, and the whole is covered with a welded or frit cover. Such devices are used when requirements exceed the performance (heat dissipation, noise, voltage rating, leakage current, or other properties) available in a single-die integrated circuit, or for mixing analog and digital functions in the same package. Such packages are relatively expensive to manufacture, but provide most of the other benefits of integrated circuits.
+
+A modern example of multi-chip integrated circuit packages would be certain models of microprocessor, which may include separate dies for such things as cache memory within the same package.
+In a technique called flip chip, digital integrated circuit dies are inverted and soldered to a module carrier, for assembly into large systems. The technique was applied by IBM in their System/360 computers.
+
+Special packages
+
+Semiconductor packages may include special features. Light-emitting or light-sensing devices must have a transparent window in the package; other devices such as transistors may be disturbed by stray light and require an opaque package. An ultraviolet erasable programmable read-only memory device needs a quartz window to allow ultraviolet light to enter and erase the memory. Pressure-sensing integrated circuits require a port on the package that can be connected to a gas or liquid pressure source.
+
+Packages for microwave frequency devices are arranged to have minimal parasitic inductance and capacitance in their leads. Very-high-impedance devices with ultralow leakage current require packages that do not allow stray current to flow, and may also have guard rings around input terminals. Special isolation amplifier devices include high-voltage insulating barriers between input and output, allowing connection to circuits energized at 1 kV or more.
+
+The very first point-contact transistors used metal cartridge-style packages with an opening that allowed adjustment of the whisker used to make contact with the germanium crystal; such devices were common for only a brief time since more reliable, less labor-intensive types were developed.
+
+Standards
+
+Just like vacuum tubes, semiconductor packages standards may be defined by national or international industry associations such as JEDEC, Pro Electron, or EIAJ, or may be proprietary to a single manufacturer.
+
+Assorted discrete through-hole components
+
+A microprocessor in a ceramic, dual in-line package with 48 pins.
+
+A silicon wafer; individual devices (VLSI in squares) are not usable until diced, wire-bonded, and packaged
+
+A plastic dual-in-line package containing an analog integrated circuit.This can be installed in a socket or directly soldered to a printed circuit board.
+
+A low current thyristor and a high power device, with a threaded stud for attachment to a heat sink, and a flexible lead; such packages are used for devices rated for hundreds of amperes.
+
+See also
+
+Advanced packaging (semiconductors)
+
+B-staging
+
+Chip carrier
+
+Co-fired ceramic
+
+Decapping
+
+Electronic packaging
+
+Gold-aluminium intermetallic (purple plague)
+
+Gold–aluminium intermetallic "purple plague"
+
+IBM Solid Logic Technology
+
+List of electronic component packaging types
+
+List of electronics package dimensions
+
+List of integrated circuit package dimensions
+
+Potting (electronics)
+
+Quilt packaging
+
+Surface-mount technology
+
+Through-hole technology
+
+References
+
+External links
+
+The Transistor Museum - pictures of historical devices
+
+JEDEC Transistor Outlines Archive

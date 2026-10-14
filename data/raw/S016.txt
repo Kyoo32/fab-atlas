@@ -1,0 +1,59 @@
+In integrated circuits (ICs), interconnects are structures that connect two or more circuit elements (such as transistors) together electrically. The design and layout of interconnects on an IC is vital to its proper function, performance, power efficiency, reliability, and fabrication yield. The material interconnects are made from depends on many factors. Chemical and mechanical compatibility with the semiconductor substrate and the dielectric between the levels of interconnect is necessary, otherwise barrier layers are needed. Suitability for fabrication is also required; some chemistries and processes prevent the integration of materials and unit processes into a larger technology (recipe) for IC fabrication. In fabrication, interconnects are formed during the back-end-of-line (BEOL) after the fabrication of the transistors on the substrate.
+
+Interconnects are classified as local or global interconnects depending on the signal propagation distance it is able to support. The width and thickness of the interconnect, as well as the material from which it is made, are some of the significant factors that determine the distance a signal may propagate. Local interconnects connect circuit elements that are very close together, such as transistors separated by ten or so other contiguously laid out transistors. Global interconnects can transmit further, such as over large-area sub-circuits. Consequently, local interconnects may be formed from materials with relatively high electrical resistivity such as polycrystalline silicon (sometimes silicided to extend its range) or tungsten. To extend the distance an interconnect may reach, various circuits such as buffers or restorers may be inserted at various points along a long interconnect.
+
+Interconnect properties
+
+The geometric properties of an interconnect are width, thickness, spacing (the distance between an interconnect and another on the same level), pitch (the sum of the width and spacing), and aspect ratio, or AR, (the thickness divided by width). The width, spacing, AR, and ultimately, pitch, are constrained in their minimum and maximum values by design rules that ensure the interconnect (and thus the IC) can be fabricated by the selected technology with a reasonable yield. Width is constrained to ensure minimum width interconnects do not suffer breaks, and maximum width interconnects can be planarized by chemical mechanical polishing (CMP). Spacing is constrained to ensure adjacent interconnects can be fabricated without any conductive material bridging. Thickness is determined solely by the technology, and the aspect ratio, by the chosen width and set thickness. In technologies that support multiple levels of interconnects, each group of contiguous levels, or each level, has its own set of design rules.
+
+Before the introduction of CMP for planarizing IC layers, interconnects had design rules that specified larger minimum widths and spaces than the lower level to ensure that the underlying layer's rough topology did not cause breaks in the interconnect formed on top. The introduction of CMP has made finer geometries possible.
+
+The AR is an important factor. In technologies that form interconnect structures with conventional processes, the AR is limited to ensure that the etch creating the interconnect, and the dielectric deposition that fills the voids in between interconnects with dielectric, can be done successfully. In those that form interconnect structures with damascene processes, the AR must permit successful etch of the trenches, deposition of the barrier metal (if needed) and interconnect material.
+
+Interconnect layout are further restrained by design rules that apply to collections of interconnects. For a given area, technologies that rely on CMP have density rules to ensure the whole IC has an acceptable variation in interconnect density. This is because the rate at which CMP removes material depends on the material's properties, and great variations in interconnect density can result in large areas of dielectric which can dish, resulting in poor planarity. To maintain acceptable density, dummy interconnects (or dummy wires) are inserted into regions with spare interconnect density.
+
+Historically, interconnects were routed in straight lines, and could change direction by using sections aligned 45° away from the direction of travel. As IC structure geometries became smaller, to obtain acceptable yields, restrictions were imposed on interconnect direction. Initially, only global interconnects were subject to restrictions; were made to run in straight lines aligned east–west or north–south. To allow easy routing, alternate levels of interconnect ran in the same alignment, so that changes in direction were achieved by connecting to a lower or upper level of interconnect though a via. Local interconnects, especially the lowest level (usually polysilicon) could assume a more arbitrary combination of routing options to attain the a higher packing density.
+
+Materials
+
+In silicon ICs, the most commonly used semiconductor in ICs, the first interconnects were made of aluminum. Aluminum was an ideal material for interconnects due to its ease of deposition and good adherence to silicon and silicon dioxide. Al interconnects are deposited by physical vapor deposition or chemical vapor deposition methods. They were originally patterned by wet etching, and later by various dry etching techniques.
+
+Initially, pure aluminum was used but by the 1970s, substrate compatibility, junction spiking and reliability concerns (mostly concerning electromigration) forced the use of aluminum-based alloys containing silicon, copper, or both. By the late 1990s, the high resistivity of aluminum, coupled with the narrow widths of the interconnect structures forced by continuous feature size downscaling, resulted in prohibitively high resistance in interconnect structures. This forced aluminum's replacement by copper interconnects.
+
+In gallium arsenide (GaAs) ICs, which have been mainly used in application domains (e.g. monolithic microwave ICs) different to those of silicon, the predominant material used for interconnects is gold.
+
+Performance enhancements
+
+To reduce the delay penalty caused by parasitic capacitance, the dielectric material used to insulate adjacent interconnects, and interconnects on different levels (the inter-level dielectric [ILD]), should have a dielectric constant that is as close to 1 as possible. A class of such materials, Low-κ dielectrics, were introduced during the late 1990s and early 2000s for this purpose. As of January 2019, the most advanced materials reduce the dielectric constant to very low levels through highly porous structures, or through the creation of substantial air or vacuum pockets (air gap dielectric). These materials often have low mechanical strength and are restricted to the lowest level or levels of interconnect as a result. The high density of interconnects at the lower levels, along with the minimal spacing, helps support the upper layers. Intel introduced air-gap dielectric in its 14 nm technology in 2014.
+
+Multi-level interconnects
+
+ICs with complex circuits require multiple levels of interconnect to form circuits that have minimal area. As of 2018, the most complex ICs may have over 15 layers of interconnect. Each level of interconnect is separated from each other by a layer of dielectric. To make vertical connections between interconnects on different levels, vias are used. The top-most layers of a chip have the thickest and widest and most widely separated metal layers, which make the wires on those layers have the least resistance and smallest RC time constant, so they are used for power and clock distribution networks. The bottom-most metal layers of the chip, closest to the transistors, have thin, narrow, tightly-packed wires, used only for local interconnect. Adding layers can potentially improve performance, but adding layers also reduces yield and increases manufacturing costs. ICs with a single metal layer typically use the polysilicon layer to "jump across" when one signal needs to cross another signal.
+
+The process used to form DRAM capacitors creates a rough and hilly surface, which makes it difficult to add metal interconnect layers and still maintain good yield.
+
+In 1998, state-of-the-art DRAM processes had four metal layers, while state-of-the-art logic processes had seven metal layers.
+
+In 2002, five or six layers of metal interconnect was common.
+
+In 2009, 1 Gbit DRAM typically had three layers of metal interconnect; tungsten for the first layer and aluminum for the upper layers.
+
+See also
+
+Antenna effect
+
+Bonding pad
+
+Carbon nanotubes in interconnects
+
+Interconnect bottleneck
+
+Optical interconnect
+
+Parasitic extraction
+
+References
+
+Harris, David Money; Weste, Neil (2011). CMOS VLSI Design: A Circuits and Systems Perspective (4 ed.). Addison Wesley. ISBN 9780321547743.
+
+Shwartz, Geraldine Cogin (2006). Shwartz, Geraldine C.; Srikrishnan, Kris V. (eds.). Handbook of Semiconductor Interconnect Technology (2 ed.). CRC Press. ISBN 9781420017656.

@@ -35,6 +35,7 @@ const reportReady = progress.phases.flatMap((p) => p.items).some((i) => 'id' in 
 	<section>
 		<h2>8대 공정</h2>
 		<ProcessStrip />
+		<p class="note">ⓘ 8대 공정은 국내 반도체 업계에서 널리 쓰는 구분이에요. 국제 표준 분류는 아니고, 회사마다 단계 이름이 조금씩 달라요.</p>
 	</section>
 
 	<section>
@@ -54,6 +55,7 @@ const reportReady = progress.phases.flatMap((p) => p.items).some((i) => 'id' in 
 	.subtitle { font-size: 1.15rem; margin: 4px 0 16px; color: var(--muted); }
 	.lead { font-size: 1.05rem; margin: 0 0 24px; }
 	.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+	.note { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; }
 	.soon {
 		font-size: 0.7rem; font-weight: 600; vertical-align: middle; margin-left: 4px;
 		padding: 1px 6px; border-radius: 999px; border: 1px solid currentColor; opacity: 0.8;

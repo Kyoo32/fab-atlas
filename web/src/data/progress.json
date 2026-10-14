@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "phases": [
     {
       "label": "1주차",
       "items": [
-        { "text": "공개 코퍼스 수집", "done": false },
+        { "text": "공개 코퍼스 수집", "done": true },
         { "text": "기본 RAG 근거 인용 답변", "done": false }
       ]
     },

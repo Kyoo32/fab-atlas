@@ -1,0 +1,35 @@
+Wafer testing is a step performed during semiconductor device fabrication after back end of line (BEOL) and before IC packaging.
+
+Two types of testing are typically done. Very basic wafer parametric tests (WPT) are performed at a few locations on each wafer to ensure the wafer fabrication process has been carried out successfully. Discrete test structures are provided for WPT to test parameters like transistor threshold voltage or gain, interconnect resistance, capacitance, diodes, etc. Considerable information about device performance is obtained from WPT using structured typically provided in the scribe lines.[clarification needed]
+
+After WPT, all individual integrated circuits on the wafer are given extensive wafer functional testing (WFT) (also called die sort) by applying special test patterns. The testers used for WFT are typically quite expensive (see Teradyne for an example of a semiconductor test system). The WFT "yield" is recognized as the key test in determining the economic outcome of the entire fabrication process.
+
+Wafer prober
+
+Both WPT and WFT are performed using a wafer handler called a wafer prober. The wafer prober brings an array of microscopic needles or probes called a probe card into electrical contact with the wafer (vacuum-mounted on a wafer chuck). WPT and WFT use different probe cards, the WFT card contacts a chip's bond pads. After each test the prober moves the wafer to the next testing location. The wafer prober is responsible for loading and unloading the wafers from their carrier (or cassette) and is equipped with automatic pattern recognition optics capable of aligning the wafer with sufficient accuracy to ensure accurate registration between the contact pads on the wafer and the tips of the probes.
+
+Testing
+
+When all test patterns pass for a specific die, its position is remembered for later use during IC packaging. Historically, non-passing circuits were marked with a small dot of ink in the middle of the die, today this information is stored in a file, named a wafermap. This wafermap is then sent to the die attachment process which then only selects good dies. When ink dots were used, vision systems on subsequent die handling equipment recognized the ink dot. For today's multi-die packages such as stacked chip-scale package (SCSP) or system in package (SiP) – the development of non-contact (RF) probes for identification of known tested die (KTD) and known good die (KGD) are critical to increasing overall system yield.
+
+In some specific cases, a chip that passes some but not all tests can still be used as a product with limited functionality. The most common example of this is a memory chip for which only one part of the memory is functional. In this case, the chip can sometimes still be sold as a lower cost part with a smaller amount of memory. In other specific cases, a defective chip may be repaired (e.g. by laser repair) using redundant spare circuitry.
+
+After IC packaging, a packaged chip will be tested again during the IC testing phase, usually with the same or very similar tests and tester as for WFT. For this reason, it may be thought that WFT is an unnecessary, redundant step. This is not usually the case, since the removal of defective dies saves the considerable cost of packaging faulty devices. However, when WFT yield is so high that wafer testing is more expensive than the packaging cost of defect devices, the wafer testing step can be skipped altogether and chips undergo blind assembly.
+
+See also
+
+Bond characterization
+
+Non-contact wafer testing
+
+References
+
+Bibliography
+
+Fundamentals of Digital Semiconductor Testing (Version 4.0) by Guy A. Perry (Spiral-bound – Mar 1, 2003) ISBN 978-0965879705
+
+Principles of Semiconductor Network Testing (Test & Measurement) (Hardcover)by Amir Afshar, 1995 ISBN 978-0-7506-9472-8
+
+Power-Constrained Testing of VLSI Circuits. A Guide to the IEEE 1149.4 Test Standard (Frontiers in Electronic Testing) by Nicola Nicolici and Bashir M. Al-Hashimi (Kindle Edition – Feb 28, 2003) ISBN 978-0-306-48731-6
+
+Semiconductor Memories: Technology, Testing, and Reliability by Ashok K. Sharma (Hardcover – Sep 9, 2002) ISBN 978-0780310001
