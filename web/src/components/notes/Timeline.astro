@@ -5,9 +5,19 @@ import { withBase } from '../../lib/url';
 
 const entries = (await getCollection('docs', (e) => e.id.startsWith('notes/devlog/')))
 	.filter((e) => e.data.date)
-	.sort((a, b) => a.data.date!.getTime() - b.data.date!.getTime());
+	.sort(
+		(a, b) =>
+			a.data.date!.getTime() - b.data.date!.getTime() ||
+			(a.data.dateEnd ?? a.data.date!).getTime() - (b.data.dateEnd ?? b.data.date!).getTime(),
+	);
 
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
+// 여러 날 이어진 주제는 "2026-10-13 – 10-14"처럼 기간으로 보여 줘요. 해가 바뀌면 끝 날짜도 연도까지 써요.
+const fmtRange = (start: Date, end?: Date) => {
+	if (!end || fmt(end) === fmt(start)) return fmt(start);
+	const sameYear = start.getUTCFullYear() === end.getUTCFullYear();
+	return `${fmt(start)} – ${sameYear ? fmt(end).slice(5) : fmt(end)}`;
+};
 ---
 
 <div class="timeline-controls" role="group" aria-label="정렬">
@@ -21,7 +31,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
 	<ol class="timeline" id="timeline">
 		{entries.map((e) => (
 			<li>
-				<time datetime={fmt(e.data.date!)}>{fmt(e.data.date!)}</time>
+				<time datetime={fmt(e.data.date!)}>{fmtRange(e.data.date!, e.data.dateEnd)}</time>
 				<div class="body">
 					<a href={withBase(`${e.id}/`)}>{e.data.title}</a>
 					{e.data.summary && <p class="summary">{e.data.summary}</p>}
@@ -61,7 +71,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10);
 	}
 	.timeline { list-style: none; padding: 0; }
 	.timeline li {
-		display: grid; grid-template-columns: 7rem 1fr; gap: 1rem;
+		display: grid; grid-template-columns: 10rem 1fr; gap: 1rem;
 		padding: 0.75rem 0; border-bottom: 1px solid var(--sl-color-hairline);
 	}
 	.timeline time { color: var(--sl-color-gray-3); font-variant-numeric: tabular-nums; }

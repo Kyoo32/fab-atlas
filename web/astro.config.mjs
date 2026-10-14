@@ -7,6 +7,10 @@ export default defineConfig({
 	site: 'https://kyoo32.github.io',
 	base: '/fab-atlas',
 	trailingSlash: 'always',
+	// 작업일지를 주제 단위로 합치면서 옮긴 옛 주소예요.
+	redirects: {
+		'/notes/devlog/2026-10-14-corpus-fill/': '/fab-atlas/notes/devlog/2026-10-13-corpus/',
+	},
 	integrations: [
 		starlight({
 			title: 'FabAtlas 작업노트',

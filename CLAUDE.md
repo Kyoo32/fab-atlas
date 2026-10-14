@@ -35,7 +35,8 @@
 
 - 쇼케이스: `web/src/pages/` (`/`, `/report/`). 진행 현황은 `web/src/data/progress.json`.
 - 작업노트(Starlight): `web/src/content/docs/notes/`
-  - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, summary, tags, hours)
+  - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, dateEnd, summary, tags, hours)
+  - 작업일지는 작업 주제 단위예요. 같은 주제가 이어지면 새 파일 대신 "Day N (날짜)" 소절을 추가하고 `dateEnd`(마지막 작업일)와 `hours`(누적)를 갱신해요.
   - 용어사전 `glossary.mdx`, 결정 기록 `decisions.md`
   - `notebooks/`는 `scripts/nb2md.py`가 생성해요. 이미지 출력은 `web/public/notebooks/`에 생겨요. 둘 다 직접 고치지 않아요 (gitignore 대상).
 - 템플릿: `templates/` (작업일지, 용어 항목, 결정)

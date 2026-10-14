@@ -7,7 +7,7 @@ argument-hint: "[slug] (생략하면 작업 내용으로 정해요)"
 
 ## 1. 변경 읽기
 
-- `web/src/content/docs/notes/devlog/`에서 가장 최근 작업일지의 `date`를 찾아요.
+- `web/src/content/docs/notes/devlog/`에서 가장 최근 작업일지의 `dateEnd`(없으면 `date`)를 찾아요.
 - 그 날짜 이후의 `git log --stat`, `git diff`(스테이징 안 된 변경 포함), 새 파일(`git status`), `notebooks/*.ipynb` 변경을 읽어요.
 
 ## 2. 한 번에 묻기
@@ -20,14 +20,22 @@ argument-hint: "[slug] (생략하면 작업 내용으로 정해요)"
 4. 면접 한 문장
 5. 실제 쓴 시간(시간 단위 숫자)
 
+오늘 작업이 이어 쓸 기존 주제가 무엇인지(또는 새 주제인지)도 같은 메시지에서 확인해요.
+
 답이 비어 있는 칸은 비워 둬요. 내 답을 지어내거나 부풀리지 않아요.
 
 ## 3. 작업일지 초안
 
-- 파일: `web/src/content/docs/notes/devlog/YYYY-MM-DD-slug.md` (오늘 날짜, slug는 $ARGUMENTS 또는 작업 내용에서 영어 소문자로)
-- `templates/devlog.md` 순서를 그대로 따라요: 목표와 완료 기준 → 새 용어 → 과정(명령어·코드 포함) → 결정과 이유 → 막힌 점과 해결 → 숫자 → 면접 한 문장 → 다음 할 일 → `> 한 줄 정리:`
-- frontmatter의 `hours`에는 내가 답한 시간을 넣어요.
-- 내부 링크는 `/fab-atlas/notes/...` 형식이에요.
+작업일지는 **작업 주제 단위**예요.
+
+- 오늘 작업이 기존 주제의 연속이면 새 파일을 만들지 않아요.
+  - 그 파일 `## 3. 과정`에 `### Day N (MM/DD) 소주제` 소절을 추가해요.
+  - `dateEnd`를 오늘로, `hours`를 누적 시간(기존 값 + 오늘)으로 갱신해요.
+  - 목표, 용어, 결정, 막힌 점, 숫자, 다음 할 일은 기존 섹션에 이어 써요. 내가 쓴 문장은 고치지 않아요.
+- 새 주제면 새 파일을 만들어요: `web/src/content/docs/notes/devlog/YYYY-MM-DD-slug.md` (시작일, slug는 $ARGUMENTS 또는 작업 내용에서 영어 소문자로)
+- 연속인지 새 주제인지 애매하면 나에게 물어요.
+- `templates/devlog.md` 순서를 그대로 따라요: 목표와 완료 기준 → 새 용어 → 과정(Day별, 명령어·코드 포함) → 결정과 이유 → 막힌 점과 해결 → 숫자 → 면접 한 문장 → 다음 할 일 → `> 한 줄 정리:`
+- 내부 링크는 `/fab-atlas/notes/...` 형식이에요. 파일을 합치거나 옮기면 `web/astro.config.mjs`의 `redirects`에 옛 주소를 추가해요.
 
 ## 4. 용어사전
 
