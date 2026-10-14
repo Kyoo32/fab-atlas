@@ -9,16 +9,16 @@ S007,포토,상세,S006,Photoresist,https://en.wikipedia.org/wiki/Photoresist,en
 S008,포토,상세,S006,EUV lithography,https://en.wikipedia.org/wiki/EUV_lithography,en,CC BY-SA 4.0,1380083450,2026-10-14,redirect from Extreme ultraviolet lithography
 S009,식각,기본,,Etching (microfabrication),https://en.wikipedia.org/wiki/Etching_(microfabrication),en,CC BY-SA 4.0,1375104544,2026-10-14,
 S010,식각,상세,S009,Plasma etching,https://en.wikipedia.org/wiki/Plasma_etching,en,CC BY-SA 4.0,1378806025,2026-10-14,
-S011,식각,상세,S009,Reactive-ion etching,https://en.wikipedia.org/wiki/Reactive-ion_etching,en,CC BY-SA 4.0,1338516236,2026-10-14,short: 검토 필요
+S011,식각,상세,S009,Reactive-ion etching,https://en.wikipedia.org/wiki/Reactive-ion_etching,en,CC BY-SA 4.0,1338516236,2026-10-14,
 S012,증착·이온주입,기본,,Chemical vapor deposition,https://en.wikipedia.org/wiki/Chemical_vapor_deposition,en,CC BY-SA 4.0,1377616620,2026-10-14,
 S013,증착·이온주입,기본,,Ion implantation,https://en.wikipedia.org/wiki/Ion_implantation,en,CC BY-SA 4.0,1375104650,2026-10-14,
 S014,증착·이온주입,상세,S012,Atomic layer deposition,https://en.wikipedia.org/wiki/Atomic_layer_deposition,en,CC BY-SA 4.0,1363328777,2026-10-14,
 S015,증착·이온주입,상세,S012,Physical vapor deposition,https://en.wikipedia.org/wiki/Physical_vapor_deposition,en,CC BY-SA 4.0,1362147744,2026-10-14,
 S016,금속배선,기본,,Interconnect (integrated circuits),https://en.wikipedia.org/wiki/Interconnect_(integrated_circuits),en,CC BY-SA 4.0,1358708084,2026-10-14,
 S017,금속배선,상세,S016,Copper interconnects,https://en.wikipedia.org/wiki/Copper_interconnects,en,CC BY-SA 4.0,1373806317,2026-10-14,
-S018,EDS,기본,,Wafer testing,https://en.wikipedia.org/wiki/Wafer_testing,en,CC BY-SA 4.0,1354441206,2026-10-14,short: 검토 필요
+S018,EDS,기본,,Wafer testing,https://en.wikipedia.org/wiki/Wafer_testing,en,CC BY-SA 4.0,1354441206,2026-10-14,
 S019,EDS,상세,S018,Probe card,https://en.wikipedia.org/wiki/Probe_card,en,CC BY-SA 4.0,1375462243,2026-10-14,
 S020,패키징,기본,,Integrated circuit packaging,https://en.wikipedia.org/wiki/Integrated_circuit_packaging,en,CC BY-SA 4.0,1379429931,2026-10-14,
 S021,패키징,상세,S020,Flip chip,https://en.wikipedia.org/wiki/Flip_chip,en,CC BY-SA 4.0,1355687095,2026-10-14,
 S022,패키징,상세,S020,Through-silicon via,https://en.wikipedia.org/wiki/Through-silicon_via,en,CC BY-SA 4.0,1377710775,2026-10-14,
-S023,패키징,상세,S020,Die singulation,https://en.wikipedia.org/wiki/Die_singulation,en,CC BY-SA 4.0,1379499934,2026-10-14,redirect from Wafer dicing; short: 검토 필요
+S023,패키징,상세,S020,Die singulation,https://en.wikipedia.org/wiki/Die_singulation,en,CC BY-SA 4.0,1379499934,2026-10-14,redirect from Wafer dicing
