@@ -35,9 +35,12 @@
 
 - 쇼케이스: `web/src/pages/` (`/`, `/report/`). 진행 현황은 `web/src/data/progress.json`.
 - 작업노트(Starlight): `web/src/content/docs/notes/`
-  - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, dateEnd, summary, tags, hours)
+  - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, dateEnd, summary, tags, hours, sidebar.order)
   - 작업일지는 작업 주제 단위예요. 같은 주제가 이어지면 새 파일 대신 "Day N (날짜)" 소절을 추가하고 `dateEnd`(마지막 작업일)와 `hours`(누적)를 갱신해요.
   - 용어사전 `glossary.mdx`, 결정 기록 `decisions.md`
+  - 작업일지 frontmatter의 `sidebar.order`는 시작한 시간순 일련번호예요. 새 작업일지는 기존 최댓값 + 1이고, Day를 추가할 때는 바꾸지 않아요.
+  - 결정 번호는 결정한 시간순이에요. 같은 날 여러 개면 실제로 결정한 순서예요.
+  - 공개 후에는 결정 번호를 다시 매기지 않아요. 바뀐 결정은 새 번호로 추가하고, 옛 결정에 "→ D-00N으로 대체"를 달아요.
   - `notebooks/`는 `scripts/nb2md.py`가 생성해요. 이미지 출력은 `web/public/notebooks/`에 생겨요. 둘 다 직접 고치지 않아요 (gitignore 대상).
 - 템플릿: `templates/` (작업일지, 용어 항목, 결정)
 - 마크다운 안의 내부 링크는 base를 포함한 절대 경로로 써요: `/fab-atlas/notes/...`

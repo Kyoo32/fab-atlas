@@ -33,6 +33,8 @@ argument-hint: "[slug] (생략하면 작업 내용으로 정해요)"
   - `dateEnd`를 오늘로, `hours`를 누적 시간(기존 값 + 오늘)으로 갱신해요.
   - 목표, 용어, 결정, 막힌 점, 숫자, 다음 할 일은 기존 섹션에 이어 써요. 내가 쓴 문장은 고치지 않아요.
 - 새 주제면 새 파일을 만들어요: `web/src/content/docs/notes/devlog/YYYY-MM-DD-slug.md` (시작일, slug는 $ARGUMENTS 또는 작업 내용에서 영어 소문자로)
+  - frontmatter에 `sidebar: { order: N }`을 넣어요. N은 기존 작업일지 order의 최댓값 + 1이에요.
+- 기존 문서에 Day를 추가할 때는 `sidebar.order`를 바꾸지 않아요.
 - 연속인지 새 주제인지 애매하면 나에게 물어요.
 - `templates/devlog.md` 순서를 그대로 따라요: 목표와 완료 기준 → 새 용어 → 과정(Day별, 명령어·코드 포함) → 결정과 이유 → 막힌 점과 해결 → 숫자 → 면접 한 문장 → 다음 할 일 → `> 한 줄 정리:`
 - 내부 링크는 `/fab-atlas/notes/...` 형식이에요. 파일을 합치거나 옮기면 `web/astro.config.mjs`의 `redirects`에 옛 주소를 추가해요.
@@ -45,6 +47,8 @@ argument-hint: "[slug] (생략하면 작업 내용으로 정해요)"
 ## 5. 결정 기록
 
 - 결정이 있으면 `templates/decision.md` 형식으로 `decisions.md` 맨 아래에 다음 번호(D-00N)로 추가하고, 작업일지에서 링크해요.
+- 결정 번호는 결정한 시간순이에요. 같은 날 여러 개면 실제로 결정한 순서대로 매겨요.
+- 공개 후에는 번호를 다시 매기지 않아요. 바뀐 결정은 새 번호로 추가하고, 옛 결정에 "→ D-00N으로 대체"를 달아요.
 
 ## 6. 진행 현황
 

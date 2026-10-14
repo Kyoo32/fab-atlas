@@ -5,10 +5,11 @@ import { withBase } from '../../lib/url';
 
 const entries = (await getCollection('docs', (e) => e.id.startsWith('notes/devlog/')))
 	.filter((e) => e.data.date)
+	// 시작일, 같은 날이면 sidebar.order(시작한 시간순 일련번호) 순서예요.
 	.sort(
 		(a, b) =>
 			a.data.date!.getTime() - b.data.date!.getTime() ||
-			(a.data.dateEnd ?? a.data.date!).getTime() - (b.data.dateEnd ?? b.data.date!).getTime(),
+			(a.data.sidebar.order ?? Infinity) - (b.data.sidebar.order ?? Infinity),
 	);
 
 const fmt = (d: Date) => d.toISOString().slice(0, 10);

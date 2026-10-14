@@ -4,6 +4,8 @@ date: 2026-10-13
 summary: FabAtlas 공개 저장소와 사이트를 만들고, 쇼케이스와 작업노트를 두 영역으로 나눴어요.
 tags: [저장소, 사이트]
 hours:
+sidebar:
+  order: 1
 ---
 
 ## 1. 오늘의 목표와 완료 기준
@@ -17,7 +19,7 @@ hours:
 
 ### 저장소와 사이트 구조
 
-한 저장소, 한 사이트 안에 두 영역을 나눴어요. ([D-006](/fab-atlas/notes/decisions/#d-006--문서-사이트-astro--starlight-두-영역-분리))
+한 저장소, 한 사이트 안에 두 영역을 나눴어요. ([D-004](/fab-atlas/notes/decisions/#d-004--문서-사이트-astro--starlight-두-영역-분리))
 
 | 영역 | 누가 보나 | 무엇을 담나 |
 | --- | --- | --- |
@@ -41,13 +43,13 @@ gh api -X POST repos/Kyoo32/fab-atlas/pages -f build_type=workflow
 
 ## 4. 결정과 이유
 
-- [D-006](/fab-atlas/notes/decisions/#d-006--문서-사이트-astro--starlight-두-영역-분리): Astro + Starlight로 쇼케이스와 작업노트를 한 사이트에서 나눠요.
+- [D-004](/fab-atlas/notes/decisions/#d-004--문서-사이트-astro--starlight-두-영역-분리): Astro + Starlight로 쇼케이스와 작업노트를 한 사이트에서 나눠요.
 
 ## 5. 막힌 점과 해결
 
 ## 6. 숫자
 
-- 결정 1건(D-006)
+- 결정 1건(D-004)
 
 ## 7. 면접 한 문장
 
