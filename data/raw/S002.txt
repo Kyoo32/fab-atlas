@@ -4,9 +4,9 @@ The most important application may be the growth of large cylindrical ingots, or
 
 The method is not limited to production of metal or metalloid crystals. For example, it is used to manufacture very high-purity crystals of salts, including material with controlled isotopic composition, for use in particle physics experiments, with tight controls (part per billion measurements) on confounding metal ions and water absorbed during manufacture.
 
-History
+== History ==
 
-Early developments (1915–1930s)
+=== Early developments (1915–1930s) ===
 
 Jan Czochralski - a Polish chemist invented his method in 1916 at AEG in Germany while investigating the crystallization velocities of metals. His technique—originally reported in 1918—formed the basis for growing single crystals by pulling material from the melt. Until 1923, modifications to the method were confined mainly to Berlin‐based groups.
 
@@ -14,11 +14,11 @@ Shortly thereafter, in 1925, E.P.T. Tyndall's group at the University of Iowa gr
 
 The development of the fundamental process would be completed in 1937 by Henry Walther at Bell Telephone Laboratories. Walther introduced crystal rotation—a technique that compensates for thermal asymmetries—and implemented dynamic cooling control via an adjustable gas stream. His innovations enabled precise control over crystal shape and diameter and allowed the first growth of true bulk crystals, including high-melting-point materials such as sodium chloride. Walther's work laid the foundation for the modern Czochralski process.
 
-Post–World War II revival (1940s–1950s)
+=== Post–World War II revival (1940s–1950s) ===
 
 The strategic importance of semiconductors following World War II led Gordon Teal, then employed at Bell Labs to revive the Czochralski method for single crystal growth. In the early 1950s, high-quality germanium crystals were grown to meet the emerging demands of transistor technology, and soon after, silicon crystals were produced. This renewed interest marked the beginning of a rapid expansion in the use of the technique in the United States.
 
-Global spread and process refinements (late 1950s–present)
+=== Global spread and process refinements (late 1950s–present) ===
 
 The adoption of the Czochralski method expanded internationally in the late 1950s. In Europe, Germany employed the technique for semiconductor crystals as early as 1952, followed by France in 1953, the United Kingdom and Russia in 1956, the Czech Republic in 1957, and finally Switzerland and the Netherlands in 1959. In Japan, the technique began to be used in 1959, with its applications and technical improvements accelerating during the 1960s.
 
@@ -34,21 +34,21 @@ Automatic diameter control using crystal or crucible weighing (introduced in 197
 
 These innovations extended the versatility of the Czochralski process, paving the way for industrial-scale production of high-quality single crystals across a wide range of materials.
 
-Application
+== Application ==
 
 Monocrystalline silicon (mono-Si) grown by the Czochralski method is often referred to as monocrystalline Czochralski silicon (Cz-Si). It is the basic material in the production of integrated circuits used in computers, TVs, mobile phones and all types of electronic equipment and semiconductor devices. Monocrystalline silicon is also used in large quantities by the photovoltaic industry for the production of conventional mono-Si solar cells. The almost perfect crystal structure yields the highest light-to-electricity conversion efficiency for silicon.
 
 Use of the Czochralski process is not limited to semiconductor materials; it is extensively utilized in the growth of high-quality optical crystals and synthetic gemstones. This method enables the production of large, high-purity crystals suitable for various optical applications. For instance, synthetic alexandrite—a variety of chrysoberyl—is commonly produced using this technique. Additionally, synthetic sapphire (corundum) is frequently grown through the Czochralski process. Furthermore, yttrium aluminium garnet (YAG), an artificial garnet, has been synthesized using this method. YAG crystals are utilized as diamond simulants and in various optical applications, benefiting from the process's ability to produce large, high-purity crystals. YAG is produced with this process in an iridium crucible at 2100 degrees C under oxidizing conditions with mixed oxides as the starting charge.
 
-Production of Czochralski silicon
+== Production of Czochralski silicon ==
 
 Semiconductor-grade silicon (only a few parts per million of impurities) is melted in a crucible at 1,425 °C (2,597 °F; 1,698 K), usually made of high-purity quartz. The crucible receives a charge consisting of high-purity polysilicon. Dopant impurity atoms such as boron or phosphorus can be added to the molten silicon in precise amounts to dope the silicon, thus changing it into p-type or n-type silicon, with different electronic properties. A precisely oriented rod-mounted seed crystal is dipped into the molten silicon. The seed crystal's rod is slowly pulled upwards and rotated simultaneously. By precisely controlling the temperature gradients, rate of pulling and speed of rotation, it is possible to extract a large, single-crystal, cylindrical ingot from the melt. Occurrence of unwanted instabilities in the melt can be avoided by investigating and visualizing the temperature and velocity fields during the crystal growth process. This process is normally performed in an inert atmosphere, such as argon, in an inert chamber, such as quartz. The quartz crucible is normally discarded after the process is terminated which normally happens after a single ingot is produced in what is known as a batch process, but it is possible to perform this process continuously, as well as with an applied magnetic field.
 
-Crystal sizes
+== Crystal sizes ==
 
 Due to efficiencies of scale, the semiconductor industry often uses wafers with standardized dimensions, or common wafer specifications. Early on, boules were small, a few centimeters wide. With advanced technology, high-end device manufacturers use 200 mm and 300 mm diameter wafers. Width is controlled by precise control of temperature, speeds of rotation, and the speed at which the seed holder is withdrawn. The crystal ingots from which wafers are sliced can be up to 2 metres in length, weighing several hundred kilograms. Larger wafers allow improvements in manufacturing efficiency, as more chips can be fabricated on each wafer, with lower relative loss, so there has been a steady drive to increase silicon wafer sizes. The next step up, 450 mm, was scheduled for introduction in 2018 but was stopped in 2016. Silicon wafers are typically about 0.2–0.75 mm thick, and can be polished to great flatness for making integrated circuits or textured for making solar cells.
 
-Incorporating impurities
+== Incorporating impurities ==
 
 When silicon is grown by the Czochralski method, the melt is contained in a silica (quartz) crucible. During growth, the walls of the crucible dissolve into the melt and Czochralski silicon therefore contains oxygen at a typical concentration of 1018
 cm−3
@@ -56,7 +56,7 @@ cm−3
 
 However, oxygen impurities can react with boron in an illuminated environment, such as that experienced by solar cells. This results in the formation of an electrically active boron–oxygen complex that detracts from cell performance. Module output drops by approximately 3% during the first few hours of light exposure.
 
-Mathematical form
+=== Mathematical form ===
 
 Impurity concentration in the final solid is given by
 
@@ -116,13 +116,13 @@ Manufacturing portal
 
 Wikimedia Commons has media related to Czochralski method.
 
-See also
+== See also ==
 
 Float-zone silicon
 
-References
+== References ==
 
-External links
+== External links ==
 
 Czochralski doping process
 

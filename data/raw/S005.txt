@@ -2,7 +2,7 @@ Silicon dioxide, also known as silica, is an oxide of silicon with the chemical 
 
 Silicon dioxide is a common fundamental constituent of glass.
 
-Structure
+== Structure ==
 
 In the majority of silicon dioxides, the silicon atom shows tetrahedral coordination, with four oxygen atoms surrounding a central Si atom (see 3-D Unit Cell). Thus, SiO2 forms 3-dimensional network solids in which each silicon atom is covalently bonded in a tetrahedral manner to 4 oxygen atoms. In contrast, CO2 is a linear molecule. The starkly different structures of the dioxides of carbon and silicon are a manifestation of the double bond rule.
 
@@ -10,29 +10,29 @@ Based on the crystal structural differences, silicon dioxide can be divided into
 
 All of these distinct crystalline forms always have the same local structure around Si and O. In α-quartz the Si–O bond length is 161 pm, whereas in α-tridymite it is in the range 154–171 pm. The Si–O–Si angle also varies between a low value of 140° in α-tridymite, up to 180° in β-tridymite. In α-quartz, the Si–O–Si angle is 144°.
 
-Polymorphism
+=== Polymorphism ===
 
 Alpha quartz is the most stable form of solid SiO2 at room temperature. The high-temperature minerals, cristobalite and tridymite, have both lower densities and indices of refraction than quartz. The transformation from α-quartz to beta-quartz takes place abruptly at 573 °C. Since the transformation is accompanied by a significant change in volume, it can easily induce fracturing of ceramics or rocks passing through this temperature limit. The high-pressure minerals, seifertite, stishovite, and coesite, though, have higher densities and indices of refraction than quartz. Stishovite has a rutile-like structure where silicon is 6-coordinate. The density of stishovite is 4.287 g/cm3, which compares to α-quartz, the densest of the low-pressure forms, which has a density of 2.648 g/cm3. The difference in density can be ascribed to the increase in coordination as the six shortest Si–O bond lengths in stishovite (four Si–O bond lengths of 176 pm and two others of 181 pm) are greater than the Si–O bond length (161 pm) in α-quartz.
 The change in the coordination increases the ionicity of the Si–O bond.
 
 Faujasite silica, another polymorph, is obtained by the dealumination of a low-sodium, ultra-stable Y zeolite with combined acid and thermal treatment. The resulting product contains over 99% silica, and has high crystallinity and specific surface area (over 800 m2/g). Faujasite-silica has very high thermal and acid stability. For example, it maintains a high degree of long-range molecular order or crystallinity even after boiling in concentrated hydrochloric acid.
 
-Molten SiO2
+=== Molten SiO2 ===
 
 Molten silica exhibits several peculiar physical characteristics that are similar to those observed in liquid water: negative temperature expansion, density maximum at temperatures ~5000 °C, and a heat capacity minimum. Its density decreases from 2.08 g/cm3 at 1950 °C to 2.03 g/cm3 at 2200 °C.
 
-Molecular SiO2
+=== Molecular SiO2 ===
 
 The molecular SiO2 has a linear structure like CO2. It has been produced by combining silicon monoxide (SiO) with oxygen in an argon matrix.
 The dimeric silicon dioxide, (SiO2)2 has been obtained by reacting O2 with matrix isolated dimeric silicon monoxide, (Si2O2). In dimeric silicon dioxide there are two oxygen atoms bridging between the silicon atoms with an Si–O–Si angle of 94° and bond length of 164.6 pm and the terminal Si–O bond length is 150.2 pm. The Si–O bond length is 148.3 pm, which compares with the length of 161 pm in α-quartz. The bond energy is estimated at 621.7 kJ/mol.
 
-Natural occurrence
+== Natural occurrence ==
 
-Geology
+=== Geology ===
 
 SiO2 is most commonly encountered in nature as quartz, which comprises more than 10% by mass of the Earth's crust. Quartz is the only polymorph of silica stable at the Earth's surface. Metastable occurrences of the high-pressure forms coesite and stishovite have been found around impact structures and associated with eclogites formed during ultra-high-pressure metamorphism. The high-temperature forms of tridymite and cristobalite are known from silica-rich volcanic rocks. In many parts of the world, silica is the major constituent of sand.
 
-Biology
+=== Biology ===
 
 Even though it is poorly soluble, silica occurs in many plants such as rice. Plant materials with high silica phytolith content appear to be of importance to grazing animals, from chewing insects to ungulates. Silica accelerates tooth wear, and high levels of silica in plants frequently eaten by insects may have developed as a defense mechanism against predation.
 
@@ -48,9 +48,9 @@ Silica phytoliths in the cells of many plants including Equisetaceae, many grass
 
 The spicules forming the skeleton of many sponges.
 
-Uses
+== Uses ==
 
-Structural use
+=== Structural use ===
 
 About 95% of the commercial use of silicon dioxide (sand) is in the construction industry, e.g. in the production of concrete (Portland cement concrete).
 
@@ -58,7 +58,7 @@ Certain deposits of silica sand, with desirable particle size and shape and desi
 
 Crystalline silica is used in hydraulic fracturing of formations which contain tight oil and shale gas.
 
-Precursor to glass and silicon
+=== Precursor to glass and silicon ===
 
 Silica is the primary ingredient in the production of most glass. As other minerals are melted with silica, the principle of freezing point depression lowers the melting point of the mixture and increases fluidity. The glass transition temperature of pure SiO2 is about 1475 K. When molten silicon dioxide SiO2 is rapidly cooled, it does not crystallize, but solidifies as a glass. Because of this, most ceramic glazes have silica as the main ingredient.
 
@@ -85,7 +85,7 @@ CO
 
 {\displaystyle {\ce {SiO2 + 2 C -> Si + 2 CO}}}
 
-Fumed silica
+=== Fumed silica ===
 
 Fumed silica, also known as pyrogenic silica, is prepared by burning SiCl4 in an oxygen-rich hydrogen flame to produce a "smoke" of SiO2.
 
@@ -123,7 +123,7 @@ It can also be produced by vaporizing quartz sand in a 3000 °C electric arc. B
 
 Silica fume is an ultrafine powder collected as a by-product of the silicon and ferrosilicon alloy production. It consists of amorphous (non-crystalline) spherical particles with an average particle diameter of 150 nm, without the branching of the pyrogenic product. The main use is as pozzolanic material for high performance concrete. Fumed silica nanoparticles can be successfully used as an anti-aging agent in asphalt binders.
 
-Food, cosmetic, and pharmaceutical applications
+=== Food, cosmetic, and pharmaceutical applications ===
 
 Silica, either colloidal, precipitated, or pyrogenic fumed, is a common additive in food production. It is used primarily as a flow or anti-caking agent in powdered foods such as spices and non-dairy coffee creamer, or powders to be formed into pharmaceutical tablets. It can adsorb water in hygroscopic applications. Colloidal silica is used as a fining agent for wine, beer, and juice, with the E number reference E551.
 
@@ -131,7 +131,7 @@ In cosmetics, silica is useful for its light-diffusing properties and natural ab
 
 Diatomaceous earth, a mined product, has been used in food and cosmetics for centuries. It consists of the silica shells of microscopic diatoms; in a less processed form it was sold as tooth powder. Manufactured or mined hydrated silica is used as the hard abrasive in toothpaste.
 
-Semiconductors
+=== Semiconductors ===
 
 Silicon dioxide is widely used in the semiconductor technology:
 
@@ -151,7 +151,7 @@ Surface passivation is the process by which a semiconductor surface is rendered 
 
 The process of silicon surface passivation by thermal oxidation (silicon dioxide) is critical to the semiconductor industry. It is commonly used to manufacture metal–oxide–semiconductor field-effect transistors (MOSFETs) and silicon integrated circuit chips (with the planar process).
 
-Other
+=== Other ===
 
 Hydrophobic silica is used as a defoamer component.
 
@@ -164,12 +164,12 @@ Silica aerogel was used in the Stardust spacecraft to collect extraterrestrial p
 Pure silica (silicon dioxide), when cooled as fused quartz into a glass with no true melting point, can be used as a glass fibre for fibreglass,
 fiberglass contains silica, which is a key component in its composition, typically making up about 65% of the material. Silica is combined with other compounds to create the glass fibers used in fiberglass products.
 
-Production
+== Production ==
 
 Silicon dioxide is mostly obtained by mining, including sand mining and purification of quartz.
 Quartz is suitable for many purposes, while chemical processing is required to make a purer or otherwise more suitable (e.g. more reactive or fine-grained) product.
 
-Precipitated silica
+=== Precipitated silica ===
 
 Precipitated silica or amorphous silica is produced by the acidification of solutions of sodium silicate. The gelatinous precipitate or silica gel, is first washed and then dehydrated to produce colorless microporous silica. The idealized equation involving a trisilicate and sulfuric acid is:
 
@@ -224,7 +224,7 @@ O
 
 Approximately one billion kilograms/year (1999) of silica were produced in this manner, mainly for use for polymer composites – tires and shoe soles.
 
-On microchips
+=== On microchips ===
 
 Thin films of silica grow spontaneously on silicon wafers via thermal oxidation, producing a very shallow layer of about 1 nm or 10 Å of so-called native oxide.
 Higher temperatures and alternative environments are used to grow well-controlled layers of silicon dioxide on silicon, for example at temperatures between 600 and 1200 °C, using so-called dry oxidation with O2
@@ -272,9 +272,9 @@ H
 
 The native oxide layer is beneficial in microelectronics, where it acts as electric insulator with high chemical stability. It can protect the silicon, store charge, block current, and even act as a controlled pathway to limit current flow.
 
-Laboratory or special methods
+=== Laboratory or special methods ===
 
-From organosilicon compounds
+==== From organosilicon compounds ====
 
 Many routes to silicon dioxide start with an organosilicon compound, e.g., HMDSO, TEOS. Synthesis of silica is illustrated below using tetraethyl orthosilicate (TEOS). Simply heating TEOS at 680–730 °C results in the oxide:
 
@@ -414,7 +414,7 @@ CH
 
 {\displaystyle {\ce {Si(OC2H5)4 + 2 H2O -> SiO2 + 4 HOCH2CH3}}}
 
-Other methods
+==== Other methods ====
 
 Being highly stable, silicon dioxide arises from many methods. Conceptually simple, but of little practical value, combustion of silane gives silicon dioxide. This reaction is analogous to the combustion of methane:
 
@@ -448,7 +448,7 @@ O
 
 However the chemical vapor deposition of silicon dioxide onto crystal surface from silane had been used using nitrogen as a carrier gas at 200–500 °C.
 
-Chemical reactions
+== Chemical reactions ==
 
 Silicon dioxide is a relatively inert material (hence its widespread occurrence as a mineral). Silica is often used as inert containers for chemical reactions. At high temperatures, it is converted to silicon by reduction with carbon.
 
@@ -592,44 +592,44 @@ SiO
 
 {\displaystyle {\ce {SiO2 + Si -> 2 SiO}}}
 
-Water solubility
+=== Water solubility ===
 
 "The solubility is essentially zero at temperatures below 200 degrees C. and increases to a maximum of 0.20 part silica per 100 parts water at 360 degrees C."
 
 The solubility of silicon dioxide in water strongly depends on its crystalline form and is three to four times higher for amorphous silica than quartz; as a function of temperature, it peaks around 340 °C (644 °F). This property is used to grow single crystals of quartz in a hydrothermal process where natural quartz is dissolved in superheated water in a pressure vessel that is cooler at the top. Crystals of 0.5–1  kg can be grown for 1–2 months. These crystals are a source of very pure quartz for use in electronic applications. Above the critical temperature of water 647.096 K (373.946 °C; 705.103 °F) and a pressure of 22.064 megapascals (3,200.1 psi) or higher, water is a supercritical fluid and solubility is once again higher than at lower temperatures.
 
-Health effects
+== Health effects ==
 
 A 2024 study at McMaster University showed that prolonged exposure to silicon dioxide via oral ingestion significantly alters immune cell function, while a 2008 study following subjects for 15 years found that higher levels of silica in water appeared to decrease the risk of dementia, stating that an increase of 10 mg/day of silica in drinking water was associated with a reduced risk of dementia of 11%.
 
 Inhaling finely divided crystalline silica dust can lead to silicosis, bronchitis, or lung cancer, as the dust becomes lodged in the lungs and continuously irritates the tissue, reducing lung capacities. When fine silica particles are inhaled in large enough quantities (such as through occupational exposure), it increases the risk of systemic autoimmune diseases such as lupus and rheumatoid arthritis compared to expected rates in the general population.
 
-Occupational hazard
+=== Occupational hazard ===
 
 Silica is an occupational hazard for people who do sandblasting or work with powdered crystalline silica products. Amorphous silica, such as fumed silica, may cause irreversible lung damage in some cases but is not associated with the development of silicosis. Children, asthmatics of any age, those with allergies, and the elderly (all of whom have reduced lung capacity) can be affected in less time.
 
 Crystalline silica is an occupational hazard for those working with stone countertops because the process of cutting and installing the countertops creates large amounts of airborne silica. Crystalline silica used in hydraulic fracturing presents a health hazard to workers.
 
-Pathophysiology
+=== Pathophysiology ===
 
 In the body, crystalline silica particles do not dissolve over clinically relevant periods. Silica crystals inside the lungs can activate the NLRP3 inflammasome inside macrophages and dendritic cells and thereby result in production of interleukin, a highly pro-inflammatory cytokine in the immune system.
 
-Regulation
+=== Regulation ===
 
 Regulations restricting silica exposure 'with respect to the silicosis hazard' specify that they are concerned only with silica, which is both crystalline and dust-forming.
 
 In 2013, the U.S. Occupational Safety and Health Administration reduced the exposure limit to 50 μg/m3 of air. Prior to 2013, it had allowed 100 μg/m3 and in construction workers even 250 μg/m3.
 In 2013, OSHA also required the "green completion" of fracked wells to reduce exposure to crystalline silica and restrict the exposure limit.
 
-Crystalline forms
+== Crystalline forms ==
 
 SiO2, more so than almost any material, exists in many crystalline forms. These forms are called polymorphs.
 
-Safety
+== Safety ==
 
 Inhaling finely divided crystalline silica can lead to severe inflammation of the lung tissue, silicosis, bronchitis, lung cancer, and systemic autoimmune diseases, such as lupus and rheumatoid arthritis. Inhalation of amorphous silicon dioxide, in high doses, leads to non-permanent short-term inflammation, where all effects heal.
 
-Other names
+== Other names ==
 
 This extended list enumerates synonyms for silicon dioxide; all of these values are from a single source; values in the source were presented capitalized.
 
@@ -693,7 +693,7 @@ Synthetic amorphous silica
 
 Vulkasil
 
-See also
+== See also ==
 
 Mesoporous silica
 
@@ -701,9 +701,9 @@ Orthosilicic acid
 
 Silicon carbide
 
-References
+== References ==
 
-External links
+== External links ==
 
 Wikimedia Commons has media related to Silicon dioxide.
 

@@ -2,11 +2,11 @@ Etching is used in microfabrication to chemically remove layers from the surface
 
 For many etch steps, part of the wafer is protected from the etchant by a "masking" material which resists etching. In some cases, the masking material is a photoresist which has been patterned using photolithography. Other situations require a more durable mask, such as silicon nitride.
 
-Etching media and technology
+== Etching media and technology ==
 
 The two fundamental types of etchants are liquid-phase ("wet") and plasma-phase ("dry"). Each of these exists in several varieties.
 
-Wet etching
+=== Wet etching ===
 
 The first etching processes used liquid-phase ("wet") etchants. This process is now largely outdated but was used up until the late 1980s when it was superseded by dry plasma etching. The wafer can be immersed in a bath of etchant, which must be agitated to achieve good process control. For instance, buffered hydrofluoric acid (BHF) is used commonly to etch silicon dioxide over a silicon substrate.
 
@@ -16,7 +16,7 @@ Wet etchants are usually isotropic, which leads to a large bias when etching thi
 
 As an alternative to immersion, single wafer machines use the Bernoulli principle to employ a gas (usually, pure nitrogen) to cushion and protect one side of the wafer while etchant is applied to the other side. It can be done to either the front side or back side. The etch chemistry is dispensed on the top side when in the machine and the bottom side is not affected. This etching method is particularly effective just before "backend" processing (BEOL), where wafers are normally very much thinner after wafer backgrinding, and very sensitive to thermal or mechanical stress. Etching a thin layer of even a few micrometres will remove microcracks produced during backgrinding resulting in the wafer having dramatically increased strength and flexibility without breaking.
 
-Anisotropic wet etching (Orientation dependent etching)
+=== Anisotropic wet etching (Orientation dependent etching) ===
 
 Some wet etchants etch crystalline materials at very different rates depending upon which crystal face is exposed. In single-crystal materials (e.g. silicon wafers), this effect can allow very high anisotropy, as shown in the figure. The term "crystallographic etching" is synonymous with "anisotropic etching along crystal planes".
 
@@ -90,7 +90,7 @@ where Rxxx is the etch rate in the <xxx> direction, T is the etch time, D is the
 
 Different etchants have different anisotropies. Below is a table of common anisotropic etchants for silicon:
 
-Plasma etching
+=== Plasma etching ===
 
 Modern very large scale integration (VLSI) processes avoid wet etching, and use plasma etching instead. Plasma etchers can operate in several modes by adjusting the parameters of the plasma. Ordinary plasma etching operates between 0.1 and 5 Torr. (This unit of pressure, commonly used in vacuum engineering, equals approximately 133.3 pascals.) The plasma produces energetic free radicals, neutrally charged, that react at the surface of the wafer.
 
@@ -101,15 +101,15 @@ The source gas for the plasma usually contains small molecules rich in chlorine 
 
 Ion milling, or sputter etching, uses lower pressures, often as low as 10−4 Torr (10 mPa). It bombards the wafer with energetic ions of noble gases, often Ar+, which knock atoms from the substrate by transferring momentum. Because the etching is performed by ions, which approach the wafer approximately from one direction, this process is highly anisotropic. On the other hand, it tends to display poor selectivity. Reactive-ion etching (RIE) operates under conditions intermediate between sputter and plasma etching (between 10−3 and 10−1 Torr). Deep reactive-ion etching (DRIE) modifies the RIE technique to produce deep, narrow features.
 
-Figures of merit
+== Figures of merit ==
 
 If the etch is intended to make a cavity in a material, the depth of the cavity may be controlled approximately using the etching time and the known etch rate. More often, though, etching must entirely remove the top layer of a multilayer structure, without damaging the underlying or masking layers. The etching system's ability to do this depends on the ratio of etch rates in the two materials (selectivity).
 
 Some etches undercut the masking layer and form cavities with sloping sidewalls. The distance of undercutting is called bias. Etchants with large bias are called isotropic, because they erode the substrate equally in all directions. Modern processes greatly prefer anisotropic etches, because they produce sharp, well-controlled features.
 
-Common etch processes used in microfabrication
+== Common etch processes used in microfabrication ==
 
-See also
+== See also ==
 
 Chemical-Mechanical Polishing
 
@@ -121,14 +121,14 @@ Lift-off (microtechnology)
 
 List of semiconductor occupations
 
-References
+== References ==
 
 Jaeger, Richard C. (2002). "Lithography". Introduction to Microelectronic Fabrication (2nd ed.). Upper Saddle River: Prentice Hall. ISBN 978-0-201-44494-0.
 
 Ibid, "Processes for MicroElectroMechanical Systems (MEMS)"
 
-Inline references
+=== Inline references ===
 
-External links
+== External links ==
 
 Wikimedia Commons has media related to Etching (microfabrication).

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "nb2md": "cd .. && uv run scripts/nb2md.py",
+    "nb2md": "cd .. && uv run --no-project scripts/nb2md.py",
     "predev": "npm run nb2md",
     "dev": "astro dev",
     "prebuild": "npm run nb2md",

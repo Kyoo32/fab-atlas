@@ -1,6 +1,6 @@
 In microfabrication, thermal oxidation is a way to produce a thin layer of oxide (usually silicon dioxide) on the surface of a wafer. The technique forces an oxidizing agent to diffuse into the wafer at high temperature and react with it. The rate of oxide growth is often predicted by the Deal–Grove model. Thermal oxidation may be applied to different materials, but most commonly involves the oxidation of silicon substrates to produce silicon dioxide.
 
-The chemical reaction
+== The chemical reaction ==
 
 Thermal oxidation of silicon is usually performed at a temperature between 800 and 1200 °C, resulting in a so-called high temperature oxide layer (HTO). It may use either water vapor (usually UHP steam) or molecular oxygen as the oxidant; it is consequently called either wet or dry oxidation. The reaction is one of the following:
 
@@ -57,7 +57,7 @@ The oxidizing ambient may also contain several percent of hydrochloric acid (HCl
 
 Thermal oxide incorporates silicon consumed from the substrate and oxygen supplied from the ambient. Thus, it grows both down into the wafer and up out of it. For every unit thickness of silicon consumed, 2.17 unit thicknesses of oxide will appear. If a bare silicon surface is oxidized, 46% of the oxide thickness will lie below the original surface, and 54% above it.
 
-Deal-Grove model
+=== Deal-Grove model ===
 
 According to the commonly used Deal-Grove model, the time τ required to grow an oxide of thickness Xo, at a constant temperature, on a bare silicon surface, is:
 
@@ -133,7 +133,7 @@ t
 
 {\displaystyle X_{o}(t)=A/2\cdot \left[{\sqrt {1+{\frac {4B}{A^{2}}}(t+\tau )}}-1\right]}
 
-Oxidation technology
+== Oxidation technology ==
 
 Most thermal oxidation is performed in furnaces, at temperatures between 800 and 1200 °C. A single furnace accepts many wafers at the same time, in a specially designed quartz rack (called a "boat"). Historically, the boat entered the oxidation chamber from the side (this design is called "horizontal"), and held the wafers vertically, beside each other. However, many modern designs hold the wafers horizontally, above and below each other, and load them into the oxidation chamber from below.
 
@@ -143,7 +143,7 @@ Vertical furnaces also eliminate an issue that plagued horizontal furnaces: non-
 
 Vertical furnaces also allow the use of load locks to purge the wafers with nitrogen before oxidation to limit the growth of native oxide on the Si surface.
 
-Oxide quality
+== Oxide quality ==
 
 Wet oxidation is preferred to dry oxidation for growing thick oxides, because of the higher growth rate. However, fast oxidation leaves more dangling bonds at the silicon interface, which produce quantum states for electrons and allow current to leak along the interface. (This is called a "dirty" interface.) Wet oxidation also yields a lower-density oxide, with lower dielectric strength.
 
@@ -151,7 +151,7 @@ The long time required to grow a thick oxide in dry oxidation makes this process
 
 Mobile metal ions can degrade performance of MOSFETs (sodium is of particular concern). However, chlorine can immobilize sodium by forming sodium chloride. Chlorine is often introduced by adding hydrogen chloride or trichloroethylene to the oxidizing medium. Its presence also increases the rate of oxidation.
 
-Other notes
+== Other notes ==
 
 Thermal oxidation can be performed on selected areas of a wafer and blocked on others. This process, first developed at Philips, is commonly referred to as the local oxidation of silicon (LOCOS) process. Areas which are not to be oxidized are covered with a film of silicon nitride, which blocks diffusion of oxygen and water vapor due to its oxidation at a much slower rate. The nitride is removed after oxidation is complete. This process cannot produce sharp features, because lateral (parallel to the surface) diffusion of oxidant molecules under the nitride mask causes the oxide to protrude into the masked area.
 
@@ -161,7 +161,7 @@ The orientation of the silicon crystal affects oxidation. A <100> wafer (see Mil
 
 Thermal oxidation of any variety produces a higher-quality oxide, with a much cleaner interface, than chemical vapor deposition of oxide resulting in low temperature oxide layer (reaction of TEOS at about 600 °C). However, the high temperatures required to produce High Temperature Oxide (HTO) restrict its usability. For instance, in MOSFET processes, thermal oxidation is never performed after the doping for the source and drain terminals is performed, because it would disturb the placement of the dopants.
 
-References
+== References ==
 
 Notes
 

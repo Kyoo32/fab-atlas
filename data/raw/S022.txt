@@ -1,26 +1,26 @@
 In electronic engineering, a through-silicon via (TSV) or through-chip via is a vertical electrical connection (via) that passes completely through a silicon wafer or die. TSVs are high-performance interconnect techniques used as an alternative to wire-bond and flip chips to create 3D packages and 3D integrated circuits. Compared to alternatives such as package-on-package, the interconnect and device density is substantially higher, and the length of the connections becomes shorter.
 
-Classification
+== Classification ==
 
 Dictated by the manufacturing process, there exist three different types of TSVs: via-first TSVs are fabricated before the individual component (transistors, capacitors, resistors, etc.) are patterned (front end of line, FEOL), via-middle TSVs are fabricated after the individual component are patterned but before the metal layers (back-end-of-line, BEOL), and via-last TSVs are fabricated after (or during) the BEOL process. Via-middle TSVs are currently a popular option for advanced 3D ICs as well as for interposer stacks.
 
 TSVs through the front end of line (FEOL) have to be carefully accounted for during the EDA and manufacturing phases. That is because TSVs induce thermo-mechanical stress in the FEOL layer, thereby impacting the transistor behaviour.
 
-Applications
+== Applications ==
 
-Image sensors
+=== Image sensors ===
 
 CMOS image sensors (CIS) were among the first applications to adopt TSV(s) in volume manufacturing. In initial CIS applications, TSVs were formed on the backside of the image sensor wafer to form interconnects, eliminate wire bonds, and allow for reduced form factor and higher-density interconnects. Die stacking came about only with the advent of backside illuminated (BSI) CIS, and involved reversing the order of the lens, circuitry, and photodiode from traditional front-side illumination so that the light coming through the lens first hits the photodiode and then the circuitry. This was accomplished by flipping the photodiode wafer, thinning the backside, and then bonding it on top of the readout layer using a direct oxide bond, with TSVs as interconnects around the perimeter.
 
-3D packages
+=== 3D packages ===
 
 A 3D package (System in Package, Chip Stack MCM, etc.) contains two or more dies stacked vertically so that they occupy less space and/or have greater connectivity. An alternate type of 3D package can be found in IBM's Silicon Carrier Packaging Technology, where ICs are not stacked but a carrier substrate containing TSVs is used to connect multiple ICs together in a package. In most 3D packages, the stacked chips are wired together along their edges; this edge wiring slightly increases the length and width of the package and usually requires an extra "interposer" layer between the dies. In some new 3D packages, TSVs replace edge wiring by creating vertical connections through the body of the dies. The resulting package has no added length or width. Because no interposer is required, a TSV 3D package can also be flatter than an edge-wired 3D package. This TSV technique is sometimes also referred to as TSS (Through-Silicon Stacking or Thru-Silicon Stacking).
 
-3D integrated circuits
+=== 3D integrated circuits ===
 
 A 3D integrated circuit (3D IC) is a single integrated circuit built by stacking silicon wafers and/or dies and interconnecting them vertically so that they behave as a single device. By using TSV technology, 3D ICs can pack a great deal of functionality into a small "footprint". The different devices in the stack may be heterogeneous, e.g. combining CMOS logic, DRAM and III-V materials into a single IC. In addition, critical electrical paths through the device can be drastically shortened, leading to faster operation. The Wide I/O 3D DRAM memory standard (JEDEC JESD229) includes TSVs in the design.
 
-History
+== History ==
 
 The origins of the TSV concept can be traced back to William Shockley's patent "Semiconductive Wafer and Method of Making the Same" filed in 1958 and granted in 1962, which was further developed by IBM researchers Merlin Smith and Emanuel Stern with their patent "Methods of Making Thru-Connections in Semiconductor Wafers" filed in 1964 and granted in 1967, the latter describing a method for etching a hole through silicon. TSV was not originally designed for 3D integration, but the first 3D chips based on TSV were invented later in the 1980s.
 
@@ -32,9 +32,9 @@ The term "through-silicon via" (TSV) was coined by Tru-Si Technologies researche
 
 CMOS image sensors utilising TSV were commercialized by companies including Toshiba, Aptina and STMicroelectronics during 2007–2008, with Toshiba naming their technology "Through Chip Via" (TCV). 3D-stacked random-access memory (RAM) was commercialized by Elpida Memory, which developed the first 8 GB DRAM module (stacked with four DDR3 SDRAM dies) in September 2009, and released it in June 2011. TSMC announced plans for 3D IC production with TSV technology in January 2010. In 2011, SK Hynix introduced 16 GB DDR3 SDRAM (40 nm class) using TSV technology, Samsung introduced 3D-stacked 32 GB DDR3 (30 nm class) based on TSV in September, and then Samsung and Micron Technology announced TSV-based Hybrid Memory Cube (HMC) technology in October. In 2013, SK Hynix manufactured the first High Bandwidth Memory (HBM) module based on TSV technology. The via middle technology was developed by IMEC under the vision of Eric Beyne. The via middle provided the best trade off in terms of cost and interconnect density. The work was supported by Qualcomm, and then later Nvidia, Xilinx and Altera, who were looking for ways to beat Intel at its game - increasing on-die memory, but then by stacking, rather than scaling.
 
-References
+== References ==
 
-External links
+== External links ==
 
 "3D Integration: A Revolution in Design". Real World Tech. 2 May 2007.
 

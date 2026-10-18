@@ -13,11 +13,11 @@ Photolithography shares some fundamental principles with photography in that the
 Conventional photoresists typically consist of three components: resin, sensitizer, and solvent.
 Levelling is a process used in a lithography machine calibration step, measuring or calibrating wafer surface height with respect to a datum reference.
 
-Etymology
+== Etymology ==
 
 The root words photo, litho, and graphy all have Greek origins, with the meanings 'light', 'stone' and 'writing' respectively. As suggested by the name compounded from them, photolithography is a printing method (originally based on the use of limestone printing plates) in which light plays an essential role.
 
-History
+== History ==
 
 In the 1820s, Nicephore Niepce invented a photographic process that used Bitumen of Judea, a natural asphalt, as the first photoresist. A thin coating of the bitumen on a sheet of metal, glass or stone became less soluble where it was exposed to light; the unexposed parts could then be rinsed away with a suitable solvent, baring the material beneath, which was then chemically etched in an acid bath to produce a printing plate. The light-sensitivity of bitumen was very poor and very long exposures were required, but despite the later introduction of more sensitive alternatives, its low cost and superb resistance to strong acids prolonged its commercial life into the early 20th century.
 
@@ -31,26 +31,26 @@ Despite the fact that photolithography of electronic components concerns etching
 
 In 2019, the Trump administration successfully pressured the government of the Netherlands, where ASML is headquartered, to block sales of EUV Lithography tools to China. In 2026, a Chinese firm reportedly began shipping domestically-built DUV immersion lithography tools to customers.
 
-Process
+== Process ==
 
 A single iteration of photolithography combines several steps in sequence. Modern cleanrooms use automated, robotic wafer track systems to coordinate the process. The procedure described here omits some advanced treatments, such as thinning agents. The photolithography process is carried out by the wafer track and stepper/scanner, and the wafer track system and the stepper/scanner are installed side by side. Wafer track systems are also known as wafer coater/developer systems, which perform the same functions. Wafer tracks are named after the "tracks" used to carry wafers inside the machine, but modern machines do not use tracks.
 
-Cleaning
+=== Cleaning ===
 
 If organic or inorganic contaminations are present on the wafer surface, they are usually removed by wet chemical treatment, e.g. the RCA clean procedure based on solutions containing hydrogen peroxide. Other solutions made with trichloroethylene, acetone or methanol can also be used to clean.
 
-Preparation
+=== Preparation ===
 
 The wafer is initially heated to a temperature sufficient to drive off any moisture that may be present on the wafer surface; 150 °C for ten minutes is sufficient. Wafers that have been in storage must be chemically cleaned to remove contamination. A liquid or gaseous "adhesion promoter", such as Bis(trimethylsilyl)amine ("hexamethyldisilazane", HMDS), is applied to promote adhesion of the photoresist to the wafer. The surface layer of silicon dioxide on the wafer reacts with HMDS to form tri-methylated silicon-dioxide, a highly water repellent layer not unlike the layer of wax on a car's paint. This water repellent layer prevents the aqueous developer from penetrating between the photoresist layer and the wafer's surface, thus preventing so-called lifting of small photoresist structures in the (developing) pattern. In order to ensure the development of the image, it is best covered and placed over a hot plate and let it dry while stabilizing the temperature at 120 °C.
 
-Photoresist application
+=== Photoresist application ===
 
 The wafer is covered with photoresist liquid by spin coating. Thus, the top layer of resist is quickly ejected from the wafer's edge while the bottom layer still creeps slowly radially along the wafer. In this way, any 'bump' or 'ridge' of resist is removed, leaving a very flat layer. However, viscous films may result in large edge beads which are areas at the edges of the wafer or photomask with increased resist thickness whose planarization has physical limits. Often, Edge bead removal (EBR) is carried out, usually with a nozzle, to remove this extra resist as it could otherwise cause particulate contamination.
 Final thickness is also determined by the evaporation of liquid solvents from the resist. For very small, dense features (< 125 or so nm), lower resist thicknesses (< 0.5 microns) are needed to overcome collapse effects at high aspect ratios; typical aspect ratios are < 4:1.
 
 The photoresist-coated wafer is then prebaked to drive off excess photoresist solvent, typically at 90 to 100 °C for 30 to 60 seconds on a hotplate. A BARC coating (Bottom Anti-Reflectant Coating) may be applied before the photoresist is applied, to avoid reflections from occurring under the photoresist and to improve the photoresist's performance at smaller semiconductor nodes such as 45 nm and below. Top Anti-Reflectant Coatings (TARCs) also exist. EUV lithography is unique in the sense it allows for the use of photoresists with metal oxides.
 
-Exposure and developing
+=== Exposure and developing ===
 
 After prebaking, the photoresist is exposed to a pattern of intense light. The exposure to light causes a chemical change that allows some of the photoresist to be removed by a special solution, called "developer" by analogy with photographic developer. Positive photoresist, the most common type, becomes soluble in the developer when exposed; with negative photoresist, unexposed regions are soluble in the developer.
 
@@ -62,23 +62,23 @@ The resulting wafer is then "hard-baked" if a non-chemically amplified resist wa
 
 From preparation until this step, the photolithography procedure has been carried out by two machines: the photolithography stepper or scanner, and the coater/developer. The two machines are usually installed side by side, and are "linked" together.
 
-Etching, implantation
+=== Etching, implantation ===
 
 In etching, a liquid ("wet") or plasma ("dry") chemical agent removes the uppermost layer of the substrate in the areas that are not protected by photoresist. In semiconductor fabrication, dry etching techniques are generally used, as they can be made anisotropic, in order to avoid significant undercutting of the photoresist pattern. This is essential when the width of the features to be defined is similar to or less than the thickness of the material being etched (i.e. when the aspect ratio approaches unity). Wet etch processes are generally isotropic in nature, which is often indispensable for microelectromechanical systems, where suspended structures must be "released" from the underlying layer.
 
 The development of low-defectivity anisotropic dry-etch process has enabled the ever-smaller features defined photolithographically in the resist to be transferred to the substrate material.
 
-Photoresist removal
+=== Photoresist removal ===
 
 After a photoresist is no longer needed, it must be removed from the substrate. This usually requires a liquid "resist stripper", which chemically alters the resist so that it no longer adheres to the substrate. Alternatively, the photoresist may be removed by a plasma containing oxygen, which oxidizes it. This process is called plasma ashing and resembles dry etching. The use of 1-Methyl-2-pyrrolidone (NMP) solvent for photoresist is another method used to remove an image. When the resist has been dissolved, the solvent can be removed by heating to 80 °C without leaving any residue.
 
-Exposure ("printing") systems
+== Exposure ("printing") systems ==
 
 Exposure systems typically produce an image on the wafer using a photomask. The photomask blocks light in some areas and lets it pass in others. (Maskless lithography projects a precise beam directly onto the wafer without a mask, but it is not widely used in commercial processes.) Exposure systems may be classified by the optics that transfer the image from the mask to the wafer.
 
 Photolithography produces better thin film transistor structures than printed electronics, due to smoother printed layers, less wavy patterns, and more accurate drain-source electrode registration.
 
-Contact and proximity
+=== Contact and proximity ===
 
 A contact aligner, the simplest exposure system, puts a photomask in direct contact with the wafer and exposes it to a uniform light. A proximity aligner puts a small gap of around 5 microns between the photomask and wafer. In both cases, the mask covers the entire wafer, and simultaneously patterns every die.
 
@@ -86,16 +86,16 @@ Contact printing/lithography is liable to damage both the mask and the wafer, an
 
 Research and prototyping processes often use contact or proximity lithography, because it uses inexpensive hardware and can achieve high optical resolution. The resolution in proximity lithography is approximately the square root of the product of the wavelength and the gap distance. Hence, except for projection lithography (see below), contact printing offers the best resolution, because its gap distance is approximately zero (neglecting the thickness of the photoresist itself). In addition, nanoimprint lithography may revive interest in this familiar technique, especially since the cost of ownership is expected to be low; however, the shortcomings of contact printing discussed above remain as challenges.
 
-Projection
+=== Projection ===
 
 Very-large-scale integration (VLSI) lithography uses projection systems. Unlike contact or proximity masks, which cover an entire wafer, projection masks (known as "reticles") show only one die or an array of dies (known as a "field") in a portion of the wafer at a time. Projection exposure systems (steppers or scanners) project the mask onto the wafer many times, changing the position of the wafer with every projection, to create the complete pattern, fully patterning the wafer. The difference between steppers and scanners is that, during exposure, a scanner moves the photomask and the wafer simultaneously, while a stepper only moves the wafer. Contact, proximity and projection Mask aligners preceded steppers
 and do not move the photomask nor the wafer during exposure and use masks that cover the entire wafer. Immersion lithography scanners use a layer of Ultrapure water between the lens and the wafer to increase resolution. An alternative to photolithography is nanoimprint lithography. The maximum size of the image that can be projected onto a wafer is known as the reticle limit.
 
-Photomasks
+== Photomasks ==
 
 The image for the mask originates from a computerized data file. This data file is converted to a series of polygons and written onto a square of fused quartz substrate covered with a layer of chromium using a photolithographic process. A laser beam (laser writer) or a beam of electrons (e-beam writer) is used to expose the pattern defined by the data file and travels over the surface of the substrate in either a vector or raster scan manner. Where the photoresist on the mask is exposed, the chrome can be etched away, leaving a clear path for the illumination light in the stepper/scanner system to travel through.
 
-Resolution in projection systems
+== Resolution in projection systems ==
 
 The ability to project a clear image of a small feature onto the wafer is limited by the wavelength of the light that is used, and the ability of the reduction lens system to capture enough diffraction orders from the illuminated mask. Current state-of-the-art photolithography tools use deep ultraviolet (DUV) light from excimer lasers with wavelengths of 248 (KrF) and
 193 (ArF) nm (the dominant lithography technology today is thus also called "excimer laser lithography"), which allow minimum feature sizes down to 50 nm. Excimer laser lithography has thus played a critical role in the continued advance of the Moore's Law for the last 20 years (see below).
@@ -195,11 +195,11 @@ Resolution is also nontrivial in a two-dimensional context. For example, a tight
 
 For advanced nodes, blur, rather than wavelength, becomes the key resolution-limiting factor. Minimum pitch is given by blur sigma/0.14. Blur is affected by dose as well as quantum yield, leading to a tradeoff with stochastic defects, in the case of EUV.
 
-Depth of focus
+== Depth of focus ==
 
 Besides resolution, depth of focus (DoF) is another key metric in lithography systems. Depth of focus is inversely proportional to the square of the numerical aperture (NA) in projection lithography systems. Periodic structures may be illuminated to greatly enhance depth of focus, e.g., two-beam imaging for fixed line pitch. On the other hand, non-periodic features like tip-to-tip gaps can severely limit depth of focus, limiting how much they can be shrunk; this effectively limits the resolution more than the minimum pitch.
 
-Stochastic effects
+== Stochastic effects ==
 
 As light consists of photons, at low doses the image quality ultimately depends on the photon number. This affects the use of extreme ultraviolet lithography or EUVL, which is limited to the use of low doses on the order of 20 photons/nm2.
 This is due to fewer photons for the same energy dose for a shorter wavelength (higher energy per photon). With fewer photons making up the image, there is noise in the edge placement.
@@ -208,7 +208,7 @@ The stochastic effects would become more complicated with larger pitch patterns 
 
 Secondary electrons in EUV lithography aggravate the stochastic characteristics.
 
-Light sources
+== Light sources ==
 
 Historically, photolithography has used ultraviolet light from gas-discharge lamps using mercury, sometimes in combination with noble gases such as xenon. These lamps produce light across a broad spectrum with several strong peaks in the ultraviolet range. This spectrum is filtered to select a single spectral line. From the early 1960s through the mid-1980s, Hg lamps had been used in lithography for their spectral lines at 436 nm ("g-line"), 405 nm ("h-line") and 365 nm ("i-line"). However, with the semiconductor industry's need for both higher resolution (to produce denser and faster chips) and higher throughput (for lower costs), lamp-based lithography tools were no longer able to meet the industry's high-end requirements.
 
@@ -228,19 +228,19 @@ Theoretically, an alternative light source for photolithography, especially if a
 
 Visible and infrared femtosecond lasers were also applied for lithography. In that case photochemical reactions are initiated by multiphoton absorption. Usage of these light sources have a lot of benefits, including possibility to manufacture true 3D objects and process non-photosensitized (pure) glass-like materials with superb optical resiliency.
 
-Experimental methods
+== Experimental methods ==
 
 Photolithography has been defeating predictions of its demise for many years. For instance, by the early 1980s, many in the semiconductor industry had come to believe that features smaller than 1 micron could not be printed optically. Modern techniques using excimer laser lithography already print features with dimensions a fraction of the wavelength of light used – an amazing optical feat. New techniques such as immersion lithography, dual-tone resist and multiple patterning continue to improve the resolution of 193 nm lithography. Meanwhile, current research is exploring alternatives to conventional UV, such as electron beam lithography, X-ray lithography, extreme ultraviolet lithography and ion projection lithography. Extreme ultraviolet lithography has entered mass production use, as of 2018 by Samsung and other manufacturers have followed suit.
 
 Massively parallel electron beam lithography has been explored as an alternative to photolithography, and was tested by TSMC, but it did not succeed and the technology from the main developer of the technique, MAPPER, was purchased by ASML, although electron beam lithography was at one point used in chip production by IBM. Electron beam lithography is only used in niche applications such as photomask production.
 
-Expense
+== Expense ==
 
 In 2001 NIST publication has reported that photolithography process constituted about 35% of total cost of a wafer processing costs.
 
 In 2021, the photolithography industry was valued over 8 billion USD.
 
-See also
+== See also ==
 
 Dip-pen nanolithography
 
@@ -266,9 +266,9 @@ Semiconductor device fabrication
 
 List of semiconductor occupations
 
-References
+== References ==
 
-External links
+== External links ==
 
 Look up photolithography in Wiktionary, the free dictionary.
 

@@ -4,6 +4,7 @@
 - revision_id가 비어 있으면 현재 판을 받고 revision_id·collected_at을 채워요.
 - revision_id가 있으면 그 판을 다시 받아요(재현용). collected_at은 비어 있을 때만 채워요.
 - 위키백과가 아닌 URL은 건너뛰고 경고만 출력해요.
+- 섹션 제목은 위키 문법처럼 `== 제목 ==`(하위는 `=== 제목 ===`)으로 남겨요. 파싱할 때 섹션을 나누는 기준이에요.
 
 표준 라이브러리만 써요.
     uv run scripts/fetch_corpus.py
@@ -30,6 +31,7 @@ USER_AGENT = "FabAtlas/0.1 (https://github.com/Kyoo32/fab-atlas)"
 SKIP_TAGS = {"style", "script", "table", "figure"}
 SKIP_CLASSES = {"reference", "hatnote", "shortdescription", "mw-editsection", "reflist", "references", "navbox", "toc", "mw-references-wrap"}
 BLOCK_TAGS = {"p", "div", "li", "h1", "h2", "h3", "h4", "h5", "h6", "dd", "dt", "br", "blockquote", "pre"}
+HEADING_LEVEL = {"h2": 2, "h3": 3, "h4": 4, "h5": 5, "h6": 6}
 VOID_TAGS = {"br", "img", "hr", "meta", "link", "input", "wbr", "source", "col", "area"}
 
 
@@ -50,6 +52,8 @@ class _TextExtractor(HTMLParser):
         self.stack.append(starts_skip)
         if starts_skip:
             self.skip_depth += 1
+        elif not self.skip_depth and tag in HEADING_LEVEL:
+            self.parts.append("\n" + "=" * HEADING_LEVEL[tag] + " ")
         elif not self.skip_depth and tag in BLOCK_TAGS:
             self.parts.append("\n")
 
@@ -58,6 +62,8 @@ class _TextExtractor(HTMLParser):
             return
         if self.stack.pop():
             self.skip_depth -= 1
+        elif not self.skip_depth and tag in HEADING_LEVEL:
+            self.parts.append(" " + "=" * HEADING_LEVEL[tag] + "\n")
         elif not self.skip_depth and tag in BLOCK_TAGS:
             self.parts.append("\n")
 

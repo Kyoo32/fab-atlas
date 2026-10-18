@@ -9,7 +9,7 @@ The size of the die left on the tape may range from 35 mm on a side (very large
 
 Materials diced include glass, alumina, silicon, gallium arsenide (GaAs), silicon on sapphire (SoS), ceramics, and delicate compound semiconductors.[citation needed]
 
-Stealth dicing
+== Stealth dicing ==
 
 Dicing of silicon wafers may also be performed by a laser-based technique, the so-called stealth dicing process. It works as a two-stage process in which defect regions are firstly introduced into the wafer by scanning the beam along intended cutting lines and secondly an underlying carrier membrane is expanded to induce fracture.
 
@@ -17,14 +17,14 @@ The first step operates with a pulsed Nd:YAG laser, the wavelength of which (106
 
 It is the advantage of the stealth dicing process that it does not require a cooling liquid. Dry dicing methods inevitably have to be applied for the preparation of certain microelectromechanical systems (MEMS), in particular, when these are intended for bioelectronic applications. In addition, stealth dicing hardly generates debris and allows for improved exploitation of the wafer surface due to smaller kerf loss compared to wafer saw. Wafer grinding may be performed after this step, to reduce die thickness.
 
-Dice before grind
+== Dice before grind ==
 
 The DBG or "dice before grind" process is a way to separate dies without dicing. The separation occurs during the wafer thinning step. The wafers are initially diced using a half-cut dicer to a depth below the final target thickness. Next, the wafer is thinned to the target thickness while mounted on a special adhesive film and then mounted on to a pick-up tape to hold the dies in place until they are ready for the packaging step. The benefit to the DBG process is higher die strength. Alternatively, plasma dicing may be used, which replaces the dicer's saw with DRIE plasma etching.
 
 The DBG process requires a back grinding tape that has the following attributes, 1) strong adhesive force (prevents infiltration of grinding fluid and die dust during grinding), 2) absorption and/or relief of compression stress and shear stress during grinding, 3) suppresses cracking due to contact between dies, 4) adhesive strength that can be greatly reduced through UV irradiation.
 
-See also
+== See also ==
 
 Wafer bonding
 
-References
+== References ==

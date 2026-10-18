@@ -53,6 +53,7 @@ cd web && npm run dev      # nb2md 후 개발 서버
 cd web && npm run build    # nb2md 후 빌드
 uv run scripts/nb2md.py    # 노트북 변환만
 uv run scripts/fetch_corpus.py  # sources.csv의 위키백과 문서 → data/raw/
+uv run python -m fabatlas.ask "질문"  # 검색 + 근거 인용 답변 (키는 .env의 OPENAI_API_KEY)
 ```
 
 ## 커밋

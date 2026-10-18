@@ -4,7 +4,7 @@ The transition from aluminium to copper required significant developments in fab
 
 Although the methods of superconformal copper electrodeposition were known since late 1960, their application at the (sub)micron via scale (e.g. in microchips) started only in 1988–1995 (see figure). By the year 2002 it became a mature technology, and research and development efforts in this field started to decline.
 
-Patterning
+== Patterning ==
 
 Although some form of volatile copper compound has been known to exist since 1947, with more discovered as the century progressed, none were in industrial use, so copper could not be patterned by the previous techniques of photoresist masking and plasma etching that had been used with great success with aluminium. The inability to plasma etch copper called for a drastic rethinking of the metal patterning process and the result of this rethinking was a process referred to as an additive patterning, also known as a "Damascene" or "dual-Damascene" process by analogy to a traditional technique of metal inlaying.[citation needed]
 
@@ -12,7 +12,7 @@ In this process, the underlying silicon oxide insulating layer is patterned with
 
 With successive layers of insulator and copper, a multilayer interconnect structure is created. The number of layers depends on the IC's function, 10 or more metal layers are possible. Without the ability of CMP to remove the copper coating in a planar and uniform fashion, and without the ability of the CMP process to stop repeatably at the copper-insulator interface, this technology would not be realizable.[citation needed]
 
-Barrier metal
+== Barrier metal ==
 
 A barrier metal layer must completely surround all copper interconnects, since diffusion of copper into surrounding materials would degrade their properties. For instance, silicon forms deep-level traps when doped with copper. As the name implies, a barrier metal must limit copper diffusivity sufficiently to chemically isolate the copper conductor from the silicon below, yet have high electrical conductivity in order to maintain a good electronic contact.
 
@@ -20,11 +20,11 @@ The thickness of the barrier film is also quite important; with too thin a layer
 
 The improvement in conductivity in going from earlier aluminium to copper based conductors was modest, and not as good as to be expected by a simple comparison of bulk conductivities of aluminium and copper. The addition of barrier metals on all four sides of the copper conductor significantly reduces the cross-sectional area of the conductor that is composed of pure, low resistance, copper. Aluminium, while requiring a thin barrier metal to promote low ohmic resistance when making a contact directly to silicon or aluminium layers, did not require barrier metals on the sides of the metal lines to isolate aluminium from the surrounding silicon oxide insulators. Therefore scientists are looking for new ways to reduce the diffusion of copper into silicon substrates without using the buffer layer. One method is to use copper-germanium alloy as the interconnect material so that buffer layer (e.g. titanium nitride) is no longer needed. Epitaxial Cu3Ge layer has been fabricated with an average resistivity of 6 ± 1 μΩ cm and work function of ~4.47 ± 0.02 eV respectively, qualifying it as a good alternative to copper.
 
-Electromigration
+== Electromigration ==
 
 Resistance to electromigration, the process by which a metal conductor changes shape under the influence of an electric current flowing through it and which eventually leads to the breaking of the conductor, is significantly better with copper than with aluminium. This improvement in electromigration resistance allows higher currents to flow through a given size copper conductor compared to aluminium. The combination of a modest increase in conductivity along with this improvement in electromigration resistance was to prove highly attractive. The overall benefits derived from these performance improvements were ultimately enough to drive full-scale investment in copper-based technologies and fabrication methods for high performance semiconductor devices, and copper-based processes continue to be the state of the art for the semiconductor industry today.
 
-Superconformal electrodeposition of copper
+== Superconformal electrodeposition of copper ==
 
 Around 2005 the processor frequency reached 3 GHz due to continuous decrease in the on-chip transistor size in the previous years. At this point, the capacitive RC coupling of interconnects became the speed(frequency)-limiting factor.
 
@@ -40,8 +40,8 @@ Liquid solutions for superconformal copper electroplating typically comprise sev
 
 There is experimental evidence to support either model. The reconciliatory opinion is that in the early stages of the bottom-up via filling the higher rate of Cu plating at the bottom is due to the lack of the PEG suppressor molecules there (their diffusion coefficienct is too low to provide a fast enough mass-transport). The accelerator, which is a smaller and faster diffusing molecule, reaches the bottom of the via, where it accelerates the rate of Cu plating without the suppressor. At the end of plating, the accelerator remains in a high concentration on the surface of the plated copper, causing the formation of a final bump.
 
-See also
+== See also ==
 
 Carbon nanotubes in interconnects
 
-References
+== References ==

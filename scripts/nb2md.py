@@ -49,7 +49,17 @@ def _save_image(data: dict, stem: str, cell_no: int, seq: int) -> str | None:
 def _outputs(outputs: list[dict], stem: str, cell_no: int) -> list[str]:
     parts: list[str] = []
     seq = 0
+    # stderr(경고, 진행 막대)는 빼고, 이어진 stdout 조각은 하나로 합쳐요.
+    merged: list[dict] = []
     for out in outputs:
+        if out.get("output_type") == "stream":
+            if out.get("name") == "stderr":
+                continue
+            if merged and merged[-1].get("output_type") == "stream":
+                merged[-1] = {**merged[-1], "text": _text(merged[-1]["text"]) + _text(out.get("text", ""))}
+                continue
+        merged.append(out)
+    for out in merged:
         kind = out.get("output_type")
         if kind == "stream":
             text = _text(out.get("text", ""))
@@ -58,6 +68,9 @@ def _outputs(outputs: list[dict], stem: str, cell_no: int) -> list[str]:
             if any(m in data for m in IMAGE_TYPES):
                 seq += 1
                 parts.append(_save_image(data, stem, cell_no, seq))  # type: ignore[arg-type]
+                continue
+            if "text/markdown" in data:  # 표 같은 마크다운 출력은 그대로 넣어요
+                parts.append(_text(data["text/markdown"]).rstrip())
                 continue
             if "text/plain" not in data:
                 continue

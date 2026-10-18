@@ -1,6 +1,6 @@
 Reactive-ion etching (RIE) is an etching technology used in microfabrication. RIE is a type of dry etching which has different characteristics than wet etching. RIE uses chemically reactive plasma to remove material deposited on wafers. The plasma is generated under low pressure (vacuum) by an electromagnetic field. High-energy ions from the plasma attack the wafer surface and react with it.
 
-Equipment
+== Equipment ==
 
 A typical (parallel plate) RIE system consists of a cylindrical vacuum chamber, with a wafer platter situated in the bottom portion of the chamber. The wafer platter is electrically isolated from the rest of the chamber. Gas enters through small inlets in the top of the chamber, and exits to the vacuum pump system through the bottom. The types and amount of gas used vary depending upon the etch process; for instance, sulfur hexafluoride is commonly used for etching silicon. Gas pressure is typically maintained in a range between a few millitorr and a few hundred millitorr by adjusting gas flow rates and/or adjusting an exhaust orifice.
 
@@ -8,7 +8,7 @@ Other types of RIE systems exist, including inductively coupled plasma (ICP) RIE
 
 A combination of parallel plate and inductively coupled plasma RIE is possible. In this system, the ICP is employed as a high density source of ions which increases the etch rate, whereas a separate RF bias is applied to the substrate (silicon wafer) to create directional electric fields near the substrate to achieve more anisotropic etch profiles. The RF power given to the substrate is often a tunable parameter called 'platen power', and controls the energy of ions bombarding the surface.
 
-Method of operation
+== Method of operation ==
 
 Plasma is initiated in the system by applying a strong RF (radio frequency) electromagnetic field to the wafer platter. The field is typically set to a frequency of 13.56 Megahertz, applied at a few hundred watts. The oscillating electric field ionizes the gas molecules by stripping them of electrons, creating a plasma.
 
@@ -18,15 +18,15 @@ Because of the large voltage difference, the positive ions tend to drift toward 
 
 Etch conditions in an RIE system depend strongly on the many process parameters, such as pressure, gas flows, and RF power. A modified version of RIE is deep reactive-ion etching, used to excavate deep features.
 
-See also
+== See also ==
 
 Deep RIE (Bosch Process)
 
 Plasma etcher
 
-References
+== References ==
 
-External links
+== External links ==
 
 BYU Cleanroom – RIE Etching
 

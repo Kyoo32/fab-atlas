@@ -2,7 +2,7 @@ Physical vapor deposition (PVD), sometimes called physical vapor transport (PVT)
 
 The source material is, unavoidably, also deposited on most other surfaces in the vacuum chamber, including the fixtures holding the parts. This is called overshoot.
 
-Examples
+== Examples ==
 
 Cathodic arc deposition: A high-power electric arc discharged at the target (source) material blasts away some into highly ionized vapor to be deposited onto the workpiece.
 
@@ -22,7 +22,7 @@ Pulsed electron deposition: A highly energetic pulsed electron beam ablates mate
 
 Sublimation sandwich method: This method is used for growing crystals such as silicon carbide (SiC).
 
-Metrics and testing
+=== Metrics and testing ===
 
 Various techniques to characterize thin films can be used to measure the physical properties of PVD coatings, such as:
 
@@ -36,9 +36,9 @@ Scratch testing: measures coating adhesion
 
 X-ray micro-analysis measures structural features and heterogeneity of elemental composition of the growth surfaces
 
-Comparison to other deposition techniques
+== Comparison to other deposition techniques ==
 
-Advantages
+=== Advantages ===
 
 PVD coatings are sometimes harder and more corrosion-resistant than coatings applied by electroplating processes. Most coatings have high temperature and good impact strength, excellent abrasion resistance and are so durable that protective topcoats are rarely necessary.
 
@@ -52,28 +52,28 @@ PVD can be performed at lower temperatures compared to chemical vapor deposition
 
 PVD technologies can be scaled from small laboratory setups to large industrial systems, offering flexibility for different production volumes and sizes. This scalability makes it accessible for both research and commercial applications.
 
-Disadvantages
+=== Disadvantages ===
 
 Specific technologies can impose constraints; for example, the line-of-sight transfer is typical of most PVD coating techniques, however, some methods allow full coverage of complex geometries.
 
 Some PVD technologies operate at high temperatures and vacuums, requiring special attention by operating personnel and sometimes a cooling water system to dissipate large heat loads.
 
-Applications
+== Applications ==
 
-Anisotropic glasses
+=== Anisotropic glasses ===
 
 PVD can be used as an application to make anisotropic glasses of low molecular weight for organic semiconductors. The parameter needed to allow the formation of this type of glass is molecular mobility and anisotropic structure at the free surface of the glass. The configuration of the polymer is important where it needs to be positioned in a lower energy state before the added molecules bury the material through a deposition. This process of adding molecules to the structure starts to equilibrate and gain mass and bulk out to have more kinetic stability. The packing of molecules here through PVD is face-on, meaning not at the long tail end, allows further overlap of pi orbitals as well which also increases the stability of added molecules and the bonds. The orientation of these added materials is dependent mainly on temperature for when molecules will be deposited or extracted from the molecule. The equilibration of the molecules is what provides the glass with its anisotropic characteristics. The anisotropy of these glasses is valuable as it allows a higher charge carrier mobility. This process of packing in glass in an anisotropic way is valuable due to its versatility and the fact that glass provides added benefits beyond crystals, such as homogeneity and flexibility of composition.
 
-Decorative applications
+=== Decorative applications ===
 
 By varying the composition and duration of the process, a range of colors can be produced by PVD on stainless steel. The resulting colored stainless steel product can appear as brass, bronze, and other metals or alloys.
 This PVD-colored stainless steel can be used as exterior cladding for buildings and structures, such as the Vessel sculpture in New York City and The Bund in Shanghai. It is also used for interior hardware, paneling, and fixtures, and is even used on some consumer electronics, like the Space Gray and Gold finishes of the iPhone[citation needed] and Apple Watch.
 
-Cutting tools
+=== Cutting tools ===
 
 PVD is used to enhance the wear resistance of steel cutting tools' surfaces and decrease the risk of adhesion and sticking between tools and a workpiece. This includes tools used in metalworking or plastic injection molding. The coating is typically a thin ceramic layer less than 4 μm that has very high hardness and low friction. It is necessary to have high hardness of workpieces to ensure dimensional stability of coating to avoid brittling. It is possible to combine PVD with a plasma nitriding treatment of steel to increase the load bearing capacity of the coating. Chromium nitride (CrN), titanium nitride (TiN), and titanium carbonitride (TiCN) may be used for PVD coating for plastic molding dies.
 
-Other applications
+=== Other applications ===
 
 PVD coatings are generally used to improve hardness, increase wear resistance, and prevent oxidation. They can also be used for aesthetic purposes. Thus, such coatings are used in a wide range of applications, such as:
 
@@ -93,7 +93,7 @@ Watches
 
 Jewelry
 
-See also
+== See also ==
 
 HPCVD – Thin-film deposition techniquePages displaying short descriptions of redirect targets
 
@@ -105,9 +105,9 @@ Thin-film deposition
 
 Ion-beam–assisted deposition – Materials engineering technique
 
-References
+== References ==
 
-Further reading
+== Further reading ==
 
 Anders, André, ed. (3 October 2000). Handbook of Plasma Immersion Ion Implantation and Deposition. Wiley-VCH. ISBN 978-0471246985.
 
@@ -139,7 +139,7 @@ Willey, Ronald R (15 December 2007). Practical Monitoring and Control of Optical
 
 Willey, Ronald R (27 October 2007). Practical Equipment, Materials, and Processes for Optical Thin Films. Willey Optical, Consultants. ISBN 978-0615143972.
 
-External links
+== External links ==
 
 "Society of Vacuum Coaters". svc.org. Society of Vacuum Coaters. Retrieved 3 October 2019.
 

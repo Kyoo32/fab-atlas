@@ -5,7 +5,13 @@ description = "8대 공정을 지도로 보고, 묻고, 근거로 답한다"
 authors = [{ name = "Kyuwon Lee" }]
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "huggingface-hub>=2.2.0",
+    "numpy>=2.4.6",
+    "openai>=3.35.1",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=5.7.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12"]
@@ -13,3 +19,10 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-root = ""
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "nbconvert>=7.17.2",
+    "nbformat>=5.11.1",
+]

@@ -6,7 +6,7 @@ Microfabrication processes widely use CVD to deposit materials in various forms,
 
 The term chemical vapour deposition was coined in 1960 by John M. Blocher, Jr. who intended to differentiate chemical from physical vapour deposition (PVD).
 
-Types
+== Types ==
 
 CVD is practiced in a variety of formats. These processes generally differ in the means by which chemical reactions are initiated.
 
@@ -62,13 +62,13 @@ Photo-initiated CVD (PICVD) – This process uses UV light to stimulate chemical
 
 Laser chemical vapor deposition (LCVD) - This CVD process uses lasers to heat spots or lines on a substrate in semiconductor applications. In MEMS and in fiber production the lasers are used rapidly to break down the precursor gas—process temperature can exceed 2000 °C—to build up a solid structure in much the same way as laser sintering-based 3D printers build up solids from powders.
 
-Uses
+== Uses ==
 
 CVD is commonly used to deposit conformal films and augment substrate surfaces in ways that more traditional surface modification techniques are not capable of. CVD is extremely useful in the process of atomic layer deposition at depositing extremely thin layers of material. A variety of applications for such films exist. Gallium arsenide is used in some integrated circuits (ICs) and photovoltaic devices. Amorphous polysilicon is used in photovoltaic devices. Certain carbides and nitrides confer wear-resistance. Polymerization by CVD, perhaps the most versatile of all applications, allows for super-thin coatings which possess some very desirable qualities, such as lubricity, hydrophobicity and weather-resistance to name a few. The CVD of metal–organic frameworks, a class of crystalline nanoporous materials, has recently been demonstrated. Recently scaled up as an integrated cleanroom process depositing large-area substrates, the applications for these films are anticipated in gas sensing and low-κ dielectrics. CVD techniques are advantageous for membrane coatings as well, such as those in desalination or water treatment, as these coatings can be sufficiently uniform (conformal) and thin that they do not clog membrane pores.
 
-Commercially important materials prepared by CVD
+== Commercially important materials prepared by CVD ==
 
-Polysilicon
+=== Polysilicon ===
 
 Polycrystalline silicon is deposited from trichlorosilane (SiHCl3) or silane (SiH4), using the following reactions:
 
@@ -78,7 +78,7 @@ SiH4 → Si + 2 H2
 
 This reaction is usually performed in LPCVD systems, with either pure silane feedstock, or a solution of silane with 70–80% nitrogen. Temperatures between 600 and 650 °C, and pressures between 25 and 150 Pa yield a growth rate between 10 and 20 nm per minute. An alternative process uses a hydrogen-based solution. The hydrogen reduces the growth rate, but the temperature is raised to 850 or even 1050 °C to compensate. Polysilicon may be grown directly with doping, if gases such as phosphine, arsine or diborane are added to the CVD chamber. Diborane increases the growth rate, but arsine and phosphine decrease it.
 
-Silicon dioxide
+=== Silicon dioxide ===
 
 Silicon dioxide (usually called simply "oxide" in the semiconductor industry) may be deposited by several different processes. Common source gases include silane and oxygen, dichlorosilane (SiCl2H2) and nitrous oxide (N2O), or tetraethylorthosilicate (TEOS; Si(OC2H5)4). The reactions are as follows:
 
@@ -100,7 +100,7 @@ Besides these intentional impurities, CVD oxide may contain byproducts of the de
 
 Lower temperature deposition of silicon dioxide and doped glasses from TEOS using ozone rather than oxygen has also been explored (350 to 500 °C). Ozone glasses have excellent conformality but tend to be hygroscopic – that is, they absorb water from the air due to the incorporation of silanol (Si-OH) in the glass. Infrared spectroscopy and mechanical strain as a function of temperature are valuable diagnostic tools for diagnosing such problems.
 
-Silicon nitride
+=== Silicon nitride ===
 
 Silicon nitride is often used as an insulator and chemical barrier in manufacturing ICs. The following two reactions deposit silicon nitride from the gas phase:
 
@@ -118,7 +118,7 @@ SiH4 + NH3 → SiNH + 3 H2
 
 These films have much less tensile stress, but worse electrical properties (resistivity 106 to 1015 Ω·cm, and dielectric strength 1 to 5 MV/cm).
 
-Titanium nitride
+==== Titanium nitride ====
 
 Titanium nitride (TiN) is a commonly used as a wear resistant coating to increase the lifetime of cutting tools due to its hardness and chemical resistance. A common gas mixture used for depositing titanium nitride with CVD is:
 
@@ -126,7 +126,7 @@ TiCl4 + 1/2 N2 + 2 H2 → TiN(s) + 4 HCl
 
 Other gas mixtures used to deposit titanium nitride with CVD includes TiCl4 + NH3 + H2.
 
-Metals
+=== Metals ===
 
 Tungsten CVD, used for forming conductive contacts, vias, and plugs on a semiconductor device, is achieved from tungsten hexafluoride (WF6), which may be deposited in two ways:
 
@@ -152,23 +152,23 @@ Niobium(V) oxide layers can be produced by the thermal decomposition of niobium(
 
 Late transition metals are particularly difficult to deposit through CVD; see chemical vapor deposition of ruthenium.
 
-Graphene
+=== Graphene ===
 
 Many variations of CVD can be utilized to synthesize graphene. Although many advancements have been made, the processes listed below are not commercially viable yet.
 
-Carbon source
+==== Carbon source ====
 
 The most popular carbon source that is used to produce graphene is methane gas. One of the less popular choices is petroleum asphalt, notable for being inexpensive but more difficult to work with.
 
 Although methane is the most popular carbon source, hydrogen is required during the preparation process to promote carbon deposition on the substrate. If the flow ratio of methane and hydrogen are not appropriate, it will cause undesirable results. During the growth of graphene, the role of methane is to provide a carbon source, the role of hydrogen is to provide H atoms to corrode amorphous C, and improve the quality of graphene. But excessive H atoms can also corrode graphene. As a result, the integrity of the crystal lattice is destroyed, and the quality of graphene is deteriorated. Therefore, by optimizing the flow rate of methane and hydrogen gases in the growth process, the quality of graphene can be improved.
 
-Use of catalyst
+==== Use of catalyst ====
 
 The use of catalyst is viable in changing the physical process of graphene production. Notable examples include iron nanoparticles, nickel foam, and gallium vapor. These catalysts can either be used in situ during graphene buildup, or situated at some distance away at the deposition area. Some catalysts require another step to remove them from the sample material.
 
 The direct growth of high-quality, large single-crystalline domains of graphene on a dielectric substrate is of vital importance for applications in electronics and optoelectronics. Combining the advantages of both catalytic CVD and the ultra-flat dielectric substrate, gaseous catalyst-assisted CVD paves the way for synthesizing high-quality graphene for device applications while avoiding the transfer process.
 
-Physical conditions
+==== Physical conditions ====
 
 Physical conditions such as surrounding pressure, temperature, carrier gas, and chamber material play a big role in production of graphene.
 
@@ -176,15 +176,15 @@ Most systems use LPCVD with pressures ranging from 1 to 1500 Pa. However, some s
 
 On the other hand, temperatures used range from 800 to 1050 °C. High temperatures translate to an increase of the rate of reaction. Caution has to be exercised as high temperatures do pose higher danger levels in addition to greater energy costs.
 
-Carrier gas
+==== Carrier gas ====
 
 Hydrogen gas and inert gases such as argon are flowed into the system. These gases act as a carrier, enhancing surface reaction and improving reaction rate, thereby increasing deposition of graphene onto the substrate.
 
-Chamber material
+==== Chamber material ====
 
 Standard quartz tubing and chambers are used in CVD of graphene. Quartz is chosen because it has a very high melting point and is chemically inert. In other words, quartz does not interfere with any physical or chemical reactions regardless of the conditions.
 
-Methods of analysis of results
+==== Methods of analysis of results ====
 
 Raman spectroscopy, X-ray spectroscopy, transmission electron microscopy (TEM), and scanning electron microscopy (SEM) are used to examine and characterize the graphene samples.
 
@@ -196,11 +196,11 @@ X-ray diffraction methods are useful techniques to analyze thin films. X-ray dif
 
 Cold wall CVD technique can be used to study the underlying surface science involved in graphene nucleation and growth as it allows unprecedented control of process parameters like gas flow rates, temperature and pressure as demonstrated in a recent study. The study was carried out in a home-built vertical cold wall system utilizing resistive heating by passing direct current through the substrate. It provided conclusive insight into a typical surface-mediated nucleation and growth mechanism involved in two-dimensional materials grown using catalytic CVD under conditions sought out in the semiconductor industry.
 
-Graphene nanoribbon
+=== Graphene nanoribbon ===
 
 In spite of graphene's exciting electronic and thermal properties, it is unsuitable as a transistor for future digital devices, due to the absence of a bandgap between the conduction and valence bands. This makes it impossible to switch between on and off states with respect to electron flow. Scaling things down, graphene nanoribbons of less than 10 nm in width do exhibit electronic bandgaps and are therefore potential candidates for digital devices. Precise control over their dimensions, and hence electronic properties, however, represents a challenging goal, and the ribbons typically possess rough edges that are detrimental to their performance.
 
-Diamond
+=== Diamond ===
 
 CVD can be used to produce a synthetic diamond by creating the circumstances necessary for carbon atoms in a gas to settle on a substrate in crystalline form. CVD of diamonds has received much attention in the materials sciences because it allows many new applications that had previously been considered too expensive. CVD diamond growth typically occurs under low pressure (1–27 kPa; 0.145–3.926 psi; 7.5–203 Torr) and involves feeding varying amounts of gases into a chamber, energizing them and providing conditions for diamond growth on the substrate. The gases always include a carbon source, and typically include hydrogen as well, though the amounts used vary greatly depending on the type of diamond being grown. Energy sources include hot filament, microwave power, and arc discharges, among others. The energy source is intended to generate a plasma in which the gases are broken down and more complex chemistries occur. The actual chemical process for diamond growth is still under study and is complicated by the very wide variety of diamond growth processes used.
 
@@ -210,11 +210,11 @@ The growth of diamond directly on a substrate allows the addition of many of dia
 
 CVD growth allows one to control the properties of the diamond produced. In the area of diamond growth, the word "diamond" is used as a description of any material primarily made up of sp3-bonded carbon, and there are many different types of diamond included in this. By regulating the processing parameters—especially the gases introduced, but also including the pressure the system is operated under, the temperature of the diamond, and the method of generating plasma—many different materials that can be considered diamond can be made. Single-crystal diamond can be made containing various dopants. Polycrystalline diamond consisting of grain sizes from several nanometers to several micrometers can be grown. Some polycrystalline diamond grains are surrounded by thin, non-diamond carbon, while others are not. These different factors affect the diamond's hardness, smoothness, conductivity, optical properties and more.
 
-Chalcogenides
+=== Chalcogenides ===
 
 Commercially, mercury cadmium telluride is of continuing interest for detection of infrared radiation. Consisting of an alloy of CdTe and HgTe, this material can be prepared from the dimethyl derivatives of the respective elements.
 
-See also
+== See also ==
 
 Apollo Diamond
 
@@ -240,9 +240,9 @@ List of metal–organic chemical vapour deposition precursors
 
 List of synthetic diamond manufacturers
 
-References
+== References ==
 
-Further reading
+== Further reading ==
 
 Jaeger, Richard C. (2002). "Film Deposition". Introduction to Microelectronic Fabrication (2nd ed.). Upper Saddle River: Prentice Hall. ISBN 978-0-201-44494-0.
 

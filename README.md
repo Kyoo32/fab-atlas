@@ -17,7 +17,7 @@
 
 ```
 web/              Astro + Starlight 사이트 (쇼케이스 + 작업노트)
-fabatlas/         Python 패키지
+fabatlas/         Python 패키지 (파싱·청킹·임베딩·검색·CLI)
 notebooks/        실습 노트북 원본
 data/             코퍼스 (sources.csv 출처 대장, raw/ 본문)
 scripts/          nb2md.py 노트북 변환, fetch_corpus.py 코퍼스 수집
@@ -34,6 +34,14 @@ npm ci
 npm run dev     # http://localhost:4321/fab-atlas/
 npm run build
 ```
+
+## 질문하기
+
+```bash
+uv run python -m fabatlas.ask "EUV 노광에서 펠리클은 왜 필요한가요?"
+```
+
+처음 실행하면 임베딩 모델(BAAI/bge-m3, 약 2.3GB)을 받아요. 저장소 루트의 `.env`에 `OPENAI_API_KEY`가 있으면 근거를 인용한 한국어 답변까지, 없으면 검색된 청크와 점수까지 보여 줘요.
 
 ## 코퍼스
 

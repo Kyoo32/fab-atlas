@@ -1,6 +1,6 @@
 Flip chip, also known as controlled collapse chip connection or its abbreviation, C4, is a method for interconnecting dies such as semiconductor devices, IC chips, integrated passive devices and microelectromechanical systems (MEMS), to external circuitry with solder bumps that have been deposited onto the chip pads. The technique was developed by General Electric's Light Military Electronics Department, Utica, New York. The solder bumps are deposited on the chip pads on the top side of the wafer during the final wafer processing step. In order to mount the chip to external circuitry (e.g., a circuit board or another chip or wafer), it is flipped over so that its top side faces down, and aligned so that its pads align with matching pads on the external circuit, and then the solder is reflowed to complete the interconnect. This is in contrast to wire bonding, in which the chip is mounted upright and fine wires are welded onto the chip pads and lead frame contacts to interconnect the chip pads to external circuitry.
 
-Process steps
+== Process steps ==
 
 Integrated circuits are created on the wafer.
 
@@ -16,13 +16,13 @@ Solder balls are then remelted (typically using hot air reflow).
 
 Mounted chip is "underfilled" using a (capillary, shown here) electrically-insulating adhesive.
 
-Comparison of mounting technologies
+== Comparison of mounting technologies ==
 
-Wire bonding/thermosonic bonding
+=== Wire bonding/thermosonic bonding ===
 
 In typical semiconductor fabrication systems, chips are built up in large numbers on a single large wafer of semiconductor material, typically silicon. The individual chips are patterned with small pads of metal near their edges that serve as the connections to an eventual mechanical carrier. The chips are then cut out of the wafer and attached to their carriers, typically via wire bonding such as thermosonic bonding. These wires eventually lead to pins on the outside of the carriers, which are attached to the rest of the circuitry making up the electronic system.
 
-Flip chip
+=== Flip chip ===
 
 Processing a flip chip is similar to conventional IC fabrication, with a few additional steps. Near the end of the manufacturing process, the attachment pads are metalized to make them more receptive to solder. This typically consists of several treatments. A small dot of solder is then deposited on each metalized pad. The chips are then cut out of the wafer as normal.
 
@@ -37,15 +37,15 @@ In 2008, High-speed mounting methods evolved through a cooperation between Reel 
 
 Flip-chip packages often consist of a silicon die sitting on top of a "substrate" which then sits on top of a traditional PCB. The substrate can have a Ball Grid Array (BGA) on its underside. The substrate makes the connections to the die available for use by the PCB. Substates made with build up film such as Ajinomoto Build up Film (ABF), are manufactured around a core, and the film is stacked on the core in layers by vacuum lamination at high temperatures. After each layer is applied, the film is cured, and laser vias are made with CO2 or UV lasers, then the blind vias in the substrate are cleaned and the build up film is roughened chemically with a permanganate, and then copper is deposited using electroless copper plating, followed by creating a pattern on the copper using photolithography and etching, and then this process is repeated for every layer of the substrate.
 
-Tape-automated bonding
+=== Tape-automated bonding ===
 
 Tape-automated bonding (TAB) was developed for connecting dies with thermocompression or thermosonic bonding to a flexible substrate including from one to three conductive layers. Also with TAB it is possible to connect die pins all at the same time as with the soldering based flip-chip mounting. Originally TAB could produce finer pitch interconnections compared to flip chip, but with the development of the flip chip this advantage has diminished and has kept TAB to be a specialized interconnection technique of display drivers or similar requiring specific TAB compliant roll-to-roll (R2R, reel-to-reel) like assembly system.
 
-Advantages
+=== Advantages ===
 
 The resulting completed flip-chip assembly is much smaller than a traditional carrier-based system; the chip sits directly on the circuit board, and is much smaller than the carrier both in area and height. The short wires greatly reduce inductance, allowing higher-speed signals, and also conduct heat better.
 
-Disadvantages
+=== Disadvantages ===
 
 Flip chips have several disadvantages.
 
@@ -53,13 +53,13 @@ The lack of a carrier means they are not suitable for easy replacement, or unaid
 
 Also, the short connections are very stiff, so the thermal expansion of the chip must be matched to the supporting board or the connections can crack. The underfill material acts as an intermediate between the difference in CTE of the chip and board.
 
-History
+== History ==
 
 The process was originally introduced commercially by IBM in the 1960s for individual transistors and diodes packaged for use in their mainframe systems.
 
 Ceramic substrates for flip-chip BGA were replaced with organic substrates to reduce costs and use existing PCB manufacturing techniques to produce more packages at a time by using larger PCB panels during manufacturing. Ajinomoto Build up Film (ABF) was developed in 1999 and has become a material widely used in flip-chip packages, used for manufacturing flip-chip substrates in a semi-additive process, first pioneered by Intel. Build up film helped transition the industry away from ceramic substrates, and this film is now essential in the production of organic flip-chip package substrates.
 
-See also
+== See also ==
 
 Flip-Chip modules – Digital Equipment Corporation trademarked version
 
@@ -69,8 +69,8 @@ IBM 3081
 
 Solid Logic Technology
 
-References
+== References ==
 
-External links
+== External links ==
 
 Amkor Flip-Chip Technology: CSP (fcCSP), BGA (FCBGA), FlipStack CSP
