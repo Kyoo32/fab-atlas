@@ -50,15 +50,18 @@ class Answer:
     unknown_citations: list[str]  # 검색된 청크에 없는 인용 — 있으면 지어낸 인용이에요
 
 
-def answer(question: str, hits: list[Hit]) -> Answer:
+def complete(messages: list[dict]) -> str:
+    """고정한 모델 스냅샷, 온도 0으로 한 번 호출해요. 답변과 질의 번역이 같이 써요."""
     from openai import OpenAI
 
     _load_dotenv()
+    resp = OpenAI().chat.completions.create(model=model_name(), messages=messages, temperature=0)
+    return (resp.choices[0].message.content or "").strip()
+
+
+def answer(question: str, hits: list[Hit]) -> Answer:
     model = model_name()
-    resp = OpenAI().chat.completions.create(
-        model=model, messages=build_messages(question, hits), temperature=0,
-    )
-    text = (resp.choices[0].message.content or "").strip()
+    text = complete(build_messages(question, hits))
     cited = list(dict.fromkeys(CITATION.findall(text)))
     known = {h.chunk.chunk_id for h in hits}
     return Answer(

@@ -1,6 +1,7 @@
-"""답변 생성 프롬프트. 검색된 청크만 근거로 쓰게 하고, 근거가 없으면 거절하게 해요.
+"""LLM 프롬프트 모음.
 
-아직 LLM에 연결하지 않았어요(검색만 모드). `ask --show-prompt`로 보낼 내용을 미리 볼 수 있어요.
+- 답변 생성: 검색된 청크만 근거로 쓰게 하고, 근거가 없으면 거절하게 해요. `ask --show-prompt`로 미리 볼 수 있어요.
+- 질의 번역: BM25 경로에서만 써요(D-011). 한국어 질문 → 영어 검색 질의.
 """
 
 from __future__ import annotations
@@ -33,4 +34,19 @@ def build_messages(question: str, hits: list[Hit]) -> list[dict]:
     return [
         {"role": "system", "content": SYSTEM},
         {"role": "user", "content": USER.format(question=question, context=format_context(hits))},
+    ]
+
+
+# --- 질의 번역 (BM25 전용, D-011) ---
+
+TRANSLATE_SYSTEM = """당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
+규칙:
+1. 반도체 공정 용어는 업계 표준 영어 용어로 옮겨요.
+2. 따옴표나 설명 없이 영어 질의 한 줄만 출력해요."""
+
+
+def build_translate_messages(question: str) -> list[dict]:
+    return [
+        {"role": "system", "content": TRANSLATE_SYSTEM},
+        {"role": "user", "content": question},
     ]

@@ -24,3 +24,6 @@ data/index/
 
 # 비밀 값 (API 키)
 .env
+
+# 실행 로그 (질의 번역 등)
+logs/
