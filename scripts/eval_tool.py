@@ -128,6 +128,9 @@ def cmd_draft(args) -> None:
     targets = [docs[args.doc]] if args.doc else [d for d in docs.values() if d.process == args.process]
     if not targets:
         sys.exit("문서를 찾지 못했어요.")
+    # 평가셋에 이미 있는 근거와 겹치는 구절은 건너뛰어요.
+    taken = [(e["doc_id"], e["char_start"], e["char_end"]) for it in load_items() for e in it.get("evidence", [])]
+    overlaps = lambda doc_id, s, e: any(d == doc_id and s < te and ts < e for d, ts, te in taken)
     # 무관 섹션과 아주 짧은 섹션은 빼고, 인과 표현이 있는 2~3문장 구절을 우선해요.
     cands = []
     for d in targets:
@@ -138,7 +141,7 @@ def cmd_draft(args) -> None:
             if len(window) < 2 or window[0][0] in off or any(w[0] != window[0][0] for w in window):
                 continue
             text = " ".join(w[3] for w in window)
-            if len(text.split()) < 35:
+            if len(text.split()) < 35 or overlaps(d.doc_id, window[0][1], window[-1][2]):
                 continue
             cands.append((bool(CAUSAL_CUES.search(text)), d, window))
     # 인과 표현이 있는 구절을 앞에, 역사·어원 같은 섹션은 뒤로 보내요.
