@@ -16,6 +16,7 @@ FabAtlas 코퍼스 폴더예요.
 | --- | --- |
 | `sources.csv` | 코퍼스 출처 대장 |
 | `raw/{id}.txt` | 위키백과 본문 평문. `scripts/fetch_corpus.py`가 만들어요. |
+| `eval/qa_v1.jsonl` | 평가셋. 질문·정답은 MIT, 근거 발췌는 CC BY-SA 4.0 ([eval/README.md](eval/README.md)) |
 
 ## 다시 받기
 
