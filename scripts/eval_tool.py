@@ -29,7 +29,8 @@ PROCESSES = ["웨이퍼 제조", "산화", "포토", "식각", "증착·이온�
 TYPES = ["일반", "용어변형", "답없음"]
 TARGET = {"일반": 36, "용어변형": 9, "답없음": 5}
 EDS_GENERAL = 3          # EDS는 문서가 얇아서 일반 문항을 3개로 고정해요
-DOC_WORD_CAP = 3000      # 배분 계산에서 문서 하나는 최대 3,000단어로 세요
+DOC_WORD_CAP = 3000      # 배분 계산에서 문서 하나는 최대 3,000단어로 세요 (D-012)
+MIN_PER_PROCESS = 3      # 공정마다 일반 문항 최소 3개 (D-013)
 MIN_CAUSAL = 8           # 여러 문장에 걸친 인과 관계 질문 최소 개수
 VARIANT_GROUPS = {"EDS": 3, "CMP": 3, "감광액": 3}
 # 원문 베낌 의심: 질문 속 영어 단어가 근거에 그대로 있는 비율이 크면 표시해요.
@@ -81,22 +82,25 @@ def append(item: dict) -> None:
 
 
 def general_targets(docs: dict[str, Document]) -> dict[str, int]:
-    """일반 36문항을 공정별 문서 단어 수에 비례해 나눠요. EDS는 3개로 고정하고 나머지를 최대 나머지법으로 배분해요.
+    """일반 36문항 배분(D-013). 모든 공정에 MIN_PER_PROCESS개씩 먼저 주고, 남은 문항을 단어 수에 비례해 나눠요.
 
-    문서 하나의 단어 수는 DOC_WORD_CAP까지만 세요. 긴 문서 하나(EUV lithography, 10,550단어)가 배분을 끌고 가지 않게 하려는 거예요.
+    - EDS는 문서가 얇아서 EDS_GENERAL개로 고정하고 추가 배분에서 빼요.
+    - 문서 하나의 단어 수는 DOC_WORD_CAP까지만 세요. 긴 문서 하나(EUV lithography, 10,550단어)가 배분을 끌고 가지 않게 하려는 거예요(D-012).
+    - 소수점은 나머지가 큰 공정부터 하나씩 올려요(최대 나머지법).
     """
     words = Counter()
     for d in docs.values():
         words[d.process] += min(sum(len(s.text.split()) for s in d.sections), DOC_WORD_CAP)
-    rest = TARGET["일반"] - EDS_GENERAL
+    alloc = {p: MIN_PER_PROCESS for p in PROCESSES}
+    alloc["EDS"] = EDS_GENERAL
     others = [p for p in PROCESSES if p != "EDS"]
+    rest = TARGET["일반"] - sum(alloc.values())
     total = sum(words[p] for p in others)
     exact = {p: rest * words[p] / total for p in others}
-    alloc = {p: int(exact[p]) for p in others}
-    for p in sorted(others, key=lambda p: exact[p] - alloc[p], reverse=True)[: rest - sum(alloc.values())]:
-        alloc[p] += 1
-    alloc["EDS"] = EDS_GENERAL
-    return {p: alloc[p] for p in PROCESSES}
+    extra = {p: int(exact[p]) for p in others}
+    for p in sorted(others, key=lambda p: exact[p] - extra[p], reverse=True)[: rest - sum(extra.values())]:
+        extra[p] += 1
+    return {p: alloc[p] + extra.get(p, 0) for p in PROCESSES}
 
 
 # ---------- find ----------
@@ -239,7 +243,7 @@ def cmd_check(args) -> None:
         print(f"  {t}: {by_type[t]}/{TARGET[t]}" + (f"  부족 {TARGET[t] - by_type[t]}" if by_type[t] < TARGET[t] else ""))
     gt = general_targets(docs)
     gen = Counter(i.get("process") for i in items if i.get("type") == "일반")
-    print(f"\n일반 문항 공정별 (현재/목표, 목표는 문서 단어 수 비례 · 문서당 {DOC_WORD_CAP:,}단어 상한 · EDS 3 고정)")
+    print(f"\n일반 문항 공정별 (현재/목표, 목표는 공정별 기본 {MIN_PER_PROCESS} + 단어 수 비례 · 문서당 {DOC_WORD_CAP:,}단어 상한 · EDS {EDS_GENERAL} 고정)")
     for p in PROCESSES:
         print(f"  {p}: {gen[p]}/{gt[p]}" + (f"  부족 {gt[p] - gen[p]}" if gen[p] < gt[p] else ""))
     lv = Counter(i.get("level") for i in items if i.get("type") != "답없음")
