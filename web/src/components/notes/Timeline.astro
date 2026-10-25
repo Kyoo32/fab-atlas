@@ -61,7 +61,9 @@ const fmtRange = (start: Date, end?: Date) => {
 </script>
 
 <style>
-	.timeline-controls { display: flex; gap: 0.5rem; }
+	/* Starlight 본문 스타일이 형제 요소에 넣는 위쪽 여백(1rem)을 버튼에서 빼요. 안 빼면 두 번째 버튼만 밀려서 높이가 달라 보여요. */
+	.timeline-controls { display: flex; gap: 0.5rem; align-items: center; }
+	.timeline-controls > button { margin: 0; white-space: nowrap; }
 	.timeline-controls button {
 		font: inherit; font-size: var(--sl-text-sm); cursor: pointer;
 		padding: 0.2rem 0.75rem; border-radius: 999px;
