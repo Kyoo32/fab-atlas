@@ -40,16 +40,24 @@ def build_messages(question: str, hits: list[Hit]) -> list[dict]:
 
 # --- 질의 번역 (BM25 전용, D-011) ---
 
-# v1: 규칙 두 줄(2026-10-20). v2: 표준 용어 매핑 추가(2026-10-25, D-016).
-TRANSLATE_PROMPT_VERSION = "v2"
-
-TRANSLATE_SYSTEM = f"""당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
+# 번역 프롬프트 버전. 결과를 다시 만들 수 있게 둘 다 남겨요.
+# v1: 규칙 두 줄(2026-10-20, D-011) — 사용 중
+# v2: v1 + 표준 용어 매핑(2026-10-25, D-016). 효과가 흔들림 안이라 채택하지 않음(D-017)
+TRANSLATE_PROMPTS = {
+    "v1": """당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
+규칙:
+1. 반도체 공정 용어는 업계 표준 영어 용어로 옮겨요.
+2. 따옴표나 설명 없이 영어 질의 한 줄만 출력해요.""",
+    "v2": f"""당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
 규칙:
 1. 반도체 공정 용어는 업계 표준 영어 용어로 옮겨요. 아래 매핑에 있는 표현은 매핑의 영어 용어를 써요.
 2. 따옴표나 설명 없이 영어 질의 한 줄만 출력해요.
 
 표준 용어 매핑:
-{term_map_text()}"""
+{term_map_text()}""",
+}
+TRANSLATE_PROMPT_VERSION = "v1"
+TRANSLATE_SYSTEM = TRANSLATE_PROMPTS[TRANSLATE_PROMPT_VERSION]
 
 
 def build_translate_messages(question: str) -> list[dict]:
