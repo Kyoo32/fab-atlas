@@ -65,8 +65,9 @@ def evidence(doc: Document, start: int, end: int) -> dict:
             "quote": doc.text[start:min(end, start + QUOTE_LEN)]}
 
 
-def load_items(path: Path = EVAL_PATH) -> list[dict]:
+def load_items(path: Path | None = None) -> list[dict]:
     """한 줄에 한 문항(JSONL)이 기본이지만, 에디터가 여러 줄로 펼쳐 저장한 형식도 읽어요."""
+    path = path or EVAL_PATH
     if not path.exists():
         return []
     text = path.read_text(encoding="utf-8")
@@ -84,7 +85,8 @@ def load_items(path: Path = EVAL_PATH) -> list[dict]:
         items.append(item)
 
 
-def is_jsonl(path: Path = EVAL_PATH) -> bool:
+def is_jsonl(path: Path | None = None) -> bool:
+    path = path or EVAL_PATH
     lines = [l for l in path.read_text(encoding="utf-8").splitlines() if l.strip()] if path.exists() else []
     try:
         return all(isinstance(json.loads(l), dict) for l in lines)
@@ -92,8 +94,9 @@ def is_jsonl(path: Path = EVAL_PATH) -> bool:
         return False
 
 
-def write_items(items: list[dict], path: Path = EVAL_PATH) -> None:
+def write_items(items: list[dict], path: Path | None = None) -> None:
     """한 줄에 한 문항으로 다시 써요. 필드 순서도 FIELDS대로 맞춰요."""
+    path = path or EVAL_PATH
     with path.open("w", encoding="utf-8") as f:
         for it in items:
             f.write(json.dumps({k: it.get(k, "" if k != "evidence" else []) for k in FIELDS}, ensure_ascii=False) + "\n")
@@ -272,8 +275,11 @@ def cmd_check(args) -> None:
         if it.get("type") != "답없음" and not it.get("evidence"):
             problems.append(f"{iid}: 근거가 없어요")
 
-    # 2) 개수와 목표
+    # 2) 개수와 목표 (목표는 qa_v1에만 적용해요)
     by_type = Counter(i.get("type") for i in items)
+    if EVAL_PATH.name != "qa_v1.jsonl":
+        print("type별: " + ", ".join(f"{t} {by_type[t]}" for t in TYPES) + "  (목표 개수는 qa_v1에만 적용)")
+        return _check_tail(items, docs, problems)
     print("type별 (현재/목표)")
     for t in TYPES:
         print(f"  {t}: {by_type[t]}/{TARGET[t]}" + (f"  부족 {TARGET[t] - by_type[t]}" if by_type[t] < TARGET[t] else ""))
@@ -300,6 +306,10 @@ def cmd_check(args) -> None:
         if len(spans) > 1:
             problems.append(f"variant_group '{g}': 문항끼리 근거가 달라요")
 
+    _check_tail(items, docs, problems)
+
+
+def _check_tail(items, docs, problems) -> None:
     # 4) 질문과 근거의 영어 단어 겹침
     print("\n질문 속 영어 단어·약어가 근거에 그대로 있는지")
     flagged = 0
@@ -337,7 +347,9 @@ def cmd_format(args) -> None:
 
 
 def main() -> None:
+    global EVAL_PATH
     ap = argparse.ArgumentParser(description="FabAtlas 평가셋 도우미")
+    ap.add_argument("--file", type=Path, default=EVAL_PATH, help="평가셋 파일 (기본: data/eval/qa_v1.jsonl)")
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("find", help="data/raw 단순 문자열 검색")
     p.add_argument("keyword")
@@ -356,6 +368,7 @@ def main() -> None:
     p = sub.add_parser("check", help="평가셋 검사와 요약")
     p.set_defaults(func=cmd_check)
     args = ap.parse_args()
+    EVAL_PATH = args.file.resolve()
     args.func(args)
 
 

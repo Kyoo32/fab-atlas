@@ -2,6 +2,8 @@
 
 `qa_v1.jsonl`은 2주차 검색 비교용 평가셋이에요. 한 줄에 한 문항이에요. 만들고 검사할 때는 `scripts/eval_tool.py`를 써요. 에디터가 여러 줄로 펼쳐 저장해도 `check`는 읽을 수 있고, 커밋 전에 `format`으로 한 줄 형식으로 정리해요.
 
+`qa_blind.jsonl`은 편향 점검용 세트예요. 질문은 원문을 보지 않고 썼고, 정답과 근거는 질문을 다 쓴 뒤에 붙였어요. id는 B001~예요. 검사할 때는 `eval_tool.py --file data/eval/qa_blind.jsonl check`를 써요.
+
 ## 라이선스
 
 - 질문(`question`)과 정답(`answer`), 그 밖의 필드는 이 저장소의 저작물이라 저장소 코드와 같은 MIT를 따라요.

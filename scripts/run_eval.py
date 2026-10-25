@@ -1,15 +1,17 @@
 """9조합 검색 실험: 청킹 3종 × 검색 3종(dense / 번역+BM25 / 하이브리드 RRF), Recall@5.
 
-    uv run python scripts/run_eval.py
+    uv run python scripts/run_eval.py                                  (기본: data/eval/qa_v1.jsonl)
+    uv run python scripts/run_eval.py --eval data/eval/qa_blind.jsonl
 
 - 정답 판정: 상위 5개 청크 중 하나라도 정답 근거(doc_id + 원문 글자 범위)와 겹치면 맞힘이에요.
 - 답없음 문항은 근거가 없어 Recall에서 빼요.
 - 질문 임베딩과 번역은 질문마다 한 번만 만들어 9조합이 같은 값을 써요.
-- 결과는 data/eval/results/{날짜}_qa_v1.json에 문항별로 남겨요(실패 분석용).
+- 결과는 data/eval/results/{날짜}_{평가셋 이름}.json에 문항별로 남겨요(실패 분석용).
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import statistics as st
 import sys
@@ -42,7 +44,11 @@ def hit(chunk, evidence: list[dict]) -> bool:
 
 
 def main() -> None:
-    items = [it for it in load_items() if it["type"] != "답없음"]
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--eval", type=Path, default=ROOT / "data" / "eval" / "qa_v1.jsonl")
+    args = ap.parse_args()
+    eval_path = args.eval.resolve()
+    items = [it for it in load_items(eval_path) if it["type"] != "답없음"]
     print(f"문항 {len(items)}개 (답없음 제외)")
 
     model = load_model("cpu")
@@ -86,9 +92,9 @@ def main() -> None:
         return out
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / f"{date.today().isoformat()}_qa_v1.json"
+    out = OUT_DIR / f"{date.today().isoformat()}_{eval_path.stem}.json"
     report = {
-        "date": date.today().isoformat(), "eval_set": "data/eval/qa_v1.jsonl", "n_items": len(items), "k": K,
+        "date": date.today().isoformat(), "eval_set": str(eval_path.relative_to(ROOT)), "n_items": len(items), "k": K,
         "config": {"embedding": f"{MODEL_ID}@{MODEL_REVISION}", "translate_model": llm.model_name(), "rrf_k": RRF_K},
         "chunkers": chunk_stats,
         "recall_at_5": {c: round(v, 3) for c, v in results.items()},
