@@ -245,6 +245,7 @@ uv run python scripts/run_eval.py --eval data/eval/qa_blind.jsonl --tag termmap
 - [D-015](/fab-atlas/notes/decisions/#d-015--본-평가-보고-두-평가셋을-나란히-싣는다): 본 평가는 qa_v1(근거를 보고 쓴 질문 기준)과 qa_blind를 나란히 보고해요.
 - [D-016](/fab-atlas/notes/decisions/#d-016--번역-프롬프트-v2-표준-용어-매핑): 번역 프롬프트에 표준 용어 매핑을 넣어요. 매핑 출처는 8대 공정·문서 제목·용어사전으로 제한해요. → D-017으로 대체
 - [D-017](/fab-atlas/notes/decisions/#d-017--번역-프롬프트는-v1로-되돌린다): 매핑 문항만 봐도 개선이 없어 번역 프롬프트를 v1로 되돌려요.
+- [D-018](/fab-atlas/notes/decisions/#d-018--청킹-기본값을-w500o100으로-바꾼다): blind 세트에서 세 검색기 모두 가장 높았던 w500o100을 청킹 기본값으로 둬요(D-007 대체).
 
 ## 5. 막힌 점과 해결
 
@@ -271,6 +272,7 @@ uv run python scripts/run_eval.py --eval data/eval/qa_blind.jsonl --tag termmap
 
 ## 8. 다음 할 일
 
+- 기본 검색기 결정: 하이브리드를 기본 후보로, 실패 사례 분석 뒤 정한다
 - 실패 사례 분석: dense가 놓친 문항(w300o50에서 12개)이 왜 놓쳤는지 보기
 - 번역 흔들림 폭 재기: 같은 프롬프트로 여러 번 번역해 Recall@5가 얼마나 움직이는지 (D-017 다시 볼 조건). 온도 0에서도 B018 번역이 바뀐 사례가 있어요
 - 흩어진 단서를 모아 답하는 문항(B007, B030) 처리 방법
