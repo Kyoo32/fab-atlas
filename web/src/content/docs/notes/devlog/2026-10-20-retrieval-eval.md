@@ -23,6 +23,10 @@ sidebar:
 
 ## 2. 새로 만난 용어
 
+- [Recall@5](/fab-atlas/notes/glossary/#recall5)
+- [하이브리드 검색 · RRF](/fab-atlas/notes/glossary/#하이브리드-검색--rrf-reciprocal-rank-fusion)
+- [평가셋 편향 · blind 질문](/fab-atlas/notes/glossary/#평가셋-편향--blind-질문)
+
 ## 3. 과정
 
 ### Day 1 (10/20) 질의 번역 단계
