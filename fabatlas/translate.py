@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 
 from fabatlas import llm
 from fabatlas.corpus import ROOT
-from fabatlas.prompts import build_translate_messages
+from fabatlas.prompts import TRANSLATE_PROMPT_VERSION, build_translate_messages
 
 LOG_PATH = ROOT / "logs" / "translate.jsonl"
 
@@ -35,6 +35,7 @@ def translate_query(question: str, log: bool = True) -> Translation:
     if log:
         LOG_PATH.parent.mkdir(exist_ok=True)
         with LOG_PATH.open("a", encoding="utf-8") as f:
-            row = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"), **asdict(tr)}
+            row = {"time": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                   "prompt_version": TRANSLATE_PROMPT_VERSION, **asdict(tr)}
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
     return tr

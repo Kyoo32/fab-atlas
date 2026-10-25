@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from fabatlas.search import Hit
+from fabatlas.terms import term_map_text
 
 NO_ANSWER = "코퍼스에서 근거를 찾을 수 없어요."
 
@@ -39,10 +40,16 @@ def build_messages(question: str, hits: list[Hit]) -> list[dict]:
 
 # --- 질의 번역 (BM25 전용, D-011) ---
 
-TRANSLATE_SYSTEM = """당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
+# v1: 규칙 두 줄(2026-10-20). v2: 표준 용어 매핑 추가(2026-10-25, D-016).
+TRANSLATE_PROMPT_VERSION = "v2"
+
+TRANSLATE_SYSTEM = f"""당신은 반도체 공정에 관한 한국어 질문을 영어 검색 질의로 번역해요.
 규칙:
-1. 반도체 공정 용어는 업계 표준 영어 용어로 옮겨요.
-2. 따옴표나 설명 없이 영어 질의 한 줄만 출력해요."""
+1. 반도체 공정 용어는 업계 표준 영어 용어로 옮겨요. 아래 매핑에 있는 표현은 매핑의 영어 용어를 써요.
+2. 따옴표나 설명 없이 영어 질의 한 줄만 출력해요.
+
+표준 용어 매핑:
+{term_map_text()}"""
 
 
 def build_translate_messages(question: str) -> list[dict]:

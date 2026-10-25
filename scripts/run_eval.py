@@ -30,6 +30,7 @@ from fabatlas import llm  # noqa: E402
 from fabatlas.bm25 import BM25Index, tokenize  # noqa: E402
 from fabatlas.embedding import MODEL_ID, MODEL_REVISION, build_index, embed_texts, load_model  # noqa: E402
 from fabatlas.hybrid import RRF_K, rrf  # noqa: E402
+from fabatlas.prompts import TRANSLATE_PROMPT_VERSION  # noqa: E402
 from fabatlas.translate import translate_query  # noqa: E402
 
 CHUNKERS = ["section", "w300o50", "w500o100"]
@@ -46,6 +47,7 @@ def hit(chunk, evidence: list[dict]) -> bool:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--eval", type=Path, default=ROOT / "data" / "eval" / "qa_v1.jsonl")
+    ap.add_argument("--tag", default="", help="결과 파일 이름 끝에 붙여 이전 결과를 덮어쓰지 않게 해요")
     args = ap.parse_args()
     eval_path = args.eval.resolve()
     items = [it for it in load_items(eval_path) if it["type"] != "답없음"]
@@ -92,10 +94,11 @@ def main() -> None:
         return out
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / f"{date.today().isoformat()}_{eval_path.stem}.json"
+    out = OUT_DIR / f"{date.today().isoformat()}_{eval_path.stem}{'_' + args.tag if args.tag else ''}.json"
     report = {
         "date": date.today().isoformat(), "eval_set": str(eval_path.relative_to(ROOT)), "n_items": len(items), "k": K,
-        "config": {"embedding": f"{MODEL_ID}@{MODEL_REVISION}", "translate_model": llm.model_name(), "rrf_k": RRF_K},
+        "config": {"embedding": f"{MODEL_ID}@{MODEL_REVISION}", "translate_model": llm.model_name(),
+                   "translate_prompt": TRANSLATE_PROMPT_VERSION, "rrf_k": RRF_K},
         "chunkers": chunk_stats,
         "recall_at_5": {c: round(v, 3) for c, v in results.items()},
         "by_type": breakdown("type"), "by_level": breakdown("level"), "by_process": breakdown("process"),
