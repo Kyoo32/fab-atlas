@@ -1,6 +1,6 @@
 # 평가셋
 
-`qa_v1.jsonl`은 2주차 검색 비교용 평가셋이에요. 한 줄에 한 문항이에요. 만들고 검사할 때는 `scripts/eval_tool.py`를 써요.
+`qa_v1.jsonl`은 2주차 검색 비교용 평가셋이에요. 한 줄에 한 문항이에요. 만들고 검사할 때는 `scripts/eval_tool.py`를 써요. 에디터가 여러 줄로 펼쳐 저장해도 `check`는 읽을 수 있고, 커밋 전에 `format`으로 한 줄 형식으로 정리해요.
 
 ## 라이선스
 
@@ -19,5 +19,6 @@
 | `answer` | 정답 핵심 한두 문장 (한국어) |
 | `evidence` | `[{doc_id, char_start, char_end, quote}]`. 위치는 `data/raw/{doc_id}.txt` 기준, `quote`는 원문 앞 80자. 답없음은 빈 배열 |
 | `variant_group` | 용어변형 묶음 이름. 같은 묶음은 같은 근거를 공유해요 |
-| `drafted_by` | kyoo / claude |
+| `drafted_by` | 초안을 쓴 사람: kyoo / claude |
+| `reviewed_by` | 검수한 사람. 모든 문항은 kyoo가 검수해요(비어 있으면 검수 전) |
 | `note` | 자유 메모. 여러 문장에 걸친 인과 관계 질문은 "인과"를 넣어요 |

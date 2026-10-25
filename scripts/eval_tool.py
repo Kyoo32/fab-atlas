@@ -5,6 +5,7 @@
     uv run python scripts/eval_tool.py add                          (대화형)
     uv run python scripts/eval_tool.py add --json '{...}'           (초안 한 줄 추가)
     uv run python scripts/eval_tool.py check
+    uv run python scripts/eval_tool.py format                       (커밋 전 JSONL로 정리)
 
 원칙: 근거는 테스트 대상 검색기(bge-m3, BM25)가 아니라 단순 문자열 검색과 직접 읽기로 찾아요.
 그래서 이 도구는 fabatlas.search, fabatlas.bm25, 임베딩을 전혀 쓰지 않아요.
@@ -38,7 +39,7 @@ COPY_MIN_TOKENS = 3      # 근거와 겹치는 영어 단어가 3개 이상이�
 COPY_MIN_RATIO = 0.25    # 겹치는 영어 글자 수가 질문 글자 수(공백 제외)의 25% 이상
 CAUSAL_CUES = re.compile(r"\b(because|due to|therefore|thus|so that|as a result|results? in|leads? to|caus\w+|allow\w*|enabl\w+|prevent\w*)\b", re.I)
 LOW_PRIORITY = re.compile(r"History|Etymology|Expense|economic|Other names", re.I)
-FIELDS = ["id", "question", "type", "process", "level", "answer", "evidence", "variant_group", "drafted_by", "note"]
+FIELDS = ["id", "question", "type", "process", "level", "answer", "evidence", "variant_group", "drafted_by", "reviewed_by", "note"]
 
 
 # ---------- 공통 ----------
@@ -65,9 +66,37 @@ def evidence(doc: Document, start: int, end: int) -> dict:
 
 
 def load_items(path: Path = EVAL_PATH) -> list[dict]:
+    """한 줄에 한 문항(JSONL)이 기본이지만, 에디터가 여러 줄로 펼쳐 저장한 형식도 읽어요."""
     if not path.exists():
         return []
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    text = path.read_text(encoding="utf-8")
+    decoder, pos, items = json.JSONDecoder(), 0, []
+    while True:
+        while pos < len(text) and text[pos].isspace():
+            pos += 1
+        if pos >= len(text):
+            return items
+        try:
+            item, pos = decoder.raw_decode(text, pos)
+        except json.JSONDecodeError as e:
+            line = text.count("\n", 0, e.pos) + 1
+            sys.exit(f"{path.name} {line}번째 줄을 읽지 못했어요: {e.msg}")
+        items.append(item)
+
+
+def is_jsonl(path: Path = EVAL_PATH) -> bool:
+    lines = [l for l in path.read_text(encoding="utf-8").splitlines() if l.strip()] if path.exists() else []
+    try:
+        return all(isinstance(json.loads(l), dict) for l in lines)
+    except json.JSONDecodeError:
+        return False
+
+
+def write_items(items: list[dict], path: Path = EVAL_PATH) -> None:
+    """한 줄에 한 문항으로 다시 써요. 필드 순서도 FIELDS대로 맞춰요."""
+    with path.open("w", encoding="utf-8") as f:
+        for it in items:
+            f.write(json.dumps({k: it.get(k, "" if k != "evidence" else []) for k in FIELDS}, ensure_ascii=False) + "\n")
 
 
 def next_id(items: list[dict]) -> str:
@@ -162,7 +191,7 @@ def cmd_draft(args) -> None:
     for causal, d, window in picked:
         s, e = window[0][1], window[-1][2]
         skeleton = {"question": "", "type": "일반", "process": d.process, "level": d.level, "answer": "",
-                    "evidence": [evidence(d, s, e)], "variant_group": "", "drafted_by": "claude",
+                    "evidence": [evidence(d, s, e)], "variant_group": "", "drafted_by": "claude", "reviewed_by": "",
                     "note": f"draft: {d.title} — {window[0][0]}" + (" / 인과" if causal else "")}
         print(f"--- {d.doc_id} {d.title} | {window[0][0]} | {s}–{e} | 인과 표현 {'있음' if causal else '없음'}")
         print(d.text[s:e])
@@ -193,6 +222,7 @@ def cmd_add(args) -> None:
             print(f"  quote: {item['evidence'][-1]['quote']}")
         item["variant_group"] = ask("variant_group (용어변형만)")
         item["drafted_by"] = ask("drafted_by (kyoo/claude)", "kyoo")
+        item["reviewed_by"] = ask("reviewed_by (검수했으면 kyoo)", "kyoo" if item["drafted_by"] == "kyoo" else "")
         item["note"] = ask("note")
     item["id"] = item.get("id") or next_id(items)
     append(item)
@@ -209,7 +239,10 @@ def cmd_check(args) -> None:
     docs = docs_by_id()
     items = load_items()
     problems: list[str] = []
-    print(f"평가셋: {EVAL_PATH.relative_to(ROOT)} — {len(items)}문항\n")
+    print(f"평가셋: {EVAL_PATH.relative_to(ROOT)} — {len(items)}문항")
+    if items and not is_jsonl():
+        print("※ 여러 줄로 펼친 형식이에요. 커밋 전에 `format`으로 한 줄 형식으로 정리해요.")
+    print()
 
     # 1) 형식과 위치
     ids = Counter(i.get("id") for i in items)
@@ -284,13 +317,23 @@ def cmd_check(args) -> None:
         print(f"  {it['id']}: 질문 영어 {toks} → 근거에 있음 {hit} (글자 비율 {ratio:.0%}){mark}")
     print(f"  원문 베낌 의심: {flagged}문항 (기준: 겹치는 영어 단어 {COPY_MIN_TOKENS}개 이상 또는 글자 비율 {COPY_MIN_RATIO:.0%} 이상)")
 
-    # 5) 초안 남은 수
-    claude_left = sum(1 for i in items if i.get("drafted_by") == "claude")
-    print(f"\ndrafted_by=claude로 남은 문항: {claude_left} (목표 0)")
+    # 5) 작성자와 검수 상태: 초안은 claude가 써도 되지만, 모든 문항은 내가 검수해야 해요.
+    by_author = Counter(i.get("drafted_by") for i in items)
+    unreviewed = [i["id"] for i in items if not i.get("reviewed_by")]
+    print(f"\n작성: " + ", ".join(f"{k} {v}" for k, v in sorted(by_author.items())))
+    print(f"검수 안 된 문항(reviewed_by 비어 있음): {len(unreviewed)} (목표 0)" + (f" — {', '.join(unreviewed[:10])}{' …' if len(unreviewed) > 10 else ''}" if unreviewed else ""))
 
     print(f"\n문제: {len(problems)}건")
     for p in problems:
         print(f"  - {p}")
+
+
+# ---------- format ----------
+
+def cmd_format(args) -> None:
+    items = load_items()
+    write_items(items)
+    print(f"{len(items)}문항을 한 줄에 한 문항(JSONL) 형식으로 다시 썼어요.")
 
 
 def main() -> None:
@@ -308,6 +351,8 @@ def main() -> None:
     p = sub.add_parser("add", help="한 문항 추가 (대화형 또는 --json)")
     p.add_argument("--json")
     p.set_defaults(func=cmd_add)
+    p = sub.add_parser("format", help="한 줄에 한 문항(JSONL) 형식으로 정리")
+    p.set_defaults(func=cmd_format)
     p = sub.add_parser("check", help="평가셋 검사와 요약")
     p.set_defaults(func=cmd_check)
     args = ap.parse_args()
