@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-25",
   "phases": [
     {
       "label": "1주차",
@@ -11,8 +11,8 @@
     {
       "label": "2주차",
       "items": [
-        { "text": "평가셋 50문항", "done": false },
-        { "text": "9조합 실험", "done": false }
+        { "text": "평가셋 50문항", "done": true },
+        { "text": "9조합 실험", "done": true }
       ]
     },
     {
