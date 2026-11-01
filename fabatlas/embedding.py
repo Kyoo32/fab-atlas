@@ -27,7 +27,7 @@ MODEL_FILES = [
     "1_Pooling/config.json", "pytorch_model.bin",
     "tokenizer.json", "tokenizer_config.json", "special_tokens_map.json", "sentencepiece.bpe.model",
 ]
-MAX_SEQ_LENGTH = 1024  # 300단어 청크는 대략 400~500토큰이라 충분해요.
+MAX_SEQ_LENGTH = 1024  # w500o100 청크는 최대 966토큰(평균 739)이라 잘리지 않아요. section은 6개가 1024를 넘어 뒷부분이 잘려요.
 INDEX_DIR = DATA / "index"
 
 

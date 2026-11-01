@@ -78,7 +78,7 @@ CHUNKERS: dict[str, Callable[[Document], list[Chunk]]] = {
     "w300o50": lambda d: chunk_fixed_words(d, 300, 50),
     "w500o100": lambda d: chunk_fixed_words(d, 500, 100),
 }
-DEFAULT_CHUNKER = "w300o50"  # D-007
+DEFAULT_CHUNKER = "w500o100"  # D-018 (D-007의 w300o50을 대체)
 
 
 def chunk_corpus(docs: list[Document], name: str = DEFAULT_CHUNKER) -> list[Chunk]:

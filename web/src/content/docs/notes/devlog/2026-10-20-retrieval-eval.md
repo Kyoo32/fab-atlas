@@ -23,6 +23,7 @@ sidebar:
 - [x] dense 번역 있음/없음 비교 (Day 4)
 - [x] 하이브리드 변형 비교 (Day 5)
 - [x] D-020 결정: dense에 번역을 넣는 방식 (Day 5)
+- [x] D-018·D-020 기본값을 코드에 반영 (Day 5)
 
 ## 2. 새로 만난 용어
 
@@ -312,6 +313,16 @@ uv run python scripts/hybrid_variants.py
 - (d) dense(번역) 단독은 blind section에서 가장 높았지만(0.667), qa_v1 w500o100에서는 3문항을 잃었어요.
 - 이 비교도 qa_v1과 blind로 설정을 고르는 셈이라, 어느 쪽을 고르든 새 test 질문으로 확인해야 해요(D-019 다시 볼 조건). 차이는 대부분 1\~3문항이에요(qa_v1 1문항 = 2.2%p, blind 1문항 = 4.2%p).
 - 결정은 D-020으로 남겼어요.
+
+#### 결정을 코드에 반영
+
+D-018(청킹 w500o100)과 D-020(dense 한국어 + dense 번역 + BM25 RRF)을 기본값으로 반영했어요.
+
+- `fabatlas/chunking.py`: `DEFAULT_CHUNKER = "w500o100"`
+- `fabatlas/hybrid.py`: `hybrid_search()` — 번역 한 번으로 dense(번역)와 BM25에 같이 써요. 검색기별 순위도 돌려줘요.
+- `fabatlas/ask.py`: `--retriever auto`(기본)는 키가 있으면 하이브리드, 없으면 dense(한국어)만 써요. 결과에 검색기별 순위를 함께 보여 줘요.
+- 확인: 저장된 v1 번역을 넣은 `hybrid_search()`가 w500o100에서 qa_v1 0.978, blind 0.833으로 Day 5 (c)와 같았어요.
+- 토큰 길이를 재 보니 w500o100 청크는 최대 966토큰(평균 739)이라 임베딩 입력 한도 1,024 안에 들어가요. section 청크는 6개가 1,024를 넘어 뒷부분이 잘린 채 임베딩됐어요. 지금까지의 section dense 결과에는 이 영향이 들어 있어요.
 
 ## 4. 결정과 이유
 
