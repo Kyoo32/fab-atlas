@@ -16,6 +16,7 @@ from pathlib import Path
 
 import numpy as np
 
+from fabatlas import config
 from fabatlas.chunking import Chunk, chunk_corpus
 from fabatlas.corpus import DATA, load_corpus
 
@@ -37,7 +38,7 @@ def model_path() -> Path:
     return Path(snapshot_download(MODEL_ID, revision=MODEL_REVISION, allow_patterns=MODEL_FILES))
 
 
-def load_model(device: str = "cpu"):
+def load_model(device: str = config.DEVICE):
     from sentence_transformers import SentenceTransformer
 
     model = SentenceTransformer(str(model_path()), device=device)
@@ -71,7 +72,7 @@ class Index:
     meta: dict
 
 
-def build_index(name: str, device: str = "cpu", model=None, force: bool = False) -> Index:
+def build_index(name: str, device: str = config.DEVICE, model=None, force: bool = False) -> Index:
     """청킹 → 임베딩 → 저장. 같은 청킹·같은 모델이면 저장된 것을 불러와요."""
     chunks = chunk_corpus(load_corpus(), name)
     out = INDEX_DIR / name

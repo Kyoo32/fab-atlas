@@ -34,6 +34,7 @@
 ## 구조 메모
 
 - 쇼케이스: `web/src/pages/` (`/`, `/report/`). 진행 현황은 `web/src/data/progress.json`.
+- 기본 설정(청킹, 검색기, LLM 모델, 타임아웃, 동시 처리 상한)은 `fabatlas/config.py` 한곳에 둬요.
 - 작업노트(Starlight): `web/src/content/docs/notes/`
   - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, dateEnd, summary, tags, hours, sidebar.order)
   - 작업일지는 작업 주제 단위예요. 같은 주제가 이어지면 새 파일 대신 "Day N (날짜)" 소절을 추가하고 `dateEnd`(마지막 작업일)와 `hours`(누적)를 갱신해요.
@@ -57,6 +58,8 @@ uv run scripts/fetch_corpus.py  # sources.csv의 위키백과 문서 → data/ra
 uv run python -m fabatlas.ask "질문"  # 하이브리드 검색(D-020) + 근거 인용 답변 (키는 .env의 OPENAI_API_KEY, 없으면 dense만)
 uv run python scripts/eval_tool.py check  # 평가셋 검사
 uv run python scripts/run_eval.py         # 9조합 Recall@5 → data/eval/results/
+uv run uvicorn fabatlas.server:app --reload  # API 서버 (로컬, POST /ask, GET /health)
+uv run pytest                             # 서버 테스트 (LLM·임베딩 가짜, 네트워크 없음)
 ```
 
 ## 커밋

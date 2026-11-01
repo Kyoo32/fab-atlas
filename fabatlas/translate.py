@@ -27,9 +27,8 @@ class Translation:
     model: str
 
 
-def translate_query(question: str, log: bool = True) -> Translation:
-    t0 = time.perf_counter()
-    query = llm.complete(build_translate_messages(question))
+def _record(question: str, query: str, t0: float, log: bool) -> Translation:
+    """번역 결과를 Translation으로 만들고 로그에 한 줄 남겨요. 동기·비동기 번역이 같이 써요."""
     latency_ms = (time.perf_counter() - t0) * 1000
     tr = Translation(question=question, query=query, latency_ms=round(latency_ms, 1), model=llm.model_name())
     if log:
@@ -39,3 +38,14 @@ def translate_query(question: str, log: bool = True) -> Translation:
                    "prompt_version": TRANSLATE_PROMPT_VERSION, **asdict(tr)}
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
     return tr
+
+
+def translate_query(question: str, log: bool = True) -> Translation:
+    t0 = time.perf_counter()
+    return _record(question, llm.complete(build_translate_messages(question)), t0, log)
+
+
+async def translate_query_async(question: str, log: bool = True) -> Translation:
+    """translate_query()의 비동기 버전(API 서버용)."""
+    t0 = time.perf_counter()
+    return _record(question, await llm.acomplete(build_translate_messages(question)), t0, log)

@@ -13,12 +13,13 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from fabatlas import config
 from fabatlas.bm25 import BM25Index, tokenize
 from fabatlas.embedding import Index, embed_texts
 from fabatlas.search import Hit
 from fabatlas.translate import Translation, translate_query
 
-RRF_K = 60
+RRF_K = config.RRF_K
 
 
 def ranks(scores: np.ndarray) -> np.ndarray:

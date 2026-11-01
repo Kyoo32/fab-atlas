@@ -43,6 +43,21 @@ uv run python -m fabatlas.ask "EUV 노광에서 펠리클은 왜 필요한가요
 
 처음 실행하면 임베딩 모델(BAAI/bge-m3, 약 2.3GB)을 받아요. 기본 검색기는 dense(한국어) + dense(번역) + BM25(번역)를 RRF로 합친 하이브리드이고(D-020), 청킹은 500단어·겹침 100이에요(D-018). 저장소 루트의 `.env`에 `OPENAI_API_KEY`가 있으면 하이브리드 검색과 근거를 인용한 한국어 답변까지, 없으면 dense(한국어) 검색 결과만 보여 줘요.
 
+## API 서버 (로컬)
+
+```bash
+uv run uvicorn fabatlas.server:app --reload
+```
+
+```bash
+curl -s -X POST localhost:8000/ask -H 'Content-Type: application/json' -d '{"question": "이온 주입 뒤에 왜 어닐링을 하나요?"}'
+```
+
+- `POST /ask`: 답변, 인용, 상위 5개 청크(검색기별 순위·RRF 점수), 번역 질의, 단계별 지연(ms)을 돌려줘요. `GET /health`: 준비 상태.
+- 모델과 인덱스는 서버가 뜰 때 한 번만 불러요. LLM 호출은 비동기, 임베딩·검색은 스레드로 돌리고, 동시 처리 상한은 4개예요. 기본값은 `fabatlas/config.py`에 모여 있어요.
+- `OPENAI_API_KEY`가 필요해요(없으면 503). LLM 호출은 30초 타임아웃(504), API 오류는 502로 돌려줘요.
+- 테스트: `uv run pytest` (LLM과 임베딩 모델을 가짜로 바꿔 네트워크 없이 돌아요)
+
 ## 평가 기준
 
 - 스모크 테스트: 동작 확인용. 기대 문서가 검색 top-3 안에 있으면 통과.

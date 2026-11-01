@@ -10,12 +10,14 @@ import os
 import re
 from dataclasses import dataclass
 
+from fabatlas import config
 from fabatlas.corpus import ROOT
 from fabatlas.prompts import build_messages
 from fabatlas.search import Hit
 
-DEFAULT_MODEL = "gpt-4.1-mini-2025-04-14"  # 날짜가 붙은 스냅샷으로 고정해요(재현용)
-CITATION = re.compile(r"\[(S\d{3}§\d+)\]")
+DEFAULT_MODEL = config.LLM_MODEL  # 날짜가 붙은 스냅샷으로 고정해요(재현용)
+CITATION_BRACKET = re.compile(r"\[([^\]]*S\d{3}§\d+[^\]]*)\]")  # [S013§6] 또는 [S013§4, S013§6]
+CITATION_TAG = re.compile(r"S\d{3}§\d+")
 # 지시한 문장 그대로가 아니어도("코퍼스에서 ~에 관한 근거를 찾을 수 없어요") 거절로 봐요.
 REFUSAL = re.compile(r"근거를.{0,20}찾을 수 없")
 
@@ -55,16 +57,35 @@ def complete(messages: list[dict]) -> str:
     from openai import OpenAI
 
     _load_dotenv()
-    resp = OpenAI().chat.completions.create(model=model_name(), messages=messages, temperature=0)
+    resp = OpenAI(timeout=config.LLM_TIMEOUT_S).chat.completions.create(
+        model=model_name(), messages=messages, temperature=0)
     return (resp.choices[0].message.content or "").strip()
 
 
-def answer(question: str, hits: list[Hit]) -> Answer:
-    model = model_name()
-    text = complete(build_messages(question, hits))
-    cited = list(dict.fromkeys(CITATION.findall(text)))
+async def acomplete(messages: list[dict]) -> str:
+    """complete()의 비동기 버전. API 서버에서 이벤트 루프를 막지 않게 await로 불러요."""
+    from openai import AsyncOpenAI
+
+    _load_dotenv()
+    async with AsyncOpenAI(timeout=config.LLM_TIMEOUT_S) as client:
+        resp = await client.chat.completions.create(model=model_name(), messages=messages, temperature=0)
+    return (resp.choices[0].message.content or "").strip()
+
+
+def make_answer(text: str, hits: list[Hit]) -> Answer:
+    """LLM 답변 문장에서 인용과 거절 여부를 뽑아요. answer()와 answer_async()가 같이 써요."""
+    # 괄호 하나에 여러 개를 묶어 쓴 인용도 하나씩 꺼내요.
+    cited = list(dict.fromkeys(t for grp in CITATION_BRACKET.findall(text) for t in CITATION_TAG.findall(grp)))
     known = {h.chunk.chunk_id for h in hits}
     return Answer(
-        text=text, model=model, refused=REFUSAL.search(text) is not None,
+        text=text, model=model_name(), refused=REFUSAL.search(text) is not None,
         cited=cited, unknown_citations=[c for c in cited if c not in known],
     )
+
+
+def answer(question: str, hits: list[Hit]) -> Answer:
+    return make_answer(complete(build_messages(question, hits)), hits)
+
+
+async def answer_async(question: str, hits: list[Hit]) -> Answer:
+    return make_answer(await acomplete(build_messages(question, hits)), hits)

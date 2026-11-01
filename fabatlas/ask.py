@@ -12,9 +12,9 @@ from __future__ import annotations
 import argparse
 import textwrap
 
-from fabatlas import llm
+from fabatlas import config, llm
 from fabatlas.bm25 import BM25Index
-from fabatlas.chunking import CHUNKERS, DEFAULT_CHUNKER
+from fabatlas.chunking import CHUNKERS
 from fabatlas.embedding import build_index, load_model
 from fabatlas.hybrid import hybrid_search
 from fabatlas.prompts import build_messages
@@ -24,25 +24,25 @@ from fabatlas.search import search
 def main() -> None:
     ap = argparse.ArgumentParser(description="FabAtlas 질문")
     ap.add_argument("question")
-    ap.add_argument("-k", type=int, default=5, help="가져올 청크 수")
-    ap.add_argument("--chunker", default=DEFAULT_CHUNKER, choices=sorted(CHUNKERS))
-    ap.add_argument("--retriever", default="auto", choices=["auto", "hybrid", "dense"],
-                    help="auto: 키가 있으면 hybrid, 없으면 dense")
-    ap.add_argument("--device", default="cpu")
+    ap.add_argument("-k", type=int, default=config.TOP_K, help="가져올 청크 수")
+    ap.add_argument("--chunker", default=config.CHUNKER, choices=sorted(CHUNKERS))
+    ap.add_argument("--retriever", default="auto", choices=["auto", "hybrid3", "dense"],
+                    help=f"auto: 키가 있으면 {config.RETRIEVER}, 없으면 dense")
+    ap.add_argument("--device", default=config.DEVICE)
     ap.add_argument("--no-llm", action="store_true", help="답변 생성 없이 검색 결과만 보여 줘요")
     ap.add_argument("--show-prompt", action="store_true", help="LLM에 보낼 프롬프트를 출력")
     args = ap.parse_args()
 
     has_key = llm.available()
-    retriever = args.retriever if args.retriever != "auto" else ("hybrid" if has_key else "dense")
-    if retriever == "hybrid" and not has_key:
-        ap.error("hybrid는 번역에 OPENAI_API_KEY가 필요해요. 키를 넣거나 --retriever dense를 써요.")
+    retriever = args.retriever if args.retriever != "auto" else (config.RETRIEVER if has_key else "dense")
+    if retriever == "hybrid3" and not has_key:
+        ap.error("hybrid3는 번역에 OPENAI_API_KEY가 필요해요. 키를 넣거나 --retriever dense를 써요.")
 
     model = load_model(args.device)
     index = build_index(args.chunker, args.device, model=model)
     ranks = {}
     print(f"질문: {args.question}\n")
-    if retriever == "hybrid":
+    if retriever == "hybrid3":
         result = hybrid_search(index, BM25Index(index.chunks), model, args.question, args.k)
         hits, ranks = result.hits, result.ranks
         print(f"번역 질의: {result.translation.query}  ({result.translation.latency_ms:.0f}ms)\n")
@@ -64,7 +64,7 @@ def main() -> None:
             print("⚠ 인용 표시가 없는 답변이에요.")
         print()
 
-    label = "RRF 점수" if retriever == "hybrid" else "코사인"
+    label = "RRF 점수" if retriever == "hybrid3" else "코사인"
     print(f"검색된 청크 (검색기={retriever}, 청킹={args.chunker}, top-{args.k}, 점수={label}):")
     for h in hits:
         c = h.chunk
