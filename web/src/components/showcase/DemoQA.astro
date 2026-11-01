@@ -23,7 +23,7 @@ const renderAnswer = (text: string) =>
 
 <div class="questions" role="tablist" aria-label="추천 질문">
 	{demo.items.map((it, i) => (
-		<button type="button" role="tab" data-target={`q${i}`} aria-selected={i === 0 ? 'true' : 'false'}>
+		<button type="button" role="tab" data-target={it.slug} aria-selected={i === 0 ? 'true' : 'false'}>
 			<span class="cat">{it.category}</span>
 			<span class="q">{it.question}</span>
 			<span class={`res ${badgeClass(it.result)}`}>{it.result}</span>
@@ -34,7 +34,7 @@ const renderAnswer = (text: string) =>
 {demo.items.map((it, i) => {
 	const r = it.response;
 	return (
-		<section class="panel" id={`q${i}`} role="tabpanel" hidden={i !== 0}>
+		<section class="panel" id={it.slug} role="tabpanel" hidden={i !== 0}>
 			<p class="note">{it.note}</p>
 			{it.source && <p class="note">출처: {it.source}</p>}
 			<h3>답변 <span class={badgeClass(it.result)}>결과: {it.result}</span></h3>
@@ -86,12 +86,22 @@ const renderAnswer = (text: string) =>
 
 <script>
 	const buttons = document.querySelectorAll<HTMLButtonElement>('.questions button');
+	const select = (id: string) => {
+		buttons.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.target === id)));
+		document.querySelectorAll<HTMLElement>('.panel').forEach((p) => (p.hidden = p.id !== id));
+	};
 	buttons.forEach((btn) =>
 		btn.addEventListener('click', () => {
-			buttons.forEach((b) => b.setAttribute('aria-selected', String(b === btn)));
-			document.querySelectorAll<HTMLElement>('.panel').forEach((p) => (p.hidden = p.id !== btn.dataset.target));
+			select(btn.dataset.target!);
+			history.replaceState(null, '', `#${btn.dataset.target}`);
 		}),
 	);
+	// /demo/#eds 처럼 주소 끝의 이름으로 들어오면 그 질문을 열어요.
+	const fromHash = decodeURIComponent(location.hash.slice(1));
+	if (fromHash && document.getElementById(fromHash)?.classList.contains('panel')) {
+		select(fromHash);
+		document.querySelector('.questions')?.scrollIntoView();
+	}
 </script>
 
 <style>
