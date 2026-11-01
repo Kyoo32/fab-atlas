@@ -6,6 +6,7 @@
 반도체 8대 공정 공개 문서를 근거로 답하는 RAG QA 프로젝트예요.
 
 - 사이트: https://kyoo32.github.io/fab-atlas/
+- 추천 질문 데모: https://kyoo32.github.io/fab-atlas/demo/ (미리 실행한 결과, 자유 질문은 받지 않아요)
 - 작업노트: https://kyoo32.github.io/fab-atlas/notes/
 
 ## 계획
@@ -57,6 +58,7 @@ curl -s -X POST localhost:8000/ask -H 'Content-Type: application/json' -d '{"que
 - 모델과 인덱스는 서버가 뜰 때 한 번만 불러요. LLM 호출은 비동기, 임베딩·검색은 스레드로 돌리고, 동시 처리 상한은 4개예요. 기본값은 `fabatlas/config.py`에 모여 있어요.
 - `OPENAI_API_KEY`가 필요해요(없으면 503). LLM 호출은 30초 타임아웃(504), API 오류는 502로 돌려줘요.
 - 테스트: `uv run pytest` (LLM과 임베딩 모델을 가짜로 바꿔 네트워크 없이 돌아요)
+- 사이트 데모 갱신: 서버를 띄운 채로 `uv run python scripts/build_demo.py`를 돌리면 추천 질문 응답이 `web/src/data/demo.json`에 저장돼요. 사이트는 이 파일만 보여 줘요(GitHub Pages는 정적이라 실시간 호출이 없어요).
 
 ## 평가 기준
 

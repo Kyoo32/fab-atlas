@@ -33,7 +33,7 @@
 
 ## 구조 메모
 
-- 쇼케이스: `web/src/pages/` (`/`, `/report/`). 진행 현황은 `web/src/data/progress.json`.
+- 쇼케이스: `web/src/pages/` (`/`, `/demo/`, `/report/`). 진행 현황은 `web/src/data/progress.json`. 데모는 미리 실행한 응답(`web/src/data/demo.json`)만 보여 줘요.
 - 기본 설정(청킹, 검색기, LLM 모델, 타임아웃, 동시 처리 상한)은 `fabatlas/config.py` 한곳에 둬요.
 - 작업노트(Starlight): `web/src/content/docs/notes/`
   - 작업일지 `devlog/YYYY-MM-DD-slug.md` (frontmatter: title, date, dateEnd, summary, tags, hours, sidebar.order)
@@ -60,6 +60,7 @@ uv run python scripts/eval_tool.py check  # 평가셋 검사
 uv run python scripts/run_eval.py         # 9조합 Recall@5 → data/eval/results/
 uv run uvicorn fabatlas.server:app --reload  # API 서버 (로컬, POST /ask, GET /health)
 uv run pytest                             # 서버 테스트 (LLM·임베딩 가짜, 네트워크 없음)
+uv run python scripts/build_demo.py       # 서버를 띄운 채로 추천 질문 응답 → web/src/data/demo.json (사이트 /demo/)
 ```
 
 ## 커밋

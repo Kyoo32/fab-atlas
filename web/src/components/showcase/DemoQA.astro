@@ -1,0 +1,111 @@
+---
+// 추천 질문 데모. 질문 버튼을 누르면 미리 실행해 둔 API 응답(src/data/demo.json)을 보여 줘요.
+// 실시간 호출은 하지 않아요(GitHub Pages는 정적). 응답은 scripts/build_demo.py로 다시 만들어요.
+import demo from '../../data/demo.json';
+
+const tagRe = /\[([^\]]*S\d{3}§\d+[^\]]*)\]/g;
+// 답변 속 [S013§6] 같은 인용 표시를 강조해요.
+const renderAnswer = (text: string) =>
+	text.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c] as string)
+		.replace(tagRe, (m) => `<mark class="cite">${m}</mark>`);
+---
+
+<p class="meta">
+	미리 실행한 결과예요 · {demo.generated_at} · 커밋 <code>{demo.commit}</code> ·
+	청킹 {demo.config.chunking} · 검색 {demo.config.retriever} · 답변 {demo.config.model}
+</p>
+
+<div class="questions" role="tablist" aria-label="추천 질문">
+	{demo.items.map((it, i) => (
+		<button type="button" role="tab" data-target={`q${i}`} aria-selected={i === 0 ? 'true' : 'false'}>
+			<span class="cat">{it.category}</span>
+			<span class="q">{it.question}</span>
+		</button>
+	))}
+</div>
+
+{demo.items.map((it, i) => {
+	const r = it.response;
+	return (
+		<section class="panel" id={`q${i}`} role="tabpanel" hidden={i !== 0}>
+			<p class="note">{it.note}</p>
+			<h3>답변 {r.refused && <span class="badge">거절</span>}</h3>
+			<p class="answer" set:html={renderAnswer(r.answer)} />
+			{r.citations.length > 0 && (
+				<ul class="cites">
+					{r.citations.map((c) => (
+						<li><code>{c.tag}</code> <a href={c.url} rel="noopener">{c.title}</a> (영어 위키백과)</li>
+					))}
+				</ul>
+			)}
+			<p class="small">번역 질의(BM25와 dense 번역에 사용): <em>{r.translated_query}</em></p>
+
+			<h3>검색된 상위 5개 청크</h3>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr><th>#</th><th>청크</th><th>dense 한국어</th><th>dense 번역</th><th>BM25</th><th>RRF 점수</th></tr>
+					</thead>
+					<tbody>
+						{r.top5.map((t) => (
+							<tr>
+								<td>{t.rank}</td>
+								<td><code>{t.chunk_id}</code> {t.title}<br /><span class="preview">{t.chunk_preview}…</span></td>
+								<td>{t.dense_ko_rank}</td>
+								<td>{t.dense_en_rank}</td>
+								<td>{t.bm25_rank}</td>
+								<td>{t.rrf_score.toFixed(4)}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			<p class="small">순위는 청크 140개 중 각 검색기에서의 등수예요. 세 순위를 RRF(k = 60)로 합쳐 상위 5개를 골라요.</p>
+
+			<h3>단계별 지연</h3>
+			<p class="small">
+				번역 {Math.round(r.latency_ms.translate)}ms · 검색 {Math.round(r.latency_ms.retrieve)}ms ·
+				답변 {Math.round(r.latency_ms.generate)}ms · 합계 {Math.round(r.latency_ms.total)}ms
+			</p>
+		</section>
+	);
+})}
+
+<p class="license">
+	청크 미리보기와 근거는 영어 위키백과 문서(<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ko">CC BY-SA 4.0</a>)에서 왔어요.
+	문서별 출처와 판 번호는 <a href="https://github.com/Kyoo32/fab-atlas/blob/main/data/sources.csv">sources.csv</a>에 있어요.
+</p>
+
+<script>
+	const buttons = document.querySelectorAll<HTMLButtonElement>('.questions button');
+	buttons.forEach((btn) =>
+		btn.addEventListener('click', () => {
+			buttons.forEach((b) => b.setAttribute('aria-selected', String(b === btn)));
+			document.querySelectorAll<HTMLElement>('.panel').forEach((p) => (p.hidden = p.id !== btn.dataset.target));
+		}),
+	);
+</script>
+
+<style>
+	.meta, .small, .note, .license { color: var(--muted); font-size: 0.85rem; }
+	.questions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin: 16px 0 24px; }
+	.questions button {
+		text-align: left; font: inherit; cursor: pointer; padding: 10px 12px; border-radius: 8px;
+		border: 1px solid var(--line); background: var(--card); color: var(--fg);
+	}
+	.questions button[aria-selected='true'] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+	.cat { display: block; font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+	.q { display: block; font-size: 0.95rem; }
+	.panel h3 { font-size: 1rem; margin: 20px 0 8px; }
+	.note { margin: 0; }
+	.answer { line-height: 1.7; }
+	.cite { background: none; color: var(--accent); font-weight: 600; }
+	.badge { font-size: 0.75rem; border: 1px solid var(--muted); color: var(--muted); border-radius: 999px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+	.cites { padding-left: 1.2em; margin: 0 0 8px; font-size: 0.9rem; }
+	.table-wrap { overflow-x: auto; }
+	table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+	th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+	td:nth-child(n+3), th:nth-child(n+3) { text-align: right; white-space: nowrap; }
+	.preview { color: var(--muted); font-size: 0.8rem; }
+	code { font-size: 0.85em; }
+</style>

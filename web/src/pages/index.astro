@@ -19,11 +19,13 @@ const reportReady = progress.phases.flatMap((p) => p.items).some((i) => 'id' in 
 			{reportReady ? (
 				<>
 					<a class="btn primary" href={withBase('report/')}>검증 리포트</a>
+					<a class="btn ghost" href={withBase('demo/')}>추천 질문 데모</a>
 					<a class="btn ghost" href={withBase('notes/')}>작업노트 보기 →</a>
 				</>
 			) : (
 				<>
 					<a class="btn primary" href={withBase('notes/')}>작업노트 보기 →</a>
+					<a class="btn ghost" href={withBase('demo/')}>추천 질문 데모</a>
 					<a class="btn ghost" href={withBase('report/')}>
 						검증 리포트 <span class="soon">준비 중</span>
 					</a>

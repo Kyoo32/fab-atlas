@@ -1,0 +1,653 @@
+{
+ "generated_at": "2026-11-01",
+ "commit": "87353e4",
+ "config": {
+  "chunking": "w500o100",
+  "retriever": "hybrid3",
+  "model": "gpt-4.1-mini-2025-04-14"
+ },
+ "items": [
+  {
+   "category": "잘 되는 질문",
+   "question": "이온 주입 뒤에 왜 어닐링을 하나요?",
+   "note": "세 검색기가 모두 Ion implantation 문서를 위로 올리는 쉬운 경우예요.",
+   "response": {
+    "answer": "이온 주입 뒤에 어닐링을 하는 이유는 도펀트를 활성화시키기 위해서입니다. 이온 주입 과정에서 도펀트 원자가 반도체 내에 주입되지만, 이들이 전하 운반자를 생성하려면 어닐링 과정을 거쳐야 합니다. 어닐링은 튜브나 배치 퍼니스, 급속 열처리(Rapid Thermal Processing), 플래시 램프 어닐, 레이저 어닐 등 다양한 방법으로 수행될 수 있습니다. 이 과정을 통해 p형 도펀트는 정공을, n형 도펀트는 전자를 생성하여 반도체의 전도성을 변경하게 됩니다. 또한, 이 어닐링 과정은 이온 주입으로 인해 발생한 결정 구조의 손상을 복구하는 역할도 합니다. 이온 주입은 결정 격자에 많은 점 결함(공석, 간섭석 등)을 생성하는데, 어닐링을 통해 이러한 손상을 복구하고 결정 구조를 회복시킬 수 있습니다. 따라서 어닐링은 도펀트 활성화와 결정 구조 복구를 위해 필수적인 공정입니다. [S013§4, S013§6]",
+    "refused": false,
+    "citations": [
+     {
+      "tag": "S013§4",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "url": "https://en.wikipedia.org/wiki/Ion_implantation"
+     },
+     {
+      "tag": "S013§6",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "url": "https://en.wikipedia.org/wiki/Ion_implantation"
+     }
+    ],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S013§4",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "chunk_preview": "over the target surface, then some combination of beam scanning and wafer motion is used. Finally, the implanted surface is coupled with some method for collecting the accumulated charge of the implan",
+      "dense_ko_rank": 1,
+      "dense_en_rank": 1,
+      "bm25_rank": 1,
+      "rrf_score": 0.04918
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S013§3",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "chunk_preview": "be added to the plasma to delay the degradation of tungsten components due to the halogen cycle. The hydrogen can come from a high pressure cylinder or from a hydrogen generator that uses electrolysis",
+      "dense_ko_rank": 2,
+      "dense_en_rank": 2,
+      "bm25_rank": 3,
+      "rrf_score": 0.048131
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S013§6",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "chunk_preview": "ion-implanted element and the oxide substrate, and they may be formed as a result of a reduction of the substrate, first reported by Hunt and Hampikian. Typical ion beam energies used to produce nanop",
+      "dense_ko_rank": 9,
+      "dense_en_rank": 3,
+      "bm25_rank": 2,
+      "rrf_score": 0.046495
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S013§7",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "chunk_preview": "to a highly defective crystal: An amorphized film can be regrown at a lower temperature than required to anneal a highly damaged crystal. Amorphisation of the substrate can occur as a result of the be",
+      "dense_ko_rank": 5,
+      "dense_en_rank": 4,
+      "bm25_rank": 5,
+      "rrf_score": 0.046394
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S013§1",
+      "doc_id": "S013",
+      "title": "Ion implantation",
+      "chunk_preview": "Ion implantation is a low-temperature process by which ions of one element are accelerated into a solid target, thereby changing the target's physical, chemical, or electrical properties. Ion implanta",
+      "dense_ko_rank": 4,
+      "dense_en_rank": 5,
+      "bm25_rank": 6,
+      "rrf_score": 0.046161
+     }
+    ],
+    "translated_query": "Why is annealing performed after ion implantation in semiconductor fabrication?",
+    "latency_ms": {
+     "translate": 1758.4,
+     "retrieve": 363.8,
+     "generate": 2781.8,
+     "total": 4904.0
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "잘 되는 질문",
+   "question": "EUV 노광에서 펠리클은 왜 필요한가요?",
+   "note": "한국어 질문으로 영어 EUV lithography 문서의 Pellicles 부분을 찾는지 봐요.",
+   "response": {
+    "answer": "EUV 노광에서 펠리클은 마스크를 오염으로부터 보호하기 위해 필요해요. 펠리클은 마스크를 운반하거나 노광 챔버에 들어가거나 나올 때, 그리고 노광 중에도 입자 오염으로부터 마스크를 보호하는 역할을 해요. 펠리클이 없으면 입자가 마스크에 붙어 수율이 크게 떨어질 수 있어요. 기존 193nm 광학 리소그래피에서는 펠리클 사용으로 입자 오염 문제가 크게 없었지만, EUV에서는 펠리클 필름이 너무 얇아야 해서 EUV 흡수를 막기 어렵고, 고출력에서 펠리클이 손상되는 문제가 있어 펠리클 사용이 도전적이에요. 또한 펠리클이 가열되어 변형되고 투과율이 감소하는 문제도 있어, ASML은 70nm 두께의 폴리실리콘 펠리클을 개발했지만, 고출력 EUV에서는 절반 이하만 생존했어요. 따라서 펠리클은 마스크 오염 방지와 수율 유지에 필수적이지만, EUV의 높은 에너지와 열 문제로 인해 펠리클 재료와 안정성 확보가 중요한 과제에요. [S008§21, S008§22]",
+    "refused": false,
+    "citations": [
+     {
+      "tag": "S008§21",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "url": "https://en.wikipedia.org/wiki/EUV_lithography"
+     },
+     {
+      "tag": "S008§22",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "url": "https://en.wikipedia.org/wiki/EUV_lithography"
+     }
+    ],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S008§21",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "illumination variation mentioned above. Due to the varying shadowing sensitivity across the slit, the repair deposition height must be controlled very carefully, being different at different positions",
+      "dense_ko_rank": 1,
+      "dense_en_rank": 1,
+      "bm25_rank": 1,
+      "rrf_score": 0.04918
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S008§22",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "the hydrogen cleaning plasma expected to be deployed in EUV scanners. Hydrogen plasmas can also etch silicon as well. A coating helps improve hydrogen resistance, but this reduces transmission and/or ",
+      "dense_ko_rank": 4,
+      "dense_en_rank": 2,
+      "bm25_rank": 2,
+      "rrf_score": 0.047883
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S008§1",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "Extreme ultraviolet lithography (EUVL or simply EUV) is a technology used in the semiconductor industry for manufacturing integrated circuits (ICs). It is a type of photolithography that uses 13.5 nm ",
+      "dense_ko_rank": 9,
+      "dense_en_rank": 4,
+      "bm25_rank": 5,
+      "rrf_score": 0.045502
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S008§7",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "2% warrants tool downtime.\n\nThe wafer exposure throughput steadily expanded up to around 1000 wafers per day (per system) over the 2019–2022 period, indicating substantial idle time, while at the same",
+      "dense_ko_rank": 5,
+      "dense_en_rank": 10,
+      "bm25_rank": 4,
+      "rrf_score": 0.045295
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S008§8",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "chemical reaction of\n\nSn\n\n(\ns\n)\n\n+\n4\n\nH\n\n(\ng\n)\n\n⟶\n\nSnH\n\n4\n\n(\ng\n)\n\n{\\displaystyle {\\ce {Sn(s) + 4H(g) -> SnH4(g)}}}\n\nto remove tin deposition on the collector in the form of\n\nSnH\n\n4\n\n{\\displaystyle {\\c",
+      "dense_ko_rank": 3,
+      "dense_en_rank": 8,
+      "bm25_rank": 12,
+      "rrf_score": 0.044468
+     }
+    ],
+    "translated_query": "Why is a pellicle necessary in EUV lithography?",
+    "latency_ms": {
+     "translate": 1544.8,
+     "retrieve": 79.2,
+     "generate": 2265.1,
+     "total": 3889.1
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "잘 되는 질문",
+   "question": "감광액의 양성과 음성은 무엇이 다른가요?",
+   "note": "포토레지스트의 두 종류를 근거와 함께 구분하는지 봐요.",
+   "response": {
+    "answer": "감광액의 양성과 음성은 빛에 노출되었을 때 감광액의 용해성 변화가 다릅니다. 양성 감광액은 빛에 노출된 부분이 분해되어 현상액에 용해되어 제거되고, 빛에 가려진 부분은 남아 있습니다. 반면 음성 감광액은 빛에 노출된 부분이 중합 또는 가교 결합되어 강화되어 현상액에 용해되지 않고, 빛에 노출되지 않은 부분이 용해되어 제거됩니다. 즉, 양성 감광액은 빛에 노출된 부분이 제거되고, 음성 감광액은 빛에 노출된 부분이 남는 차이가 있습니다. [S007§1]",
+    "refused": false,
+    "citations": [
+     {
+      "tag": "S007§1",
+      "doc_id": "S007",
+      "title": "Photoresist",
+      "url": "https://en.wikipedia.org/wiki/Photoresist"
+     }
+    ],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S007§3",
+      "doc_id": "S007",
+      "title": "Photoresist",
+      "chunk_preview": "transitions in the DNQ molecule. In the deep ultraviolet (DUV) spectrum, the π-π* electronic transition in benzene or carbon double-bond chromophores appears at around 200 nm.[citation needed] Due to ",
+      "dense_ko_rank": 1,
+      "dense_en_rank": 3,
+      "bm25_rank": 9,
+      "rrf_score": 0.046759
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S011§2",
+      "doc_id": "S011",
+      "title": "Reactive-ion etching",
+      "chunk_preview": "walls they are simply fed out to ground and do not alter the electronic state of the system. However, electrons deposited on the wafer platter cause the platter to build up charge due to its DC isolat",
+      "dense_ko_rank": 2,
+      "dense_en_rank": 14,
+      "bm25_rank": 3,
+      "rrf_score": 0.045516
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S007§1",
+      "doc_id": "S007",
+      "title": "Photoresist",
+      "chunk_preview": "A photoresist (also known simply as a resist) is a light-sensitive material used in several processes, such as photolithography and photoengraving, to form a patterned coating on a surface. This proce",
+      "dense_ko_rank": 21,
+      "dense_en_rank": 1,
+      "bm25_rank": 1,
+      "rrf_score": 0.045133
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S007§4",
+      "doc_id": "S007",
+      "title": "Photoresist",
+      "chunk_preview": "and resistance to reactive ion etching. Other key properties are sensitivity, compatibility with tetramethylammonium hydroxide (TMAH), adhesion, environmental stability, and shelf life.\n\nResolution\n\nR",
+      "dense_ko_rank": 3,
+      "dense_en_rank": 7,
+      "bm25_rank": 11,
+      "rrf_score": 0.044883
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S007§5",
+      "doc_id": "S007",
+      "title": "Photoresist",
+      "chunk_preview": "example of commercial chemically amplified photoresists in use today:\n\nphotoacid generator + hν (193 nm) → acid cation + sulfonate anion\n\nsulfonate anion + hν (193 nm) → e− + sulfonate\n\ne− + photoacid",
+      "dense_ko_rank": 23,
+      "dense_en_rank": 5,
+      "bm25_rank": 4,
+      "rrf_score": 0.043058
+     }
+    ],
+    "translated_query": "What is the difference between positive and negative photoresist in semiconductor processing?",
+    "latency_ms": {
+     "translate": 1020.8,
+     "retrieve": 95.0,
+     "generate": 1646.0,
+     "total": 2761.9
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "표현 불일치",
+   "question": "EDS 공정에서는 무엇을 검사하나요?",
+   "note": "EDS는 국내 업계 용어라 영어 코퍼스에 없어요. 영어 위키백과는 Wafer testing이라고 불러요. 검색이 이 차이를 넘는지, 답변이 과잉 거절하지 않는지 봐요.",
+   "response": {
+    "answer": "EDS 공정에서 무엇을 검사하는지에 대한 근거를 코퍼스에서 찾을 수 없어요.",
+    "refused": true,
+    "citations": [],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S008§21",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "illumination variation mentioned above. Due to the varying shadowing sensitivity across the slit, the repair deposition height must be controlled very carefully, being different at different positions",
+      "dense_ko_rank": 15,
+      "dense_en_rank": 13,
+      "bm25_rank": 5,
+      "rrf_score": 0.042417
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S008§1",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "Extreme ultraviolet lithography (EUVL or simply EUV) is a technology used in the semiconductor industry for manufacturing integrated circuits (ICs). It is a type of photolithography that uses 13.5 nm ",
+      "dense_ko_rank": 12,
+      "dense_en_rank": 2,
+      "bm25_rank": 21,
+      "rrf_score": 0.042364
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S018§1",
+      "doc_id": "S018",
+      "title": "Wafer testing",
+      "chunk_preview": "Wafer testing is a step performed during semiconductor device fabrication after back end of line (BEOL) and before IC packaging.\n\nTwo types of testing are typically done. Very basic wafer parametric t",
+      "dense_ko_rank": 4,
+      "dense_en_rank": 3,
+      "bm25_rank": 40,
+      "rrf_score": 0.041498
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S023§1",
+      "doc_id": "S023",
+      "title": "Die singulation",
+      "chunk_preview": "Die singulation, also called wafer dicing, is the process in semiconductor device fabrication by which dies are separated from a finished wafer of semiconductor. It can involve scribing and breaking, ",
+      "dense_ko_rank": 37,
+      "dense_en_rank": 4,
+      "bm25_rank": 12,
+      "rrf_score": 0.039823
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S014§11",
+      "doc_id": "S014",
+      "title": "Atomic layer deposition",
+      "chunk_preview": "film.\n\nApplying this analysis tool during the ALD process, sometimes referred to as in situ spectroscopic ellipsometry, allows for greater control over the growth rate of the films during the ALD proc",
+      "dense_ko_rank": 7,
+      "dense_en_rank": 5,
+      "bm25_rank": 49,
+      "rrf_score": 0.039484
+     }
+    ],
+    "translated_query": "What is inspected in the EDS process in semiconductor manufacturing?",
+    "latency_ms": {
+     "translate": 774.9,
+     "retrieve": 93.0,
+     "generate": 839.8,
+     "total": 1707.7
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "답이 없는 질문",
+   "question": "TSMC 2나노 공정의 양산 수율은 몇 퍼센트인가요?",
+   "note": "코퍼스에 답이 없어요. 수치를 지어내지 않고 거절해야 해요.",
+   "response": {
+    "answer": "코퍼스에서 TSMC 2나노 공정의 양산 수율에 관한 근거를 찾을 수 없어요.",
+    "refused": true,
+    "citations": [],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S001§5",
+      "doc_id": "S001",
+      "title": "Wafer (electronics)",
+      "chunk_preview": "only for process operations such as etch where cost is related to wafer count, not wafer area.[citation needed] Cost for processes such as lithography is proportional to wafer area, and larger wafers ",
+      "dense_ko_rank": 1,
+      "dense_en_rank": 1,
+      "bm25_rank": 11,
+      "rrf_score": 0.046871
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S002§3",
+      "doc_id": "S002",
+      "title": "Czochralski method",
+      "chunk_preview": "YAG crystals are utilized as diamond simulants and in various optical applications, benefiting from the process's ability to produce large, high-purity crystals. YAG is produced with this process in a",
+      "dense_ko_rank": 7,
+      "dense_en_rank": 6,
+      "bm25_rank": 6,
+      "rrf_score": 0.045228
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S008§25",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "fills at most a leaf-shaped area at the edge of the pupil. However, due to 3D effects in the EUV mask, smaller pitches require even smaller portions of this leaf shape. Below 20% of the pupil, the thr",
+      "dense_ko_rank": 3,
+      "dense_en_rank": 5,
+      "bm25_rank": 13,
+      "rrf_score": 0.044956
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S001§2",
+      "doc_id": "S001",
+      "title": "Wafer (electronics)",
+      "chunk_preview": "a diameter of 450 mm, but are not yet in general use.\n\nWafers are cleaned with weak acids to remove unwanted particles. There are several standard cleaning procedures to make sure the surface of a sil",
+      "dense_ko_rank": 5,
+      "dense_en_rank": 13,
+      "bm25_rank": 7,
+      "rrf_score": 0.044009
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S008§22",
+      "doc_id": "S008",
+      "title": "EUV lithography",
+      "chunk_preview": "the hydrogen cleaning plasma expected to be deployed in EUV scanners. Hydrogen plasmas can also etch silicon as well. A coating helps improve hydrogen resistance, but this reduces transmission and/or ",
+      "dense_ko_rank": 14,
+      "dense_en_rank": 10,
+      "bm25_rank": 3,
+      "rrf_score": 0.043672
+     }
+    ],
+    "translated_query": "What is the mass production yield percentage of TSMC 2nm process?",
+    "latency_ms": {
+     "translate": 1352.5,
+     "retrieve": 94.1,
+     "generate": 1241.8,
+     "total": 2688.3
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "근거를 보지 않고 쓴 질문",
+   "question": "반도체 배선이 점점 가늘어지면 전기저항과 신호 전달에는 어떤 변화가 생기나요?",
+   "note": "원문을 보지 않고 쓴 평가 질문(B025)이에요. 원문 표현과 덜 겹쳐서 더 어려워요.",
+   "response": {
+    "answer": "반도체 배선이 점점 가늘어지면, 배선의 단면적이 줄어들어 전기저항이 증가할 수 있어요. 하지만 구리 배선을 사용하면 알루미늄보다 전기저항이 낮아져서 더 가는 배선도 사용할 수 있고, 전력 소모도 줄일 수 있어요. 구리는 알루미늄보다 전기 전도도가 높고 전자 이동에 대한 저항도 적기 때문에, 같은 크기의 배선에서 더 낮은 저항을 유지할 수 있어요. 또한, 구리 배선은 전자 이동에 의한 배선 손상(전자 이동 현상)에 더 강해 높은 전류를 견딜 수 있어요. 따라서 배선이 가늘어져도 구리 배선을 사용하면 전기저항 증가를 어느 정도 억제할 수 있고, 신호 전달 속도도 개선될 수 있어요. 다만, 구리 배선은 주변 실리콘과의 확산을 막기 위해 반드시 차단층(barrier metal layer)이 필요하며, 이 차단층이 배선의 유효 단면적을 줄여 저항 증가에 영향을 줄 수 있어요. 배선의 저항과 신호 전달 속도는 배선 재료, 두께, 폭, 그리고 절연체의 특성에 따라 결정되므로, 배선이 가늘어질 때는 이러한 요소들을 종합적으로 고려해야 해요. [S017§1, S017§2, S017§3, S016§1, S016§3]",
+    "refused": false,
+    "citations": [
+     {
+      "tag": "S017§1",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "url": "https://en.wikipedia.org/wiki/Copper_interconnects"
+     },
+     {
+      "tag": "S017§2",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "url": "https://en.wikipedia.org/wiki/Copper_interconnects"
+     },
+     {
+      "tag": "S017§3",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "url": "https://en.wikipedia.org/wiki/Copper_interconnects"
+     },
+     {
+      "tag": "S016§1",
+      "doc_id": "S016",
+      "title": "Interconnect (integrated circuits)",
+      "url": "https://en.wikipedia.org/wiki/Interconnect_(integrated_circuits)"
+     },
+     {
+      "tag": "S016§3",
+      "doc_id": "S016",
+      "title": "Interconnect (integrated circuits)",
+      "url": "https://en.wikipedia.org/wiki/Interconnect_(integrated_circuits)"
+     }
+    ],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S017§1",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "chunk_preview": "Copper interconnects are used in integrated circuits to reduce propagation delays and power consumption. Since copper is a better conductor than aluminium, ICs using copper for their interconnects can",
+      "dense_ko_rank": 1,
+      "dense_en_rank": 3,
+      "bm25_rank": 4,
+      "rrf_score": 0.047891
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S017§2",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "chunk_preview": "CMP to remove the copper coating in a planar and uniform fashion, and without the ability of the CMP process to stop repeatably at the copper-insulator interface, this technology would not be realizab",
+      "dense_ko_rank": 3,
+      "dense_en_rank": 1,
+      "bm25_rank": 5,
+      "rrf_score": 0.047651
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S017§3",
+      "doc_id": "S017",
+      "title": "Copper interconnects",
+      "chunk_preview": "in conductivity along with this improvement in electromigration resistance was to prove highly attractive. The overall benefits derived from these performance improvements were ultimately enough to dr",
+      "dense_ko_rank": 2,
+      "dense_en_rank": 4,
+      "bm25_rank": 6,
+      "rrf_score": 0.046906
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S016§3",
+      "doc_id": "S016",
+      "title": "Interconnect (integrated circuits)",
+      "chunk_preview": "pure aluminum was used but by the 1970s, substrate compatibility, junction spiking and reliability concerns (mostly concerning electromigration) forced the use of aluminum-based alloys containing sili",
+      "dense_ko_rank": 11,
+      "dense_en_rank": 5,
+      "bm25_rank": 3,
+      "rrf_score": 0.045342
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S016§1",
+      "doc_id": "S016",
+      "title": "Interconnect (integrated circuits)",
+      "chunk_preview": "In integrated circuits (ICs), interconnects are structures that connect two or more circuit elements (such as transistors) together electrically. The design and layout of interconnects on an IC is vit",
+      "dense_ko_rank": 17,
+      "dense_en_rank": 2,
+      "bm25_rank": 2,
+      "rrf_score": 0.045245
+     }
+    ],
+    "translated_query": "How does the electrical resistance and signal transmission change as semiconductor interconnects become narrower?",
+    "latency_ms": {
+     "translate": 951.2,
+     "retrieve": 93.5,
+     "generate": 2638.5,
+     "total": 3683.2
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  },
+  {
+   "category": "근거를 보지 않고 쓴 질문",
+   "question": "습식 식각과 건식 식각은 어떤 상황에서 각각 선택하나요?",
+   "note": "원문을 보지 않고 쓴 평가 질문(B019)이에요.",
+   "response": {
+    "answer": "습식 식각은 일반적으로 등방성(isotropic) 식각이 필요한 경우에 선택됩니다. 예를 들어, 마이크로전자기계시스템(MEMS)에서 기판으로부터 구조물을 \"해방\"시켜야 할 때 등방성 식각이 필수적이므로 습식 식각이 사용됩니다. 반면, 건식 식각은 주로 비등방성(anisotropic) 식각이 필요할 때 선택됩니다. 이는 건식 식각이 수직 방향으로 반응 이온을 전달하여 매우 비등방성 식각 프로파일을 만들 수 있기 때문입니다. 특히, 식각할 물질의 두께와 정의할 패턴의 폭이 비슷하거나 두께보다 작을 때(즉, 종횡비가 1에 가까울 때) 건식 식각이 필수적입니다. 건식 식각은 포토레지스트 패턴의 언더컷을 최소화하여 미세 패턴 전송에 유리합니다. 따라서, 미세한 반도체 패턴을 형성할 때는 건식 식각이 주로 사용되고, 구조물 해방 등 특정 목적에는 습식 식각이 사용됩니다. [S006§5, S006§6, S009§1, S011§2]",
+    "refused": false,
+    "citations": [
+     {
+      "tag": "S006§5",
+      "doc_id": "S006",
+      "title": "Photolithography",
+      "url": "https://en.wikipedia.org/wiki/Photolithography"
+     },
+     {
+      "tag": "S006§6",
+      "doc_id": "S006",
+      "title": "Photolithography",
+      "url": "https://en.wikipedia.org/wiki/Photolithography"
+     },
+     {
+      "tag": "S009§1",
+      "doc_id": "S009",
+      "title": "Etching (microfabrication)",
+      "url": "https://en.wikipedia.org/wiki/Etching_(microfabrication)"
+     },
+     {
+      "tag": "S011§2",
+      "doc_id": "S011",
+      "title": "Reactive-ion etching",
+      "url": "https://en.wikipedia.org/wiki/Reactive-ion_etching"
+     }
+    ],
+    "top5": [
+     {
+      "rank": 1,
+      "chunk_id": "S006§5",
+      "doc_id": "S006",
+      "title": "Photolithography",
+      "chunk_preview": "a pattern of intense light. The exposure to light causes a chemical change that allows some of the photoresist to be removed by a special solution, called \"developer\" by analogy with photographic deve",
+      "dense_ko_rank": 12,
+      "dense_en_rank": 3,
+      "bm25_rank": 2,
+      "rrf_score": 0.045891
+     },
+     {
+      "rank": 2,
+      "chunk_id": "S004§2",
+      "doc_id": "S004",
+      "title": "Thermal oxidation",
+      "chunk_preview": "X\n\no\n\n(\nt\n)\n=\nA\n\n/\n\n2\n⋅\n\n[\n\n1\n+\n\n4\nB\n\nA\n\n2\n\n(\nt\n+\nτ\n)\n\n−\n1\n\n]\n\n{\\displaystyle X_{o}(t)=A/2\\cdot \\left[{\\sqrt {1+{\\frac {4B}{A^{2}}}(t+\\tau )}}-1\\right]}\n\nMost thermal oxidation is performed in furnace",
+      "dense_ko_rank": 2,
+      "dense_en_rank": 11,
+      "bm25_rank": 9,
+      "rrf_score": 0.044706
+     },
+     {
+      "rank": 3,
+      "chunk_id": "S009§1",
+      "doc_id": "S009",
+      "title": "Etching (microfabrication)",
+      "chunk_preview": "Etching is used in microfabrication to chemically remove layers from the surface of a wafer during manufacturing. Etching is a critically important process module in fabrication, and every wafer under",
+      "dense_ko_rank": 63,
+      "dense_en_rank": 1,
+      "bm25_rank": 1,
+      "rrf_score": 0.040917
+     },
+     {
+      "rank": 4,
+      "chunk_id": "S006§6",
+      "doc_id": "S006",
+      "title": "Photolithography",
+      "chunk_preview": "essential when the width of the features to be defined is similar to or less than the thickness of the material being etched (i.e. when the aspect ratio approaches unity). Wet etch processes are gener",
+      "dense_ko_rank": 38,
+      "dense_en_rank": 10,
+      "bm25_rank": 4,
+      "rrf_score": 0.040115
+     },
+     {
+      "rank": 5,
+      "chunk_id": "S011§2",
+      "doc_id": "S011",
+      "title": "Reactive-ion etching",
+      "chunk_preview": "walls they are simply fed out to ground and do not alter the electronic state of the system. However, electrons deposited on the wafer platter cause the platter to build up charge due to its DC isolat",
+      "dense_ko_rank": 16,
+      "dense_en_rank": 16,
+      "bm25_rank": 14,
+      "rrf_score": 0.039829
+     }
+    ],
+    "translated_query": "When to choose wet etching versus dry etching in semiconductor fabrication processes?",
+    "latency_ms": {
+     "translate": 824.6,
+     "retrieve": 95.3,
+     "generate": 2252.2,
+     "total": 3172.1
+    },
+    "config": {
+     "chunking": "w500o100",
+     "retriever": "hybrid3",
+     "model": "gpt-4.1-mini-2025-04-14"
+    }
+   }
+  }
+ ]
+}

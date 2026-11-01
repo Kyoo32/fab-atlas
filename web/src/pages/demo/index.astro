@@ -1,0 +1,21 @@
+---
+import ShowcaseLayout from '../../layouts/ShowcaseLayout.astro';
+import DemoQA from '../../components/showcase/DemoQA.astro';
+import { withBase } from '../../lib/url';
+---
+
+<ShowcaseLayout title="추천 질문 데모" description="FabAtlas RAG에 추천 질문을 미리 물어본 결과">
+	<section>
+		<h1>추천 질문 데모</h1>
+		<p>
+			한국어 질문으로 영어 위키백과 23개 문서에서 근거를 찾고, 근거만 인용해 답해요. 잘 되는 질문과 함께
+			용어가 달라 놓치는 질문, 코퍼스에 답이 없는 질문도 넣었어요.
+		</p>
+		<DemoQA />
+		<p><a href={withBase('notes/')}>작업노트에서 설계와 실험 과정 보기 →</a></p>
+	</section>
+</ShowcaseLayout>
+
+<style>
+	h1 { margin: 0 0 8px; }
+</style>
