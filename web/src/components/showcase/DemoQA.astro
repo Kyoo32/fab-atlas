@@ -3,6 +3,11 @@
 // 실시간 호출은 하지 않아요(GitHub Pages는 정적). 응답은 scripts/build_demo.py로 다시 만들어요.
 import demo from '../../data/demo.json';
 
+// 결과 배지별 개수로 상단 요약을 만들어요. 잘 되는 질문만 고르지 않았다는 걸 숫자로 밝혀요.
+const count = (r: string) => demo.items.filter((it) => it.result === r).length;
+const summary = `${demo.items.length}개 중 ${count('과잉 거절')}개 과잉 거절, ${count('부분 답변')}개 부분 답변이 있어요. 잘 되는 질문만 고르지 않았어요.`;
+const badgeClass = (r: string) => (r === '과잉 거절' || r === '부분 답변' ? 'badge warn' : 'badge');
+
 const tagRe = /\[([^\]]*S\d{3}§\d+[^\]]*)\]/g;
 // 답변 속 [S013§6] 같은 인용 표시를 강조해요.
 const renderAnswer = (text: string) =>
@@ -14,12 +19,14 @@ const renderAnswer = (text: string) =>
 	미리 실행한 결과예요 · {demo.generated_at} · 커밋 <code>{demo.commit}</code> ·
 	청킹 {demo.config.chunking} · 검색 {demo.config.retriever} · 답변 {demo.config.model}
 </p>
+<p class="summary">{summary}</p>
 
 <div class="questions" role="tablist" aria-label="추천 질문">
 	{demo.items.map((it, i) => (
 		<button type="button" role="tab" data-target={`q${i}`} aria-selected={i === 0 ? 'true' : 'false'}>
 			<span class="cat">{it.category}</span>
 			<span class="q">{it.question}</span>
+			<span class={`res ${badgeClass(it.result)}`}>{it.result}</span>
 		</button>
 	))}
 </div>
@@ -29,7 +36,8 @@ const renderAnswer = (text: string) =>
 	return (
 		<section class="panel" id={`q${i}`} role="tabpanel" hidden={i !== 0}>
 			<p class="note">{it.note}</p>
-			<h3>답변 {r.refused && <span class="badge">거절</span>}</h3>
+			{it.source && <p class="note">출처: {it.source}</p>}
+			<h3>답변 <span class={badgeClass(it.result)}>결과: {it.result}</span></h3>
 			<p class="answer" set:html={renderAnswer(r.answer)} />
 			{r.citations.length > 0 && (
 				<ul class="cites">
@@ -100,7 +108,10 @@ const renderAnswer = (text: string) =>
 	.note { margin: 0; }
 	.answer { line-height: 1.7; }
 	.cite { background: none; color: var(--accent); font-weight: 600; }
-	.badge { font-size: 0.75rem; border: 1px solid var(--muted); color: var(--muted); border-radius: 999px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+	.summary { font-size: 0.9rem; margin: 4px 0 0; }
+	.badge { font-size: 0.75rem; border: 1px solid var(--muted); color: var(--muted); border-radius: 999px; padding: 0 8px; margin-left: 6px; vertical-align: middle; white-space: nowrap; }
+	.badge.warn { border-color: var(--accent); color: var(--accent); }
+	.res { display: inline-block; margin: 6px 0 0; }
 	.cites { padding-left: 1.2em; margin: 0 0 8px; font-size: 0.9rem; }
 	.table-wrap { overflow-x: auto; }
 	table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
